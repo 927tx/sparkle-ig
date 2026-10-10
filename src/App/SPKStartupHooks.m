@@ -16,6 +16,7 @@ FOUNDATION_EXPORT void SPKInstallStoriesActionButtonHooksIfEnabled(void);
 FOUNDATION_EXPORT void SPKInstallStoryAudioToggleHooksIfEnabled(void);
 FOUNDATION_EXPORT void SPKInstallStoryPlaybackControlsHooksIfEnabled(void);
 FOUNDATION_EXPORT void SPKInstallHideAudioUnavailableToastHooksIfEnabled(void);
+FOUNDATION_EXPORT void SPKInstallHideMetaAIStoryCameraHooksIfNeeded(void);
 FOUNDATION_EXPORT void SPKInstallStoryAutoSaveHooksIfEnabled(void);
 FOUNDATION_EXPORT void SPKInstallDirectAutoSaveHooksIfEnabled(void);
 FOUNDATION_EXPORT void SPKInstallMessagesActionButtonHooksIfEnabled(void);
@@ -234,6 +235,7 @@ void SPKInstallStorySurfaceHooksIfNeeded(void) {
     SPK_INSTALL(SPKInstallStoryAudioToggleHooksIfEnabled);
     SPK_INSTALL(SPKInstallStoryPlaybackControlsHooksIfEnabled);
     SPK_INSTALL(SPKInstallHideAudioUnavailableToastHooksIfEnabled);
+    SPK_INSTALL(SPKInstallHideMetaAIStoryCameraHooksIfNeeded);
     SPK_INSTALL(SPKInstallStoryAutoSaveHooksIfEnabled);
     SPK_INSTALL(SPKInstallSeenButtonHooksIfNeeded);
     SPK_INSTALL(SPKInstallHideMetaAIHooksIfEnabled);

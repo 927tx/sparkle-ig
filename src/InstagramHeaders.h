@@ -1360,3 +1360,10 @@ typedef struct {
 @interface IGBrowserNavigationController : UINavigationController
 @property (readonly, nonatomic) IGBrowserSession *browserSession;
 @end
+
+// The vertical tools column in the story camera. Each tool is a view conforming
+// to IGCameraToolsMenuTool, which exposes a stable string identifier.
+@interface IGCameraToolsMenu : UIView
+- (id)initWithTools:(id)tools store:(id)store;
+- (id)initWithTools:(id)tools userSession:(id)session;
+@end

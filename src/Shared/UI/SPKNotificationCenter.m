@@ -372,6 +372,8 @@ UIImage *SPKNotificationIconNamed(NSString *iconResource, BOOL instagramStyle) {
         NSString *outline = [base stringByAppendingString:@"_outline"];
         if ([SPKAssetUtils resolvedInstagramIconNameForName:outline].length > 0)
             name = outline;
+        else if (base.length < name.length && [SPKAssetUtils resolvedInstagramIconNameForName:base].length > 0)
+            name = base;
     }
     return [SPKAssetUtils instagramIconNamed:name
                                    pointSize:instagramStyle ? kSPKNotificationInstagramIconSize : 16.0

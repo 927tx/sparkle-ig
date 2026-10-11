@@ -247,8 +247,10 @@ static const NSInteger kSPKShareSheetPinDiscTag = 0x53505244;
 static const NSInteger kSPKShareSheetPinGlyphTag = 0x53505247;
 
 /// The selection check's fill (#455EFE): unlike the text accent it is the same blue
-/// in light and dark mode.
+/// in light and dark mode. Instagram 410 fills it with the classic blue instead.
 static UIColor *SPKShareSheetPinDiscColor(void) {
+    if ([SPKUtils SPKInstagramUsesClassicBlue])
+        return [SPKUtils SPKColor_InstagramBlue];
     return [UIColor colorWithRed:0x45 / 255.0 green:0x5E / 255.0 blue:0xFE / 255.0 alpha:1.0];
 }
 

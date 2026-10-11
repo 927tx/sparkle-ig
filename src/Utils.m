@@ -660,7 +660,23 @@ static UIColor *SPKInstagramColorFromClassSelector(NSString *className, SEL sele
     return [color isKindOfClass:[UIColor class]] ? color : nil;
 }
 
+// Instagram 410 still uses the classic blue, one Display P3 value for both
+// appearances. Later builds moved to the indigo accent with a dark variant.
+static BOOL SPKInstagramUsesClassicBlue(void) {
+    static BOOL classic;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+        NSInteger major = [version integerValue];
+        classic = major > 0 && major <= 410;
+    });
+    return classic;
+}
+
 static UIColor *SPKInstagramPrimaryAccentColor(void) {
+    if (SPKInstagramUsesClassicBlue())
+        return [UIColor colorWithDisplayP3Red:0.0 green:149.0 / 255.0 blue:246.0 / 255.0 alpha:1.0];
+
     return [UIColor colorWithDynamicProvider:^UIColor *_Nonnull(UITraitCollection *_Nonnull traitCollection) {
         if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
             return [UIColor colorWithRed:0.408 green:0.557 blue:1.032 alpha:1.0];
@@ -1906,6 +1922,10 @@ static NSDate *SPKScanObjectForPostedDate(id target, NSInteger depth) {
 // MARK: Colours
 + (UIColor *)SPKColor_InstagramBlue {
     return SPKInstagramPrimaryAccentColor();
+}
+
++ (BOOL)SPKInstagramUsesClassicBlue {
+    return SPKInstagramUsesClassicBlue();
 }
 
 + (UIColor *)SPKColor_InstagramBackground {

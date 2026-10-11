@@ -488,20 +488,48 @@ return [config copy];
 }
 %end
 
-// "Imagine background" in story editor vertical action bar
+// "Imagine background" and the Restyle button in the story editor action bar.
+// Both toolbar classes take the full button array before layout, so dropping an
+// entry there lets the remaining tools close the gap. Entries are either the
+// button itself or a labeled wrapper around it, depending on the setter.
+static NSArray *SPKCreationToolbarButtonsWithoutAI(id buttons) {
+    if (!SPKHideMetaAICreation() || ![buttons isKindOfClass:NSArray.class])
+        return buttons;
+
+    static NSSet<NSString *> *hiddenIdentifiers;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        hiddenIdentifiers = [NSSet setWithObjects:@"contextual-background", @"ai-modify", nil];
+    });
+
+    return [(NSArray *)buttons filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id obj, NSDictionary *bindings) {
+                                   id button = obj;
+                                   if (![button isKindOfClass:UIView.class])
+                                       button = [obj respondsToSelector:@selector(button)] ? [(IGCreationActionBarLabeledButton *)obj button] : nil;
+                                   if (![button isKindOfClass:UIView.class])
+                                       return YES;
+                                   NSString *identifier = ((UIView *)button).accessibilityIdentifier;
+                                   return !(identifier && [hiddenIdentifiers containsObject:identifier]);
+                               }]];
+}
+
 %hook _TtC17IGCreationOSSwift19IGCreationHeaderBar
+- (void)setButtons:(id)buttons {
+    %orig(SPKCreationToolbarButtonsWithoutAI(buttons));
+}
+
 - (void)setButtons:(id)buttons maxItems:(NSInteger)max {
-    NSArray *filteredObjs = buttons;
+    %orig(SPKCreationToolbarButtonsWithoutAI(buttons), max);
+}
+%end
 
-    if (SPKHideMetaAICreation()) {
-        filteredObjs = [filteredObjs filteredArrayUsingPredicate:
-                                         [NSPredicate predicateWithBlock:^BOOL(IGCreationActionBarLabeledButton *obj, NSDictionary *bindings) {
-                                             return !(
-                                                 obj.button && [((IGCreationActionBarButton *)obj.button).accessibilityIdentifier isEqualToString:@"contextual-background"]);
-                                         }]];
-    }
+%hook _TtC17IGCreationOSSwift35IGCreationVerticalScrollableToolbar
+- (void)setButtons:(id)buttons {
+    %orig(SPKCreationToolbarButtonsWithoutAI(buttons));
+}
 
-    %orig(filteredObjs, max);
+- (void)setButtons:(id)buttons numDynamicButtons:(NSInteger)count {
+    %orig(SPKCreationToolbarButtonsWithoutAI(buttons), count);
 }
 %end
 

@@ -180,7 +180,9 @@ static NSArray *SPKHideMetaAIDirectMenuOptions(NSArray *options) {
     return %orig(arg1, arg2, arg3, [self patchConfig:config], arg5, arg6, arg7);
 }
 
-- (id)_initializeWithLayoutSpecProvider:(id)arg1
+// Returns void on 410, so the result is passed through untyped: declared as an
+// object, ARC would retain whatever the return register happens to hold.
+- (void *)_initializeWithLayoutSpecProvider:(id)arg1
                             userSession:(id)arg2
                         userLauncherSet:(id)arg3
                                  config:(IGDirectComposerConfig *)config
@@ -753,13 +755,21 @@ static BOOL SPKHasShortcutManager(void) {
             UIView *viewToRemove = self;
             UIView *wrapper = self.superview;
             if ([wrapper isKindOfClass:UIView.class]) {
-                NSUInteger controlSiblings = 0;
+                // Lift only to a wrapper that holds nothing but this button. Text
+                // inputs are not controls, so counting controls alone would also
+                // remove a container that hosts a text field beside the button.
+                BOOL hostsOnlyThisButton = YES;
                 for (UIView *sub in wrapper.subviews) {
-                    if ([sub isKindOfClass:UIControl.class])
-                        controlSiblings++;
+                    if (sub == self)
+                        continue;
+                    if ([sub isKindOfClass:UIControl.class] || [sub isKindOfClass:UIScrollView.class] ||
+                        [sub conformsToProtocol:@protocol(UITextInput)] || sub.subviews.count > 0) {
+                        hostsOnlyThisButton = NO;
+                        break;
+                    }
                 }
-                if (controlSiblings <= 1)
-                    viewToRemove = wrapper; // wrapper hosts only this button
+                if (hostsOnlyThisButton)
+                    viewToRemove = wrapper;
             }
             SPKLog(@"General", @"[Sparkle] Hiding DM Restyle button (410), removing %@", [viewToRemove class]);
             self.hidden = YES;

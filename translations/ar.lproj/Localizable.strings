@@ -1101,7 +1101,7 @@
 "LANGUAGE_PACK_ERROR_NO_CATALOG" = "لم يُعثر على كتالوج لغة. استورد ملف zip لمجلد مسمى باسم لغته، مثل de.lproj.";
 "LANGUAGE_PACK_ERROR_UNREADABLE" = "تعذّرت قراءة الملف.";
 "LANGUAGE_PACK_EXPORT_ERROR_TITLE" = "تعذّر تصدير النصوص";
-"LANGUAGE_PACK_EXPORT_TITLE" = "تصدير النصوص الإنجليزية";
+"LANGUAGE_PACK_EXPORT_TITLE" = "تصدير النصوص";
 "LANGUAGE_PACK_IMPORT_ERROR_TITLE" = "تعذّر استيراد حزمة اللغة";
 "LANGUAGE_PACK_IMPORT_TITLE" = "استيراد من الملفات";
 "LANGUAGE_PACK_IMPORT_URL_TITLE" = "استيراد من رابط";

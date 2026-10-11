@@ -1101,7 +1101,7 @@
 "LANGUAGE_PACK_ERROR_NO_CATALOG" = "ไม่พบแคตตาล็อกภาษา นำเข้าไฟล์ zip ของโฟลเดอร์ที่ตั้งชื่อตามภาษานั้น เช่น de.lproj";
 "LANGUAGE_PACK_ERROR_UNREADABLE" = "ไม่สามารถอ่านไฟล์ได้";
 "LANGUAGE_PACK_EXPORT_ERROR_TITLE" = "ไม่สามารถส่งออกสตริงได้";
-"LANGUAGE_PACK_EXPORT_TITLE" = "ส่งออกสตริงภาษาอังกฤษ";
+"LANGUAGE_PACK_EXPORT_TITLE" = "ส่งออกสตริง";
 "LANGUAGE_PACK_IMPORT_ERROR_TITLE" = "ไม่สามารถนำเข้าแพ็กภาษาได้";
 "LANGUAGE_PACK_IMPORT_TITLE" = "นำเข้าแพ็กภาษา";
 "LANGUAGE_PACK_IMPORT_URL_TITLE" = "นำเข้าจากลิงก์";

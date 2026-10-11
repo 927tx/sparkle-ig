@@ -1101,7 +1101,7 @@
 "LANGUAGE_PACK_ERROR_NO_CATALOG" = "No se ha encontrado ningún catálogo de idioma. Importa un zip de una carpeta con el nombre de su idioma, como de.lproj.";
 "LANGUAGE_PACK_ERROR_UNREADABLE" = "No se ha podido leer el archivo.";
 "LANGUAGE_PACK_EXPORT_ERROR_TITLE" = "No se han podido exportar los textos";
-"LANGUAGE_PACK_EXPORT_TITLE" = "Exportar textos en inglés";
+"LANGUAGE_PACK_EXPORT_TITLE" = "Exportar textos";
 "LANGUAGE_PACK_IMPORT_ERROR_TITLE" = "No se ha podido importar el paquete de idioma";
 "LANGUAGE_PACK_IMPORT_TITLE" = "Importar desde Archivos";
 "LANGUAGE_PACK_IMPORT_URL_TITLE" = "Importar desde un enlace";

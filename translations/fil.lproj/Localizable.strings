@@ -1101,7 +1101,7 @@
 "LANGUAGE_PACK_ERROR_NO_CATALOG" = "Walang nahanap na language catalog. Mag-import ng zip ng isang folder na pinangalanan ayon sa wika nito, tulad ng de.lproj.";
 "LANGUAGE_PACK_ERROR_UNREADABLE" = "Hindi mabasa ang file.";
 "LANGUAGE_PACK_EXPORT_ERROR_TITLE" = "Hindi Ma-export ang mga Strings";
-"LANGUAGE_PACK_EXPORT_TITLE" = "I-export ang English Strings";
+"LANGUAGE_PACK_EXPORT_TITLE" = "I-export ang mga String";
 "LANGUAGE_PACK_IMPORT_ERROR_TITLE" = "Hindi Ma-import ang Language Pack";
 "LANGUAGE_PACK_IMPORT_TITLE" = "Mag-import ng Language Pack";
 "LANGUAGE_PACK_IMPORT_URL_TITLE" = "Mag-import mula sa Link";

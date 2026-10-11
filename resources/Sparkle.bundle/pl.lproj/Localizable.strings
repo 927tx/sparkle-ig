@@ -1101,7 +1101,7 @@
 "LANGUAGE_PACK_ERROR_NO_CATALOG" = "Nie znaleziono katalogu języków. Zaimportuj zip folderu nazwanego od języka, np. de.lproj.";
 "LANGUAGE_PACK_ERROR_UNREADABLE" = "Nie udało się odczytać pliku.";
 "LANGUAGE_PACK_EXPORT_ERROR_TITLE" = "Nie można wyeksportować ciągów";
-"LANGUAGE_PACK_EXPORT_TITLE" = "Eksportuj ciągi po angielsku";
+"LANGUAGE_PACK_EXPORT_TITLE" = "Eksportuj ciągi";
 "LANGUAGE_PACK_IMPORT_ERROR_TITLE" = "Nie można zaimportować pakietu językowego";
 "LANGUAGE_PACK_IMPORT_TITLE" = "Importuj z plików";
 "LANGUAGE_PACK_IMPORT_URL_TITLE" = "Importuj z linku";

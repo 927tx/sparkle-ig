@@ -1101,7 +1101,7 @@
 "LANGUAGE_PACK_ERROR_NO_CATALOG" = "언어 카탈로그를 찾을 수 없습니다. de.lproj처럼 언어 이름이 붙은 폴더의 zip 파일을 가져오세요.";
 "LANGUAGE_PACK_ERROR_UNREADABLE" = "파일을 읽을 수 없습니다.";
 "LANGUAGE_PACK_EXPORT_ERROR_TITLE" = "텍스트를 내보낼 수 없음";
-"LANGUAGE_PACK_EXPORT_TITLE" = "영어 텍스트 내보내기";
+"LANGUAGE_PACK_EXPORT_TITLE" = "텍스트 내보내기";
 "LANGUAGE_PACK_IMPORT_ERROR_TITLE" = "언어 팩을 가져올 수 없음";
 "LANGUAGE_PACK_IMPORT_TITLE" = "파일에서 가져오기";
 "LANGUAGE_PACK_IMPORT_URL_TITLE" = "링크에서 가져오기";

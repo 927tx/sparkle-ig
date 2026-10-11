@@ -1101,7 +1101,7 @@
 "LANGUAGE_PACK_ERROR_NO_CATALOG" = "Kalbos katalogo nerasta. Importuokite aplanko, pavadinto pagal kalbą, ZIP archyvą, pavyzdžiui, de.lproj.";
 "LANGUAGE_PACK_ERROR_UNREADABLE" = "Failo nepavyko nuskaityti.";
 "LANGUAGE_PACK_EXPORT_ERROR_TITLE" = "Nepavyko eksportuoti eilučių";
-"LANGUAGE_PACK_EXPORT_TITLE" = "Eksportuoti angliškas eilutes";
+"LANGUAGE_PACK_EXPORT_TITLE" = "Eksportuoti eilutes";
 "LANGUAGE_PACK_IMPORT_ERROR_TITLE" = "Nepavyko importuoti kalbų paketo";
 "LANGUAGE_PACK_IMPORT_TITLE" = "Importuoti iš Failų";
 "LANGUAGE_PACK_IMPORT_URL_TITLE" = "Importuoti iš nuorodos";

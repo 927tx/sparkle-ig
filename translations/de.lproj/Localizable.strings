@@ -1101,7 +1101,7 @@
 "LANGUAGE_PACK_ERROR_NO_CATALOG" = "Kein Sprachkatalog gefunden. Importiere ein ZIP-Archiv eines nach der Sprache benannten Ordners wie de.lproj.";
 "LANGUAGE_PACK_ERROR_UNREADABLE" = "Die Datei konnte nicht gelesen werden.";
 "LANGUAGE_PACK_EXPORT_ERROR_TITLE" = "Texte konnten nicht exportiert werden";
-"LANGUAGE_PACK_EXPORT_TITLE" = "Englische Texte exportieren";
+"LANGUAGE_PACK_EXPORT_TITLE" = "Texte exportieren";
 "LANGUAGE_PACK_IMPORT_ERROR_TITLE" = "Sprachpaket konnte nicht importiert werden";
 "LANGUAGE_PACK_IMPORT_TITLE" = "Aus Dateien importieren";
 "LANGUAGE_PACK_IMPORT_URL_TITLE" = "Aus einem Link importieren";

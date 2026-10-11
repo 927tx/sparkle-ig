@@ -1101,7 +1101,7 @@
 "LANGUAGE_PACK_ERROR_NO_CATALOG" = "Kei Sprachkatalog gfunge. Importier e Zip vomene Ordner, wo nach syre Sprache benännt isch, zum Byspiu de.lproj.";
 "LANGUAGE_PACK_ERROR_UNREADABLE" = "D'Datei het nid chönne gläse wärde.";
 "LANGUAGE_PACK_EXPORT_ERROR_TITLE" = "Strings Hei Nid Chönne Exportiert Wärde";
-"LANGUAGE_PACK_EXPORT_TITLE" = "Änglischi Strings Exportiere";
+"LANGUAGE_PACK_EXPORT_TITLE" = "Strings Exportiere";
 "LANGUAGE_PACK_IMPORT_ERROR_TITLE" = "Sprachpaket Het Nid Chönne Importiert Wärde";
 "LANGUAGE_PACK_IMPORT_TITLE" = "Sprachpaket Importiere";
 "LANGUAGE_PACK_IMPORT_URL_TITLE" = "Vomene Link Importiere";

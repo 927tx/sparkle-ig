@@ -1101,7 +1101,7 @@
 "LANGUAGE_PACK_ERROR_NO_CATALOG" = "言語カタログが見つかりません。de.lproj のように言語名を付けたフォルダの zip をインポートしてください。";
 "LANGUAGE_PACK_ERROR_UNREADABLE" = "ファイルを読み込めませんでした。";
 "LANGUAGE_PACK_EXPORT_ERROR_TITLE" = "テキストを書き出せませんでした";
-"LANGUAGE_PACK_EXPORT_TITLE" = "英語テキストを書き出す";
+"LANGUAGE_PACK_EXPORT_TITLE" = "テキストを書き出す";
 "LANGUAGE_PACK_IMPORT_ERROR_TITLE" = "言語パックをインポートできませんでした";
 "LANGUAGE_PACK_IMPORT_TITLE" = "ファイルからインポート";
 "LANGUAGE_PACK_IMPORT_URL_TITLE" = "リンクからインポート";

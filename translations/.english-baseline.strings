@@ -1101,7 +1101,7 @@
 "LANGUAGE_PACK_ERROR_NO_CATALOG" = "No language catalog was found. Import a zip of a folder named for its language, such as de.lproj.";
 "LANGUAGE_PACK_ERROR_UNREADABLE" = "The file could not be read.";
 "LANGUAGE_PACK_EXPORT_ERROR_TITLE" = "Could Not Export Strings";
-"LANGUAGE_PACK_EXPORT_TITLE" = "Export English Strings";
+"LANGUAGE_PACK_EXPORT_TITLE" = "Export Strings";
 "LANGUAGE_PACK_IMPORT_ERROR_TITLE" = "Could Not Import Language Pack";
 "LANGUAGE_PACK_IMPORT_TITLE" = "Import from Files";
 "LANGUAGE_PACK_IMPORT_URL_TITLE" = "Import from a Link";

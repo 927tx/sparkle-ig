@@ -1101,7 +1101,7 @@
 "LANGUAGE_PACK_ERROR_NO_CATALOG" = "Nu a fost găsit niciun catalog de limbă. Importă o arhivă zip a unui folder denumit după limba sa, precum de.lproj.";
 "LANGUAGE_PACK_ERROR_UNREADABLE" = "Fișierul nu a putut fi citit.";
 "LANGUAGE_PACK_EXPORT_ERROR_TITLE" = "Textele nu au putut fi exportate";
-"LANGUAGE_PACK_EXPORT_TITLE" = "Exportă textele în engleză";
+"LANGUAGE_PACK_EXPORT_TITLE" = "Exportă textele";
 "LANGUAGE_PACK_IMPORT_ERROR_TITLE" = "Pachetul de limbă nu a putut fi importat";
 "LANGUAGE_PACK_IMPORT_TITLE" = "Importă din Fișiere";
 "LANGUAGE_PACK_IMPORT_URL_TITLE" = "Importă dintr-un link";

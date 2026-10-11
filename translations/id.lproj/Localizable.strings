@@ -1101,7 +1101,7 @@
 "LANGUAGE_PACK_ERROR_NO_CATALOG" = "Katalog bahasa tidak ditemukan. Impor zip dari folder yang dinamai sesuai bahasanya, seperti de.lproj.";
 "LANGUAGE_PACK_ERROR_UNREADABLE" = "File tidak dapat dibaca.";
 "LANGUAGE_PACK_EXPORT_ERROR_TITLE" = "Tidak Dapat Mengekspor String";
-"LANGUAGE_PACK_EXPORT_TITLE" = "Ekspor String Bahasa Inggris";
+"LANGUAGE_PACK_EXPORT_TITLE" = "Ekspor String";
 "LANGUAGE_PACK_IMPORT_ERROR_TITLE" = "Tidak Dapat Mengimpor Paket Bahasa";
 "LANGUAGE_PACK_IMPORT_TITLE" = "Impor Paket Bahasa";
 "LANGUAGE_PACK_IMPORT_URL_TITLE" = "Impor dari Tautan";

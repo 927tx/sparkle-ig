@@ -1101,7 +1101,7 @@
 "LANGUAGE_PACK_ERROR_NO_CATALOG" = "هیچ کاتالوگ زبانی پیدا نشد. یک فایل زیپ از پوشه‌ای به‌نام زبانش، مثلاً de.lproj، درون‌ریزی کنید.";
 "LANGUAGE_PACK_ERROR_UNREADABLE" = "فایل قابل خواندن نبود.";
 "LANGUAGE_PACK_EXPORT_ERROR_TITLE" = "خروجی گرفتن از رشته‌ها ممکن نشد";
-"LANGUAGE_PACK_EXPORT_TITLE" = "خروجی گرفتن از رشته‌های انگلیسی";
+"LANGUAGE_PACK_EXPORT_TITLE" = "خروجی گرفتن از رشته‌ها";
 "LANGUAGE_PACK_IMPORT_ERROR_TITLE" = "درون‌ریزی بسته زبان ممکن نشد";
 "LANGUAGE_PACK_IMPORT_TITLE" = "درون‌ریزی بسته زبان";
 "LANGUAGE_PACK_IMPORT_URL_TITLE" = "وارد کردن از پیوند";

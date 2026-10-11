@@ -1101,7 +1101,7 @@
 "LANGUAGE_PACK_ERROR_NO_CATALOG" = "Языковой каталог не найден. Импортируйте zip-архив папки, названной по её языку, например de.lproj.";
 "LANGUAGE_PACK_ERROR_UNREADABLE" = "Не удалось прочитать файл.";
 "LANGUAGE_PACK_EXPORT_ERROR_TITLE" = "Не удалось экспортировать тексты";
-"LANGUAGE_PACK_EXPORT_TITLE" = "Экспортировать английские тексты";
+"LANGUAGE_PACK_EXPORT_TITLE" = "Экспортировать тексты";
 "LANGUAGE_PACK_IMPORT_ERROR_TITLE" = "Не удалось импортировать языковой пакет";
 "LANGUAGE_PACK_IMPORT_TITLE" = "Импорт из Файлов";
 "LANGUAGE_PACK_IMPORT_URL_TITLE" = "Импорт по ссылке";

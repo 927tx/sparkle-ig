@@ -1101,7 +1101,7 @@
 "LANGUAGE_PACK_ERROR_NO_CATALOG" = "Δεν βρέθηκε κατάλογος γλώσσας. Εισήγαγε ένα zip ενός φακέλου με το όνομα της γλώσσας του, π.χ. de.lproj.";
 "LANGUAGE_PACK_ERROR_UNREADABLE" = "Δεν ήταν δυνατή η ανάγνωση του αρχείου.";
 "LANGUAGE_PACK_EXPORT_ERROR_TITLE" = "Δεν ήταν δυνατή η εξαγωγή των κειμένων";
-"LANGUAGE_PACK_EXPORT_TITLE" = "Εξαγωγή αγγλικών κειμένων";
+"LANGUAGE_PACK_EXPORT_TITLE" = "Εξαγωγή κειμένων";
 "LANGUAGE_PACK_IMPORT_ERROR_TITLE" = "Δεν ήταν δυνατή η εισαγωγή του πακέτου γλώσσας";
 "LANGUAGE_PACK_IMPORT_TITLE" = "Εισαγωγή από Αρχεία";
 "LANGUAGE_PACK_IMPORT_URL_TITLE" = "Εισαγωγή από σύνδεσμο";

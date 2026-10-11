@@ -1101,7 +1101,7 @@
 "LANGUAGE_PACK_ERROR_NO_CATALOG" = "Không tìm thấy danh mục ngôn ngữ. Hãy nhập tệp zip của một thư mục được đặt tên theo ngôn ngữ của nó, ví dụ de.lproj.";
 "LANGUAGE_PACK_ERROR_UNREADABLE" = "Không thể đọc tệp.";
 "LANGUAGE_PACK_EXPORT_ERROR_TITLE" = "Không thể xuất chuỗi ngôn ngữ";
-"LANGUAGE_PACK_EXPORT_TITLE" = "Xuất chuỗi tiếng Anh";
+"LANGUAGE_PACK_EXPORT_TITLE" = "Xuất chuỗi";
 "LANGUAGE_PACK_IMPORT_ERROR_TITLE" = "Không thể nhập gói ngôn ngữ";
 "LANGUAGE_PACK_IMPORT_TITLE" = "Nhập từ Tệp";
 "LANGUAGE_PACK_IMPORT_URL_TITLE" = "Nhập từ Liên kết";

@@ -225,10 +225,76 @@ strip_appex_bundles() {
     rm -rf "$temp_dir"
 }
 
+# The URL scheme only this install answers. Every Instagram copy registers the
+# stock schemes, so the share and Safari extensions reach the app through this
+# one instead (modules/SPKSideloadFix/src/AppHandoff.xm maps it back). A custom
+# bundle ID gets its own scheme so two Sparkle builds can sit side by side.
+sparkle_private_url_scheme() {
+    local scheme="sparkle-ig"
+    if [ -n "${OPT_BUNDLE_ID:-}" ]; then
+        scheme="${scheme}-$(printf '%s' "$OPT_BUNDLE_ID" | tr '[:upper:]' '[:lower:]' | tr -c 'a-z0-9' '-')"
+    fi
+    echo "$scheme"
+}
+
+# Args: app dir, scheme. Adds the scheme to the app's first URL type.
+register_private_url_scheme() {
+    local plist="$1/Info.plist"
+    local scheme="$2"
+    local buddy=/usr/libexec/PlistBuddy
+
+    if "$buddy" -c "Print :CFBundleURLTypes" "$plist" 2>/dev/null | grep -qx "[[:space:]]*${scheme}"; then
+        return 0
+    fi
+    if ! "$buddy" -c "Print :CFBundleURLTypes:0:CFBundleURLSchemes" "$plist" >/dev/null 2>&1; then
+        "$buddy" -c "Add :CFBundleURLTypes array" "$plist" 2>/dev/null || true
+        "$buddy" -c "Add :CFBundleURLTypes:0 dict" "$plist"
+        "$buddy" -c "Add :CFBundleURLTypes:0:CFBundleTypeRole string Editor" "$plist"
+        "$buddy" -c "Add :CFBundleURLTypes:0:CFBundleURLSchemes array" "$plist"
+    fi
+    "$buddy" -c "Add :CFBundleURLTypes:0:CFBundleURLSchemes: string ${scheme}" "$plist"
+}
+
+# Args: appex dir. Compiles the Safari extension's native half into it. The
+# bundle is otherwise plain files, but iOS only loads an extension that has an
+# executable with the principal class its Info.plist names.
+build_safari_extension_handler() {
+    local appex_dir="$1"
+    local source="$ROOT_DIR/modules/SafariExtensionHandler/SPKSafariExtensionHandler.m"
+    local theos_dir="${THEOS:-$HOME/theos}"
+    local sdk="$theos_dir/sdks/iPhoneOS16.2.sdk"
+    local executable
+
+    [ -d "$sdk" ] || sdk="$(find "$theos_dir/sdks" -maxdepth 1 -name 'iPhoneOS*.sdk' 2>/dev/null | sort | head -n 1)"
+    if [ -z "$sdk" ] || [ ! -d "$sdk" ]; then
+        echo -e "\033[1m\033[0;31mNo iPhoneOS SDK found in ${theos_dir}/sdks for the Safari extension.\033[0m"
+        return 1
+    fi
+
+    executable="$(/usr/libexec/PlistBuddy -c "Print :CFBundleExecutable" "$appex_dir/Info.plist")" || return 1
+    # NSExtensionMain is the entry point of every app extension; there is no main().
+    # Built and signed outside the bundle: signing it in place would seal the
+    # whole extension before its scripts are final.
+    local build_dir
+    build_dir="$(mktemp -d "${TMPDIR:-/tmp}/sparkle-safari-handler.XXXXXX")"
+    if xcrun clang -arch arm64 -isysroot "$sdk" -miphoneos-version-min=15.0 \
+        -fobjc-arc -fapplication-extension -Os -e _NSExtensionMain -framework Foundation \
+        -o "$build_dir/$executable" "$source" &&
+        codesign --force --sign - "$build_dir/$executable" >/dev/null 2>&1 &&
+        mv "$build_dir/$executable" "$appex_dir/$executable"; then
+        rm -rf "$build_dir"
+        return 0
+    fi
+    rm -rf "$build_dir"
+    return 1
+}
+
 embed_safari_extension() {
     local input_ipa="$1"
     local output_ipa="$2"
-    local appex_src="$ROOT_DIR/modules/OpenInstagramSafariExtension.appex"
+    local scheme
+    scheme="$(sparkle_private_url_scheme)"
+    local appex_src="$ROOT_DIR/modules/OpenInSparkleSafariExtension.appex"
     local temp_dir
     local app_dir
 
@@ -249,8 +315,28 @@ embed_safari_extension() {
     fi
 
     mkdir -p "$app_dir/PlugIns"
-    rm -rf "$app_dir/PlugIns/OpenInstagramSafariExtension.appex"
+    rm -rf "$app_dir/PlugIns/OpenInSparkleSafariExtension.appex"
     cp -R "$appex_src" "$app_dir/PlugIns/"
+    build_safari_extension_handler "$app_dir/PlugIns/OpenInSparkleSafariExtension.appex" || {
+        echo -e '\033[1m\033[0;31mCould not build the Safari extension executable.\033[0m'
+        rm -rf "$temp_dir"
+        exit 1
+    }
+
+    register_private_url_scheme "$app_dir" "$scheme"
+    if [ "$scheme" != "sparkle-ig" ]; then
+        sed -i '' "s|var APP_SCHEME = \"sparkle-ig\";|var APP_SCHEME = \"${scheme}\";|" \
+            "$app_dir/PlugIns/OpenInSparkleSafariExtension.appex/content.js"
+        grep -q "var APP_SCHEME = \"${scheme}\";" "$app_dir/PlugIns/OpenInSparkleSafariExtension.appex/content.js" || {
+            echo -e '\033[1m\033[0;31mCould not set the URL scheme in the Safari extension.\033[0m'
+            rm -rf "$temp_dir"
+            exit 1
+        }
+    fi
+    echo -e "\033[1m\033[32mRegistered URL scheme ${scheme}://\033[0m"
+    if [ "${OPT_PATCH:-0}" -eq 0 ]; then
+        echo -e '\033[1m\033[0;33mWithout --patch nothing answers that scheme, so the Safari extension will not open the app.\033[0m'
+    fi
 
     rm -f "$output_ipa"
     (
@@ -539,7 +625,7 @@ then
         strip_appex_bundles "$ipa_stage_input" "$ipa_strip_tmp"
         mv -f "$ipa_strip_tmp" "$ipa_stage_input"
     else
-        echo -e '\033[1m\033[32mEmbedding Safari extension...\033[0m'
+        echo -e '\033[1m\033[32mEmbedding Safari extension and registering the app URL scheme...\033[0m'
         ipa_embed_tmp="$ROOT_DIR/packages/.sparkle-build-tmp-embed.ipa"
         embed_safari_extension "$ipa_stage_input" "$ipa_embed_tmp"
         mv -f "$ipa_embed_tmp" "$ipa_stage_input"

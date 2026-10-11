@@ -99,6 +99,7 @@ For the full list of features, check out [`FEATURES.md`](FEATURES.md).
 1. Grab the latest **pre-injected IPA** from the [Telegram channel](https://t.me/sparkle_ig).
 2. Install the IPA with your sideloading tool of choice.
    - Use the **`_no-ext`** build for **AltStore / SideStore / LiveContainer** (or if you don't want to have app extensions).
+   - Builds that keep the extensions also work beside other Instagram copies: sharing from another app's share sheet and the **Open in Sparkle** Safari extension both open Sparkle, not whichever copy iOS happens to pick. Turn the Safari extension on under Settings > Apps > Safari > Extensions; it adds an **Open** banner to Instagram pages.
 
 > [!NOTE]
 > Sparkle uses Instagram's bundled image assets everywhere. The distributed IPA is a full (un-thinned) build (it contains icons for all screen sizes), so the higher-quality in-app icons render crisply on every device. If you build your own from an IPA that was already thinned to a smaller device, some icon scales may be missing. See [Building from source](#building-from-source).
@@ -211,7 +212,7 @@ Sideload builds hand the same `.deb` to Cyan. Cyan hoists every framework inside
 ./build.sh ipa --release --flex
 ```
 
-Icons, the Safari extension, extension stripping, FLEX, bundle-ID changes, and `SPKSideloadFix` remain explicit IPA stages. Launch and FFmpeg operations still need on-device testing for each release.
+Icons, the Safari extension, extension stripping, FLEX, bundle-ID changes, and `SPKSideloadFix` remain explicit IPA stages. The Safari extension's small native executable is compiled from `modules/SafariExtensionHandler` while it is embedded, which needs Xcode's command line tools. Embedding it also registers a URL scheme of Sparkle's own in the app (`sparkle-ig`, with the bundle ID appended when `--bundle-id` is used). `SPKSideloadFix` routes the share extension's hand-off and the Safari extension's links through it, because every Instagram copy on a device registers the stock schemes and iOS does not say which one receives them. That routing needs `--patch`. Launch and FFmpeg operations still need on-device testing for each release.
 
 ### Liquid Glass app icon
 
@@ -254,7 +255,7 @@ Sparkle takes a lot of time to develop and maintain as Instagram changes constan
 - [**Ryuk** • RyukGram](https://github.com/faroukbmiled): code, inspiration, and help.
 - [**@n3d1117** • InstaSane](https://github.com/n3d1117/InstaSane): the Following-feed mode.
 - [**@asdfzxcvbn** • zxPluginsInject / ipapatch / cyan](https://github.com/asdfzxcvbn): tooling and fixes for sideloaded installs.
-- [**@BillyCurtis** • OpenInstagramSafariExtension](https://github.com/BillyCurtis/OpenInstagramSafariExtension): open Instagram links in Safari in the sideloaded IPA.
+- [**@BillyCurtis** • OpenInstagramSafariExtension](https://github.com/BillyCurtis/OpenInstagramSafariExtension): the original idea behind the Open in Sparkle Safari extension.
 - **@grxphxnx**: helped quickstart Sparkle's multi-language support.
 
 ## Official builds

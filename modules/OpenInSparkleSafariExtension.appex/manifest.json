@@ -20,7 +20,13 @@
 
     "content_scripts": [{
         "js": [ "content.js" ],
-        "matches": [ "*://*.instagram.com/*" ]
+        "matches": [
+            "*://*.instagram.com/*",
+            "*://*.ig.me/*",
+            "*://*.instagr.am/*"
+        ],
+        "run_at": "document_start",
+        "all_frames": false
     }],
 
     "action": {
@@ -35,5 +41,5 @@
         }
     },
 
-    "permissions": [ ]
+    "permissions": [ "storage" ]
 }

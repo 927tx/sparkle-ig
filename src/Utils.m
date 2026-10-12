@@ -947,23 +947,46 @@ static NSArray<NSString *> *SPKSanitizedInstagramPathSegments(NSArray<NSString *
     return segments;
 }
 
-static NSArray<NSURLQueryItem *> *SPKSanitizedInstagramQueryItems(NSArray<NSURLQueryItem *> *items) {
+// Share links for posts, reels, stories and profiles carry everything they need
+// in the path. Instagram mints their tracking parameter names server-side and
+// keeps adding new ones, so a blocklist is always one share behind.
+static BOOL SPKInstagramPathIsShareContent(NSArray<NSString *> *segments) {
+    if (segments.count == 0)
+        return NO;
+    if (segments.count == 1)
+        return YES; // profile
+    static NSSet<NSString *> *contentPrefixes;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        contentPrefixes = [NSSet setWithArray:@[ @"p", @"reel", @"reels", @"tv", @"stories", @"s", @"share" ]];
+    });
+    return [contentPrefixes containsObject:segments[0].lowercaseString] || SPKInstagramPathUsesSharePrefix(segments);
+}
+
+static NSArray<NSURLQueryItem *> *SPKSanitizedInstagramQueryItems(NSArray<NSURLQueryItem *> *items, BOOL shareContent) {
     if (items.count == 0)
         return nil;
 
+    static NSSet<NSString *> *allowedKeys;
     static NSSet<NSString *> *blockedKeys;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
+        allowedKeys = [NSSet setWithArray:@[ @"img_index", @"story_media_id", @"comment_id", @"hl" ]];
         blockedKeys = [NSSet setWithArray:@[
             @"igsh", @"igshid", @"igsi", @"ig_rid", @"ig_mid",
             @"utm_source", @"utm_medium", @"utm_campaign", @"utm_term", @"utm_content",
-            @"fbclid", @"stkn"
+            @"fbclid", @"stkn",
+            @"rpxt", @"psln", @"srtk", @"vrfl", @"exln", @"xtok"
         ]];
     });
 
     NSMutableArray<NSURLQueryItem *> *kept = [NSMutableArray array];
     for (NSURLQueryItem *item in items) {
-        if (![blockedKeys containsObject:item.name.lowercaseString]) {
+        NSString *name = item.name.lowercaseString;
+        // Other Instagram pages (sign-in, help, redirects) keep unknown
+        // parameters, since those are usually what makes the link work.
+        BOOL keep = shareContent ? [allowedKeys containsObject:name] : ![blockedKeys containsObject:name];
+        if (keep) {
             [kept addObject:item];
         }
     }
@@ -2609,7 +2632,7 @@ static void SPKSetResolvedPKForUsername(NSString *username, NSString *pk) {
     components.scheme = @"https";
     components.host = @"www.instagram.com";
     components.path = path;
-    components.queryItems = SPKSanitizedInstagramQueryItems(components.queryItems);
+    components.queryItems = SPKSanitizedInstagramQueryItems(components.queryItems, SPKInstagramPathIsShareContent(segments));
     components.fragment = nil;
 
     return components.URL ?: url;

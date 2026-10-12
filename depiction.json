@@ -17,7 +17,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "1.4.0"
+          "text": "1.5.0"
         },
         {
           "class": "DepictionTableTextView",
@@ -27,12 +27,12 @@
         {
           "class": "DepictionTableTextView",
           "title": "Size",
-          "text": "8.4 MB"
+          "text": "8.6 MB"
         },
         {
           "class": "DepictionTableTextView",
           "title": "Released",
-          "text": "2026-09-24"
+          "text": "2026-10-12"
         },
         {
           "class": "DepictionSeparatorView"
@@ -67,6 +67,24 @@
       "class": "DepictionStackView",
       "tabname": "Changelog",
       "views": [
+        {
+          "class": "DepictionSubheaderView",
+          "title": "v1.5.0",
+          "useBoldText": true
+        },
+        {
+          "class": "DepictionLabelView",
+          "text": "2026-10-12",
+          "textColor": "#8E8E93",
+          "fontSize": 12
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "## ✨ What's new?\n\n- Support for Instagram version 450.1.0\n\n**Languages**\n- Sparkle now comes with **Japanese** and **Polish**, both reviewed by native speakers. A pack installed for either one is retired automatically, so the reviewed version takes over\n- **Export Strings**: the share button on the language sheet exports any listed language as a zip, English to start a translation or another language to correct it\n\n**Notifications**\n- **Instagram style**: notifications can use Instagram's own toast instead of the Sparkle pill, with Instagram's icons, a progress ring with Cancel for downloads, and a result tint when Glow is on\n- Notification settings are reorganised into style, appearance, behavior, Notify Me About and Haptics pages\n\n**Stories**\n- **Keep Seen Locally**: with Manually Mark Seen on, a story you watch is marked seen on your device only. Its ring turns grey and the tray sorts it as seen, without a seen receipt being sent. A **Seen Locally** list lets you restore a person's stories to unseen\n- Hide the AI **Restyle** button on stories and the AI effects tool in the story camera\n\n**Reels**\n- **Auto Scroll**: choose whether reels auto scroll is on or off at every launch (Default / On / Off), on accounts where Instagram offers it\n- **Hide Visual Search Button** on reels\n\n**General & Interface**\n- **Pin Recipients in Share Sheet**: hold a person or group in the share sheet to pin them to the top of the list, per account\n- **Hide Emoji Bar** above the comment composer\n- **Hide Meta Promotions**: Meta Verified offers and suggested Facebook pages in the feed get their own toggle, separate from Hide Suggested Threads\n- A new **Liquid Glass** Sparkle app icon, with default, dark and clear variants\n\n**Sideloading**\n- Shares from the share sheet and links from the Safari extension open in this install, even with another copy of Instagram on the device\n- The Safari extension is rewritten as **Open in Sparkle**, with a banner, an Open button and its own settings\n\n## 🛠 Fixes & Improvements\n\n- Downloads retry and then switch to another video source when Instagram's servers refuse a file, instead of failing with \"missing media response\"\n- Trimming from the expanded preview renders at the download quality you chose, not the playback quality\n- Saving a single frame keeps full quality on AV1 videos\n- Marking a story seen (eye button, like or reply) also marks that person's earlier stories seen, not just the one on screen\n- **Hide Suggested Reels** also hides the new single suggested reels in the feed, and feed filters work on Instagram's newer feed\n- Sparkle's alerts match Instagram's own dialogs, with stacked buttons and at most one emphasized action\n- The follows-you badge no longer shows another account's answer after switching accounts, and picks up follow changes\n- Copied share links for posts, reels, stories and profiles keep only the parameters the link needs, so Instagram's newer tracking tags are stripped too\n- Sharing from Edits to a sideloaded Instagram now explains why it cannot arrive and what to do instead\n- The DM long-press menu rows are back, and Message Preview no longer marks chats seen\n- Confirm Reels Refresh and the DM bottom swipe work again\n- On Instagram 410: Sparkle uses the classic Instagram blue, and replying to a story is now possible again\n- The Saved tab on your profile, the in-feed story tray and the Instants action menu date are fixed on recent Instagram versions\n- The story viewer search button stays off the comments header\n"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
         {
           "class": "DepictionSubheaderView",
           "title": "v1.4.0",

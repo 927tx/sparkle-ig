@@ -125,7 +125,30 @@ jobs:
                 cd main
                 chmod +x ./fetch-ffmpegkit.sh
                 ./fetch-ffmpegkit.sh
-            
+
+
+            - name: Diagnose Sparkle icons
+              working-directory: main
+              run: |
+                echo "===== Current directory ====="
+                pwd
+
+                echo "===== Available icon packages ====="
+                find resources -iname '*.icon' -print
+
+                echo "===== Sparkle icon contents ====="
+                if [ -e resources/sparkle.icon ]; then
+                  ls -ld resources/sparkle.icon
+                  find resources/sparkle.icon -maxdepth 3 -print
+                else
+                  echo "WARNING: resources/sparkle.icon is missing!"
+                fi
+
+                echo "===== Xcode version ====="
+                xcodebuild -version
+
+                echo "===== Icon Composer ====="
+                ls -l "/Applications/Icon Composer.app/Contents/Executables/ictool" || true
             - name: Build Sparkle tweak for sideloading (as IPA)
               run: |
                 pip install --force-reinstall https://github.com/asdfzxcvbn/pyzule-rw/archive/main.zip

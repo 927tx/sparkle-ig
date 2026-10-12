@@ -2123,8 +2123,9 @@
 "SETTINGS_WHATS_NEW_FIX_DOWNLOAD_BUSY_FALLBACK_TEXT" = "Pobieranie próbuje innej drogi, gdy serwery Instagrama są zajęte";
 "SETTINGS_WHATS_NEW_FIX_EYE_EARLIER_STORIES_TEXT" = "Przycisk oka oznacza jako obejrzane także wcześniejsze relacje";
 "SETTINGS_WHATS_NEW_FIX_FOLLOW_BADGE_ACCOUNTS_TEXT" = "Plakietka „obserwuje Cię” pozostaje poprawna po zmianie konta";
+"SETTINGS_WHATS_NEW_FIX_HIDDEN_TABS_SWIPE_TEXT" = "Ukryte karty nie pojawiają się już podczas przesuwania między kartami";
 "SETTINGS_WHATS_NEW_FIX_INLINE_SUGGESTED_REELS_TEXT" = "Ukrywanie sugerowanych rolek obejmuje nowe sugestie w feedzie";
-"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_450_COMPATIBILITY_TEXT" = "Zgodność z Instagramem v450.1.0";
+"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_451_COMPATIBILITY_TEXT" = "Zgodność z Instagramem v451.0.0";
 "SETTINGS_WHATS_NEW_FIX_NATIVE_ALERT_STYLE_TEXT" = "Alerty wyglądają jak natywne okna dialogowe Instagrama";
 "SETTINGS_WHATS_NEW_FIX_PREVIEW_TRIM_QUALITY_TEXT" = "Przycinanie z podglądu używa wybranej jakości pobierania";
 "SETTINGS_WHATS_NEW_GLASS_APP_ICON_TEXT" = "Nowa ikona aplikacji Sparkle w stylu Liquid Glass";

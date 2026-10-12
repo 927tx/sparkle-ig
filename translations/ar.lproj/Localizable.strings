@@ -2123,8 +2123,9 @@
 "SETTINGS_WHATS_NEW_FIX_DOWNLOAD_BUSY_FALLBACK_TEXT" = "التنزيلات تجرّب مسارًا آخر عندما تكون خوادم Instagram مشغولة";
 "SETTINGS_WHATS_NEW_FIX_EYE_EARLIER_STORIES_TEXT" = "زر العين يعلّم القصص السابقة كمُشاهَدة أيضًا";
 "SETTINGS_WHATS_NEW_FIX_FOLLOW_BADGE_ACCOUNTS_TEXT" = "شارة «يتابعك» تبقى صحيحة عند التبديل بين الحسابات";
+"SETTINGS_WHATS_NEW_FIX_HIDDEN_TABS_SWIPE_TEXT" = "علامات التبويب المخفية تبقى مخفية عند السحب بين علامات التبويب";
 "SETTINGS_WHATS_NEW_FIX_INLINE_SUGGESTED_REELS_TEXT" = "إخفاء مقاطع ريلز المقترحة يشمل الاقتراحات الجديدة داخل الخلاصة";
-"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_450_COMPATIBILITY_TEXT" = "التوافق مع Instagram v450.1.0";
+"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_451_COMPATIBILITY_TEXT" = "التوافق مع Instagram v451.0.0";
 "SETTINGS_WHATS_NEW_FIX_NATIVE_ALERT_STYLE_TEXT" = "التنبيهات تبدو مثل مربعات حوار Instagram نفسه";
 "SETTINGS_WHATS_NEW_FIX_PREVIEW_TRIM_QUALITY_TEXT" = "القص من المعاينة يستخدم جودة التنزيل التي اخترتها";
 "SETTINGS_WHATS_NEW_GLASS_APP_ICON_TEXT" = "أيقونة تطبيق جديدة لـ Sparkle بتصميم Liquid Glass";

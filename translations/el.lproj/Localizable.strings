@@ -2123,8 +2123,9 @@
 "SETTINGS_WHATS_NEW_FIX_DOWNLOAD_BUSY_FALLBACK_TEXT" = "Οι λήψεις δοκιμάζουν άλλη διαδρομή όταν οι διακομιστές του Instagram είναι απασχολημένοι";
 "SETTINGS_WHATS_NEW_FIX_EYE_EARLIER_STORIES_TEXT" = "Το κουμπί ματιού σημειώνει και τις προηγούμενες ιστορίες ως προβληθείσες";
 "SETTINGS_WHATS_NEW_FIX_FOLLOW_BADGE_ACCOUNTS_TEXT" = "Το σήμα «σε ακολουθεί» παραμένει σωστό μεταξύ λογαριασμών";
+"SETTINGS_WHATS_NEW_FIX_HIDDEN_TABS_SWIPE_TEXT" = "Οι κρυφές καρτέλες παραμένουν κρυφές όταν σαρώνετε μεταξύ καρτελών";
 "SETTINGS_WHATS_NEW_FIX_INLINE_SUGGESTED_REELS_TEXT" = "Η απόκρυψη προτεινόμενων reels πιάνει τις νέες προτάσεις μέσα στη ροή";
-"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_450_COMPATIBILITY_TEXT" = "Συμβατότητα με το Instagram v450.1.0";
+"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_451_COMPATIBILITY_TEXT" = "Συμβατότητα με το Instagram v451.0.0";
 "SETTINGS_WHATS_NEW_FIX_NATIVE_ALERT_STYLE_TEXT" = "Οι ειδοποιήσεις μοιάζουν με τα παράθυρα διαλόγου του ίδιου του Instagram";
 "SETTINGS_WHATS_NEW_FIX_PREVIEW_TRIM_QUALITY_TEXT" = "Η περικοπή από την προεπισκόπηση χρησιμοποιεί την ποιότητα λήψης σας";
 "SETTINGS_WHATS_NEW_GLASS_APP_ICON_TEXT" = "Νέο εικονίδιο εφαρμογής Liquid Glass για το Sparkle";

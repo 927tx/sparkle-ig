@@ -2123,8 +2123,9 @@
 "SETTINGS_WHATS_NEW_FIX_DOWNLOAD_BUSY_FALLBACK_TEXT" = "Instagramのサーバーが混雑しているとき、ダウンロードは別の経路を試します";
 "SETTINGS_WHATS_NEW_FIX_EYE_EARLIER_STORIES_TEXT" = "目のボタンで、それより前のストーリーズも既読になります";
 "SETTINGS_WHATS_NEW_FIX_FOLLOW_BADGE_ACCOUNTS_TEXT" = "「フォローされています」バッジがアカウントを切り替えても正しく表示されます";
+"SETTINGS_WHATS_NEW_FIX_HIDDEN_TABS_SWIPE_TEXT" = "非表示にしたタブが、タブ間のスワイプでも表示されなくなりました";
 "SETTINGS_WHATS_NEW_FIX_INLINE_SUGGESTED_REELS_TEXT" = "「おすすめのリールを非表示」がフィード内の新しいおすすめにも対応";
-"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_450_COMPATIBILITY_TEXT" = "Instagram v450.1.0に対応";
+"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_451_COMPATIBILITY_TEXT" = "Instagram v451.0.0に対応";
 "SETTINGS_WHATS_NEW_FIX_NATIVE_ALERT_STYLE_TEXT" = "アラートがInstagram標準のダイアログと同じ見た目に";
 "SETTINGS_WHATS_NEW_FIX_PREVIEW_TRIM_QUALITY_TEXT" = "プレビューからのトリミングがダウンロード画質の設定に従います";
 "SETTINGS_WHATS_NEW_GLASS_APP_ICON_TEXT" = "Sparkleの新しいLiquid Glassアプリアイコン";

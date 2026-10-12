@@ -2123,8 +2123,9 @@
 "SETTINGS_WHATS_NEW_FIX_DOWNLOAD_BUSY_FALLBACK_TEXT" = "การดาวน์โหลดจะลองเส้นทางอื่นเมื่อเซิร์ฟเวอร์ของ Instagram ไม่ว่าง";
 "SETTINGS_WHATS_NEW_FIX_EYE_EARLIER_STORIES_TEXT" = "ปุ่มรูปตาทำเครื่องหมายสตอรี่ก่อนหน้าว่าดูแล้วด้วย";
 "SETTINGS_WHATS_NEW_FIX_FOLLOW_BADGE_ACCOUNTS_TEXT" = "ป้าย \"ติดตามคุณ\" ถูกต้องเสมอเมื่อสลับบัญชี";
+"SETTINGS_WHATS_NEW_FIX_HIDDEN_TABS_SWIPE_TEXT" = "แท็บที่ซ่อนไว้จะยังคงซ่อนอยู่เมื่อปัดสลับระหว่างแท็บ";
 "SETTINGS_WHATS_NEW_FIX_INLINE_SUGGESTED_REELS_TEXT" = "ซ่อน Reels ที่แนะนำครอบคลุมคำแนะนำแบบใหม่ในฟีด";
-"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_450_COMPATIBILITY_TEXT" = "รองรับ Instagram v450.1.0";
+"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_451_COMPATIBILITY_TEXT" = "รองรับ Instagram v451.0.0";
 "SETTINGS_WHATS_NEW_FIX_NATIVE_ALERT_STYLE_TEXT" = "การแจ้งเตือนมีหน้าตาเหมือนกล่องโต้ตอบของ Instagram เอง";
 "SETTINGS_WHATS_NEW_FIX_PREVIEW_TRIM_QUALITY_TEXT" = "การตัดจากตัวอย่างใช้คุณภาพการดาวน์โหลดของคุณ";
 "SETTINGS_WHATS_NEW_GLASS_APP_ICON_TEXT" = "ไอคอนแอป Liquid Glass ใหม่สำหรับ Sparkle";

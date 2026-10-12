@@ -2123,8 +2123,9 @@
 "SETTINGS_WHATS_NEW_FIX_DOWNLOAD_BUSY_FALLBACK_TEXT" = "Les téléchargements essaient une autre voie quand les serveurs d’Instagram sont saturés";
 "SETTINGS_WHATS_NEW_FIX_EYE_EARLIER_STORIES_TEXT" = "Le bouton œil marque aussi les stories précédentes comme vues";
 "SETTINGS_WHATS_NEW_FIX_FOLLOW_BADGE_ACCOUNTS_TEXT" = "Le badge « vous suit » reste correct d’un compte à l’autre";
+"SETTINGS_WHATS_NEW_FIX_HIDDEN_TABS_SWIPE_TEXT" = "Les onglets masqués restent masqués quand vous balayez entre les onglets";
 "SETTINGS_WHATS_NEW_FIX_INLINE_SUGGESTED_REELS_TEXT" = "Masquer les reels suggérés couvre les nouvelles suggestions dans le fil";
-"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_450_COMPATIBILITY_TEXT" = "Compatibilité avec Instagram v450.1.0";
+"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_451_COMPATIBILITY_TEXT" = "Compatibilité avec Instagram v451.0.0";
 "SETTINGS_WHATS_NEW_FIX_NATIVE_ALERT_STYLE_TEXT" = "Les alertes ressemblent aux boîtes de dialogue d’Instagram";
 "SETTINGS_WHATS_NEW_FIX_PREVIEW_TRIM_QUALITY_TEXT" = "Le rognage depuis l’aperçu utilise votre qualité de téléchargement";
 "SETTINGS_WHATS_NEW_GLASS_APP_ICON_TEXT" = "Une nouvelle icône d’app Liquid Glass pour Sparkle";

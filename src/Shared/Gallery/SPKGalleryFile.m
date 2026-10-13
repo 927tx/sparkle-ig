@@ -1124,6 +1124,24 @@ NSString *SPKFileNameForMedia(NSURL *fileURL,
     return nil;
 }
 
+- (NSURL *)originalWebURL {
+    SPKGallerySource source = (SPKGallerySource)self.source;
+    if (source == SPKGallerySourceStories) {
+        NSURL *url = [self preferredOriginalMediaURL];
+        return [url.scheme.lowercaseString hasPrefix:@"http"] ? url : nil;
+    }
+    if (source != SPKGallerySourceFeed && source != SPKGallerySourceReels)
+        return nil;
+
+    NSString *pathComponent = SPKGalleryPostPathComponentForSource(source);
+    NSString *code = self.sourceMediaCode.length > 0 ? self.sourceMediaCode : [SPKUtils instagramShortcodeForMediaPK:self.sourceMediaPK];
+    if (pathComponent.length > 0 && code.length > 0)
+        return [NSURL URLWithString:[NSString stringWithFormat:@"https://www.instagram.com/%@/%@/", pathComponent, code]];
+
+    NSURL *stored = self.sourceMediaURLString.length > 0 ? [NSURL URLWithString:self.sourceMediaURLString] : nil;
+    return [stored.scheme.lowercaseString hasPrefix:@"http"] ? stored : nil;
+}
+
 - (BOOL)hasOpenableProfile {
     return [self preferredProfileURL] != nil;
 }

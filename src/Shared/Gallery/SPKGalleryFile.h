@@ -129,6 +129,10 @@ typedef NS_ENUM(int16_t, SPKGallerySource) {
 - (NSString *)listDownloadDateString;
 - (nullable NSURL *)preferredProfileURL;
 - (nullable NSURL *)preferredOriginalMediaURL;
+/// The link a person would share for this item's original post, reel, story or
+/// highlight: always an https instagram.com address, never the in-app router URL
+/// that preferredOriginalMediaURL prefers for opening.
+- (nullable NSURL *)originalWebURL;
 - (BOOL)hasOpenableProfile;
 - (BOOL)hasOpenableOriginalMedia;
 

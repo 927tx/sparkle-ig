@@ -1,7 +1,4 @@
 {
-  "features" : [
-    "refractivity"
-  ],
   "fill" : "automatic",
   "groups" : [
     {
@@ -64,23 +61,6 @@
         {
           "appearance" : "tinted",
           "value" : 1
-        }
-      ],
-      "refractivity-specializations" : [
-        {
-          "value" : {
-            "depth" : 0,
-            "enabled" : false,
-            "strength" : 0.5
-          }
-        },
-        {
-          "appearance" : "tinted",
-          "value" : {
-            "depth" : 0.131328125,
-            "enabled" : true,
-            "strength" : 0.3317578125
-          }
         }
       ],
       "shadow-specializations" : [

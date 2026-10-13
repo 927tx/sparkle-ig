@@ -2,16 +2,16 @@ Package: com.sparkle.sparkle
 SileoDepiction: https://efibalogh.github.io/sparkle-ig/depiction.json
 Depiction: https://efibalogh.github.io/sparkle-ig/changelog.html
 Icon: https://efibalogh.github.io/sparkle-ig/icon.png
-Version: 1.5.0
+Version: 1.5.1
 Architecture: iphoneos-arm64
 Maintainer: efibalogh
 Installed-Size: 36036
 Depends: mobilesubstrate
-Filename: https://github.com/efibalogh/sparkle-ig/releases/download/v1.5.0/Sparkle_v1.5.0_rootless.deb
-Size: 8973152
-MD5sum: 0dbd0b6d7e4dd6eeefcdcaa832e074a0
-SHA1: 87f0d8624e61829e31816874e0671f827e18b177
-SHA256: 4ab72a092bc5719d32828396039662398a57bb909ad109af908ef65582fda469
+Filename: https://github.com/efibalogh/sparkle-ig/releases/download/v1.5.1/Sparkle_v1.5.1_rootless.deb
+Size: 8968740
+MD5sum: 575d373e803b42ae823d4174ca4ce4d8
+SHA1: ce7c09455031394eafd0464577c24246839f6bed
+SHA256: 621e849688c87e1a8b2977a6fd3cedfecf10503ca9f085185001797c89080815
 Section: Tweaks
 Homepage: https://github.com/efibalogh/sparkle-ig
 Description: Bring the spark back to Instagram!
@@ -22,16 +22,16 @@ Package: com.sparkle.sparkle
 SileoDepiction: https://efibalogh.github.io/sparkle-ig/depiction.json
 Depiction: https://efibalogh.github.io/sparkle-ig/changelog.html
 Icon: https://efibalogh.github.io/sparkle-ig/icon.png
-Version: 1.5.0
+Version: 1.5.1
 Architecture: iphoneos-arm
 Maintainer: efibalogh
 Installed-Size: 36036
 Depends: mobilesubstrate
-Filename: https://github.com/efibalogh/sparkle-ig/releases/download/v1.5.0/Sparkle_v1.5.0_rootful.deb
-Size: 8976188
-MD5sum: 890b0bd8df92abc827b2d3ef29a31722
-SHA1: 397d7293c6a5cdf22fd268986c79a0942cf4e52b
-SHA256: d0f45abbe719c4889e1de95eff731d868bbbce7a597b8a1e1097993601089af5
+Filename: https://github.com/efibalogh/sparkle-ig/releases/download/v1.5.1/Sparkle_v1.5.1_rootful.deb
+Size: 8972710
+MD5sum: 21e5e347b85735e7b9d7e9c5a98c9820
+SHA1: 16c506973dfe89eceadfd3ad9e3e52beace57f83
+SHA256: 22e20863c87dac3021c320df372e80de1dd00da1cb5dea3cc2313373e67015c9
 Section: Tweaks
 Homepage: https://github.com/efibalogh/sparkle-ig
 Description: Bring the spark back to Instagram!

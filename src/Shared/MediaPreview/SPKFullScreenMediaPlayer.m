@@ -1584,6 +1584,23 @@ static CGPoint SPKCenterForBounds(CGRect bounds) {
 - (void)openOriginalPostForCurrentGalleryItem {
     SPKGalleryFile *file = self.currentItem.galleryFile;
     __weak __typeof(self) weakSelf = self;
+    // Named for what the item is, as the Gallery list does.
+    NSString *openedTitle = nil;
+    NSString *failureTitle = nil;
+    switch ((SPKGallerySource)file.source) {
+    case SPKGallerySourceStories:
+        openedTitle = SPKL(@"GALLERY_OPENED_ORIGINAL_STORY_TOAST");
+        failureTitle = SPKL(@"GALLERY_UNABLE_OPEN_ORIGINAL_STORY_TOAST");
+        break;
+    case SPKGallerySourceReels:
+        openedTitle = SPKL(@"GALLERY_OPENED_ORIGINAL_REEL_TOAST");
+        failureTitle = SPKL(@"GALLERY_UNABLE_OPEN_ORIGINAL_REEL_TOAST");
+        break;
+    default:
+        openedTitle = SPKL(@"MEDIA_PREVIEW_FULL_SCREEN_MEDIA_PLAYER_OPENED_ORIGINAL_POST_TEXT");
+        failureTitle = SPKL(@"MEDIA_PREVIEW_FULL_SCREEN_MEDIA_PLAYER_UNABLE_OPEN_ORIGINAL_POST_TEXT");
+        break;
+    }
     // The post is pushed over the player rather than replacing it, so the preview
     // stays alive behind it and would otherwise keep playing audio under the post.
     [self pauseForNavigationAway];
@@ -1593,7 +1610,7 @@ static CGPoint SPKCenterForBounds(CGRect bounds) {
                                                fromViewController:self
                                                    legacyFallback:^{
                                                        [weakSelf dismissGalleryFlowForOriginOpenWithCompletion:^{
-                                                           SPKNotify(kSPKNotificationGalleryOpenOriginal, SPKL(@"MEDIA_PREVIEW_FULL_SCREEN_MEDIA_PLAYER_OPENED_ORIGINAL_POST_TEXT"),
+                                                           SPKNotify(kSPKNotificationGalleryOpenOriginal, openedTitle,
                                                                      nil, @"external_link",
                                                                      SPKNotificationToneForIconResource(@"external_link"));
                                                        }];
@@ -1603,7 +1620,7 @@ static CGPoint SPKCenterForBounds(CGRect bounds) {
                                                         }]) {
         // Nothing to announce: the post is on screen.
     } else {
-        [self showGalleryOpenFailureMessage:SPKL(@"MEDIA_PREVIEW_FULL_SCREEN_MEDIA_PLAYER_UNABLE_OPEN_ORIGINAL_POST_TEXT")
+        [self showGalleryOpenFailureMessage:failureTitle
                            actionIdentifier:kSPKNotificationGalleryOpenOriginal];
     }
 }
@@ -1638,7 +1655,7 @@ static CGPoint SPKCenterForBounds(CGRect bounds) {
 
     if (file.hasOpenableOriginalMedia) {
         [actions addObject:[UIAction
-                               actionWithTitle:SPKL(@"ALERT_ACTION_OPEN_ORIGINAL_POST")
+                               actionWithTitle:[file openOriginalActionTitle]
                                          image:SPKGalleryPreviewMenuIcon(
                                                    @"external_link")
                                     identifier:nil
@@ -1961,7 +1978,7 @@ static CGPoint SPKCenterForBounds(CGRect bounds) {
 
     if (actionCount == 1) {
         NSString *resourceName = hasProfile ? @"user_circle" : @"external_link";
-        NSString *label = hasProfile ? SPKL(@"ALERT_ACTION_OPEN_PROFILE") : SPKL(@"ALERT_ACTION_OPEN_ORIGINAL_POST");
+        NSString *label = hasProfile ? SPKL(@"ALERT_ACTION_OPEN_PROFILE") : [self.currentItem.galleryFile openOriginalActionTitle];
         _galleryOriginItem.image = SPKMediaChromeBottomBarIcon(resourceName);
         _galleryOriginItem.accessibilityLabel = label;
         _galleryOriginItem.menu = nil;

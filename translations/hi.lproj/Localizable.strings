@@ -734,6 +734,7 @@
 "GALLERY_GALLERY_NEW_FOLDER_TEXT" = "नया फ़ोल्डर";
 "GALLERY_GALLERY_NO_FILES_GALLERY_TEXT" = "गैलरी में कोई फाइलें नहीं";
 "GALLERY_GALLERY_ORIGIN_ACCOUNT_LINKED_TEXT" = "खाता जुड़ा हुआ";
+"GALLERY_GALLERY_ORIGIN_HIGHLIGHT_LINKED_TEXT" = "हाइलाइट लिंक किया गया";
 "GALLERY_GALLERY_ORIGIN_VALUE_SAVED_ITEM_SO_OPENS_INSTANTLY_NOW_FORMAT" = "%@ इस आइटम में सहेजा गया, इसलिए यह अब से तुरंत खुलता है।";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_FILE_GALLERY_TEXT" = "यह फ़ाइल Gallery से स्थायी रूप से हट जाएगी।";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_VALUE_FILE_VALUE_GALLERY_FORMAT" = "यह %@ Gallery से स्थायी रूप से हट जाएगा।";
@@ -956,6 +957,7 @@
 "GENERAL_UTILS_CONTINUE_CONFIRMATION_MESSAGE" = "क्या आप निश्चित रूप से जारी रखना चाहते हैं?";
 "GENERAL_UTILS_MUST_RESTART_APP_APPLY_CHANGE_TEXT" = "इस परिवर्तन को लागू करने के लिए Instagram को पुनः आरंभ करें";
 "GENERAL_UTILS_OPENING_PROFILE_TEXT" = "प्रोफाइल खोला जा रहा है...";
+"GENERAL_UTILS_OPENING_STORY_TEXT" = "स्टोरी खोली जा रही है...";
 "GENERAL_UTILS_RESTART_REQUIRED_TEXT" = "पुनः प्रारंभ आवश्यक है";
 "HOOKBISECT_BISECT_HEADER" = "आधा भाग करें";
 "HOOKBISECT_BISECT_HOOK_BISECT_TITLE" = "[DEV] Hook आधा भाग";
@@ -2241,6 +2243,8 @@
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_LIKE_TITLE" = "Story लाइक पर अग्रिम करें";
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_REPLY_TITLE" = "Story जवाब पर अग्रिम करें";
 "STORIES_STORY_NAVIGATION_HEADER" = "Story नेविगेशन";
+"STORIES_STORY_OPENER_NOT_IN_HIGHLIGHT_TEXT" = "हाइलाइट्स में नहीं। एक हफ्ते बाद कोशिश करें।";
+"STORIES_STORY_OPENER_SEARCHING_HIGHLIGHTS_TEXT" = "हाइलाइट्स में खोजा जा रहा है...";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_MARK_SEEN_MESSAGE" = "इस स्टोरी को देखी गई चिह्नित करें? आप इसकी दर्शक सूची में दिखेंगे।";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_MESSAGE" = "आप जो स्टोरीज़ देखेंगे वे देखी गई चिह्नित होंगी, इसमें यह भी शामिल है, जब तक आप इसे बंद न करें या स्टोरीज़ से बाहर न निकलें।";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_TITLE" = "स्टोरीज़ को देखा गया चिह्नित करें?";

@@ -734,6 +734,7 @@
 "GALLERY_GALLERY_NEW_FOLDER_TEXT" = "پوشهٔ جدید";
 "GALLERY_GALLERY_NO_FILES_GALLERY_TEXT" = "فایلی در گالری نیست";
 "GALLERY_GALLERY_ORIGIN_ACCOUNT_LINKED_TEXT" = "اکانت متصل شد";
+"GALLERY_GALLERY_ORIGIN_HIGHLIGHT_LINKED_TEXT" = "هایلایت پیوند شد";
 "GALLERY_GALLERY_ORIGIN_VALUE_SAVED_ITEM_SO_OPENS_INSTANTLY_NOW_FORMAT" = "%@ برای این مورد ذخیره شد، پس از این به بعد فوراً باز می‌شود.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_FILE_GALLERY_TEXT" = "این کار این فایل را برای همیشه از گالری حذف می‌کند.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_VALUE_FILE_VALUE_GALLERY_FORMAT" = "این کار %@ را برای همیشه از گالری حذف می‌کند.";
@@ -956,6 +957,7 @@
 "GENERAL_UTILS_CONTINUE_CONFIRMATION_MESSAGE" = "مطمئنید می‌خواهید ادامه دهید؟";
 "GENERAL_UTILS_MUST_RESTART_APP_APPLY_CHANGE_TEXT" = "برای اعمال این تغییر، اینستاگرام را دوباره راه‌اندازی کنید.";
 "GENERAL_UTILS_OPENING_PROFILE_TEXT" = "در حال باز کردن پروفایل...";
+"GENERAL_UTILS_OPENING_STORY_TEXT" = "در حال باز کردن استوری...";
 "GENERAL_UTILS_RESTART_REQUIRED_TEXT" = "نیاز به راه‌اندازی مجدد";
 "HOOKBISECT_BISECT_HEADER" = "بایسکت";
 "HOOKBISECT_BISECT_HOOK_BISECT_TITLE" = "بایسکت هوک";
@@ -2241,6 +2243,8 @@
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_LIKE_TITLE" = "پیشروی با لایک استوری";
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_REPLY_TITLE" = "پیشروی با پاسخ استوری";
 "STORIES_STORY_NAVIGATION_HEADER" = "پیمایش استوری";
+"STORIES_STORY_OPENER_NOT_IN_HIGHLIGHT_TEXT" = "در هایلایت نیست. یک هفته دیگر امتحان کنید.";
+"STORIES_STORY_OPENER_SEARCHING_HIGHLIGHTS_TEXT" = "در حال جستجو در هایلایت‌ها...";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_MARK_SEEN_MESSAGE" = "این استوری دیده‌شده علامت بخورد؟ در فهرست بازدیدکنندگانش نمایان می‌شوید.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_MESSAGE" = "استوری‌هایی که تماشا می‌کنید، از جمله همین یکی، دیده‌شده علامت می‌خورند تا وقتی این را خاموش کنید یا از استوری‌ها خارج شوید.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_TITLE" = "استوری‌ها دیده‌شده علامت بخورند؟";

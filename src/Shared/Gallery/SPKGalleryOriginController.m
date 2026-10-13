@@ -6,6 +6,8 @@
 
 #import "../../Utils.h"
 #import "../ActionButton/ActionButtonLookupUtils.h"
+#import "../Stories/SPKStoryContext.h"
+#import "../Stories/SPKStoryOpener.h"
 #import "../UI/SPKNotificationCenter.h"
 #import "SPKGalleryCoreDataStack.h"
 #import "SPKGalleryFile.h"
@@ -274,6 +276,20 @@ static NSString *SPKGalleryMediaURLStringFromMetadata(SPKGallerySaveMetadata *me
 }
 
 /// True when `url` is an Instagram post/reel web link (`/p/`, `/reel/`). Used to reject post links that leak into story metadata.
+// A story saved while browsing a highlight has to remember the highlight, since
+// the live-story link stops resolving once the story expires. The media object
+// carries no trace of the reel it was reached through, so the viewer on screen
+// is consulted, and only trusted when it is showing this same story.
+static NSURL *SPKGalleryHighlightURLForVisibleStory(NSString *mediaPK) {
+    NSString *bareMediaPK = [mediaPK componentsSeparatedByString:@"_"].firstObject;
+    if (bareMediaPK.length == 0 || !NSThread.isMainThread)
+        return nil;
+    SPKStoryContext *context = SPKStoryContextFromOverlay(SPKStoryActiveOverlay());
+    if (![SPKStoryMediaIdentifierForContext(context) isEqualToString:bareMediaPK])
+        return nil;
+    return SPKStoryHighlightURLForReelPK(SPKStoryReelPKForContext(context), bareMediaPK);
+}
+
 static BOOL SPKGalleryURLIsPostOrReel(NSURL *url) {
     NSString *path = url.path.lowercaseString ?: @"";
     return [path containsString:@"/p/"] || [path containsString:@"/reel/"] || [path containsString:@"/reels/"];
@@ -387,6 +403,12 @@ static BOOL SPKGalleryURLIsPostOrReel(NSURL *url) {
         mediaURL = nil;
     }
 
+    if (metadata.source == SPKGallerySourceStories && metadata.sourceMediaURLString.length == 0) {
+        NSURL *highlightURL = SPKGalleryHighlightURLForVisibleStory(metadata.sourceMediaPK);
+        if (highlightURL)
+            mediaURL = highlightURL;
+    }
+
     if (mediaURL) {
         SPKLog(@"General", @"[Sparkle Gallery] Populated origin URL from media object source=%d url=%@", metadata.source, mediaURL.absoluteString);
     }
@@ -413,6 +435,10 @@ static BOOL SPKGalleryURLIsPostOrReel(NSURL *url) {
     if (!url)
         return NO;
 
+    if (presentingVC && file.source == SPKGallerySourceStories &&
+        [self spk_openStoryLink:[SPKStoryLink linkWithURL:url] forGalleryFile:file fromViewController:presentingVC])
+        return YES;
+
     // Preferred: keep this screen up and redirect Instagram's push onto a host
     // stack over it, so closing the post comes straight back here. Only the
     // instagram://media route can be redirected; anything else takes the legacy
@@ -425,6 +451,80 @@ static BOOL SPKGalleryURLIsPostOrReel(NSURL *url) {
     if (legacyFallback)
         legacyFallback();
     return YES;
+}
+
+// A saved story or highlight opens the way it is reached in Instagram: the
+// account's profile first, pushed over this screen, then the viewer over the
+// profile. Closing the viewer leaves the profile, and going back from there
+// returns here, so nothing is torn down.
++ (BOOL)spk_openStoryLink:(SPKStoryLink *)link
+           forGalleryFile:(SPKGalleryFile *)file
+       fromViewController:(UIViewController *)presentingVC {
+    if (!link)
+        return NO;
+
+    __weak UIViewController *weakPresenter = presentingVC;
+    NSString *mediaPK = link.mediaPK ?: file.sourceMediaPK;
+
+    // A live-story link whose story is past its 24 hours cannot open: the story
+    // has left the account's reel. It may have been added to a highlight since,
+    // so it is looked for there. The media PK dates the story exactly; the save
+    // date is the fallback for an item stored without one.
+    BOOL liveStoryExpired = NO;
+    if (!link.isHighlight) {
+        liveStoryExpired = SPKStoryPostedDateForMediaPK(mediaPK)
+                               ? SPKStoryMediaIsPastLiveWindow(mediaPK)
+                               : (file.dateAdded && -file.dateAdded.timeIntervalSinceNow > 24 * 60 * 60);
+    }
+
+    void (^openViewer)(NSTimeInterval) = ^(NSTimeInterval delay) {
+        // A live story's reel is keyed by its owner's PK, which the profile
+        // lookup has filled in by now for items saved without one.
+        NSString *reelPK = link.reelPK ?: file.sourceUserPK;
+        UIViewController *presenter = weakPresenter;
+        if (reelPK.length == 0 || !presenter)
+            return;
+        if (liveStoryExpired && mediaPK.length > 0) {
+            SPKStoryOpenExpiredStory(reelPK, mediaPK, presenter, ^(NSString *highlightPK) {
+                // Remember the highlight so the next open is direct, and say so:
+                // this open was slow and the rest will not be.
+                NSURL *highlightURL = SPKStoryHighlightURLForReelPK(highlightPK, mediaPK);
+                if (!highlightURL)
+                    return;
+                file.sourceMediaURLString = highlightURL.absoluteString;
+                [[SPKGalleryCoreDataStack shared] saveContext];
+                SPKLog(@"Gallery", @"relinked expired story media=%@ to %@", mediaPK, highlightPK);
+                SPKNotify(kSPKNotificationGalleryOpenOriginal, SPKL(@"GALLERY_GALLERY_ORIGIN_HIGHLIGHT_LINKED_TEXT"),
+                          SPKStoryTitleForReelPK(highlightPK), @"info_filled", SPKNotificationToneInfo);
+            });
+            return;
+        }
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            UIViewController *livePresenter = weakPresenter;
+            if (livePresenter.view.window)
+                SPKStoryOpenReel(reelPK, mediaPK, SPKStoryPresentationSourceOver(livePresenter));
+        });
+    };
+
+    BOOL hasProfile = [SPKUtils sanitizedInstagramUsername:file.sourceUsername].length > 0 || file.sourceUserPK.length > 0;
+    if (!hasProfile) {
+        if (link.reelPK.length == 0)
+            return NO;
+        openViewer(0);
+        return YES;
+    }
+
+    // The viewer is requested after the profile's push has finished. Instagram
+    // presents it as soon as the reel is ready, which for a cached reel is
+    // immediately, and presenting over a stack mid-push drops the presentation.
+    BOOL profileStarted = [self spk_openProfileForGalleryFile:file
+                                           fromViewController:presentingVC
+                                                   completion:^(__unused BOOL success, __unused BOOL didLink) {
+                                                       openViewer(0.5);
+                                                   }];
+    // With a reel in hand the viewer was requested even if the profile was not,
+    // so the caller must not also run its own route.
+    return profileStarted || (link.reelPK ?: file.sourceUserPK).length > 0;
 }
 
 + (BOOL)openProfileForGalleryFile:(SPKGalleryFile *)file {
@@ -456,16 +556,17 @@ static BOOL SPKGalleryURLIsPostOrReel(NSURL *url) {
     // A pk observed at save time is the person who actually posted the media,
     // while one resolved now is whoever holds that handle today. If the original
     // owner renamed and somebody else took the handle, this binds the wrong
-    // person permanently -- so say so rather than doing it silently. The item is
-    // named in the toast, which is the only way the user can catch a link that
-    // looks wrong to them and clear it from the file's details.
+    // person permanently -- so say so rather than doing it silently. The handle
+    // is named in the toast, which is the only way the user can catch a link that
+    // looks wrong to them and clear it from the file's details. The display name
+    // is left out: the toast is one line and the handle is what was linked.
     //
     // There is no stored display name to compare against (the entity keeps a
     // username and a pk, not a name), so the tweak cannot detect the recycled
     // handle itself. Telling the user what was linked is the honest substitute.
     if (cleanUsername.length > 0 && file.sourceUserPK.length == 0) {
         [SPKUtils resolvePKForUsername:cleanUsername
-                            completion:^(NSString *resolvedPK, NSString *currentName) {
+                            completion:^(NSString *resolvedPK, __unused NSString *currentName) {
                                 BOOL didLink = NO;
                                 if (resolvedPK.length > 0 && file.sourceUserPK.length == 0) {
                                     didLink = YES;
@@ -473,9 +574,7 @@ static BOOL SPKGalleryURLIsPostOrReel(NSURL *url) {
                                     [[SPKGalleryCoreDataStack shared] saveContext];
                                     SPKLog(@"Gallery", @"backfilled sourceUserPK=%@ for @%@", resolvedPK, cleanUsername);
 
-                                    NSString *who = currentName.length > 0
-                                                        ? [NSString stringWithFormat:@"@%@ (%@)", cleanUsername, currentName]
-                                                        : [NSString stringWithFormat:@"@%@", cleanUsername];
+                                    NSString *who = [NSString stringWithFormat:@"@%@", cleanUsername];
                                     SPKNotify(kSPKNotificationGalleryOpenProfile,
                                               SPKL(@"GALLERY_GALLERY_ORIGIN_ACCOUNT_LINKED_TEXT"),
                                               [NSString stringWithFormat:SPKL(@"GALLERY_GALLERY_ORIGIN_VALUE_SAVED_ITEM_SO_OPENS_INSTANTLY_NOW_FORMAT"), who],

@@ -734,6 +734,7 @@
 "GALLERY_GALLERY_NEW_FOLDER_TEXT" = "Bagong folder";
 "GALLERY_GALLERY_NO_FILES_GALLERY_TEXT" = "Walang file sa Gallery";
 "GALLERY_GALLERY_ORIGIN_ACCOUNT_LINKED_TEXT" = "Naka-link ang account";
+"GALLERY_GALLERY_ORIGIN_HIGHLIGHT_LINKED_TEXT" = "Na-link ang highlight";
 "GALLERY_GALLERY_ORIGIN_VALUE_SAVED_ITEM_SO_OPENS_INSTANTLY_NOW_FORMAT" = "Na-save ang %@ sa item na ito, kaya bubukas na ito agad mula ngayon.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_FILE_GALLERY_TEXT" = "Permanente nitong aalisin ang file na ito mula sa Gallery.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_VALUE_FILE_VALUE_GALLERY_FORMAT" = "Permanente nitong aalisin ang %@ mula sa Gallery.";
@@ -956,6 +957,7 @@
 "GENERAL_UTILS_CONTINUE_CONFIRMATION_MESSAGE" = "Sigurado ka bang gusto mong magpatuloy?";
 "GENERAL_UTILS_MUST_RESTART_APP_APPLY_CHANGE_TEXT" = "I-restart ang Instagram para mailapat ang pagbabagong ito.";
 "GENERAL_UTILS_OPENING_PROFILE_TEXT" = "Binubuksan ang profile...";
+"GENERAL_UTILS_OPENING_STORY_TEXT" = "Binubuksan ang story...";
 "GENERAL_UTILS_RESTART_REQUIRED_TEXT" = "Kailangan ng Restart";
 "HOOKBISECT_BISECT_HEADER" = "Bisect";
 "HOOKBISECT_BISECT_HOOK_BISECT_TITLE" = "Hook Bisect";
@@ -2241,6 +2243,8 @@
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_LIKE_TITLE" = "Sumulong sa Story Like";
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_REPLY_TITLE" = "Sumulong sa Story Reply";
 "STORIES_STORY_NAVIGATION_HEADER" = "Navigation ng Story";
+"STORIES_STORY_OPENER_NOT_IN_HIGHLIGHT_TEXT" = "Wala sa highlight. Subukan sa isang linggo.";
+"STORIES_STORY_OPENER_SEARCHING_HIGHLIGHTS_TEXT" = "Hinahanap sa mga highlight...";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_MARK_SEEN_MESSAGE" = "Markahan ang story na ito bilang seen? Lalabas ka sa viewer list nito.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_MESSAGE" = "Ang mga story na papanoorin mo ay mama-mark na seen, kasama na ito, hanggang sa i-off mo ito o umalis sa stories.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_TITLE" = "Markahan ang mga Story bilang Seen?";

@@ -734,6 +734,7 @@
 "GALLERY_GALLERY_NEW_FOLDER_TEXT" = "Новая папка";
 "GALLERY_GALLERY_NO_FILES_GALLERY_TEXT" = "Файлов в Галерее нет";
 "GALLERY_GALLERY_ORIGIN_ACCOUNT_LINKED_TEXT" = "Аккаунт связан";
+"GALLERY_GALLERY_ORIGIN_HIGHLIGHT_LINKED_TEXT" = "Актуальное привязано";
 "GALLERY_GALLERY_ORIGIN_VALUE_SAVED_ITEM_SO_OPENS_INSTANTLY_NOW_FORMAT" = "%@ сохранено в этот элемент, поэтому он будет открываться мгновенно.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_FILE_GALLERY_TEXT" = "Этот файл будет безвозвратно удалён из Галереи.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_VALUE_FILE_VALUE_GALLERY_FORMAT" = "%@ будет безвозвратно удалён из Галереи.";
@@ -956,6 +957,7 @@
 "GENERAL_UTILS_CONTINUE_CONFIRMATION_MESSAGE" = "Вы уверены, что хотите продолжить?";
 "GENERAL_UTILS_MUST_RESTART_APP_APPLY_CHANGE_TEXT" = "Перезапустите Instagram, чтобы применить это изменение.";
 "GENERAL_UTILS_OPENING_PROFILE_TEXT" = "Открытие профиля...";
+"GENERAL_UTILS_OPENING_STORY_TEXT" = "Открытие истории...";
 "GENERAL_UTILS_RESTART_REQUIRED_TEXT" = "Требуется перезагрузка";
 "HOOKBISECT_BISECT_HEADER" = "Бисекция";
 "HOOKBISECT_BISECT_HOOK_BISECT_TITLE" = "[DEV] Бисекция хуков";
@@ -2241,6 +2243,8 @@
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_LIKE_TITLE" = "Продвинуться при лайке истории";
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_REPLY_TITLE" = "Продвинуться при ответе на историю";
 "STORIES_STORY_NAVIGATION_HEADER" = "Навигация истории";
+"STORIES_STORY_OPENER_NOT_IN_HIGHLIGHT_TEXT" = "Нет в актуальном. Повторите через неделю.";
+"STORIES_STORY_OPENER_SEARCHING_HIGHLIGHTS_TEXT" = "Поиск в актуальном...";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_MARK_SEEN_MESSAGE" = "Пометить эту историю как просмотренную? Вы появитесь в списке зрителей.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_MESSAGE" = "Истории, которые вы смотрите, включая эту, будут отмечаться как просмотренные, пока вы не выключите это или не выйдете из историй.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_TITLE" = "Отметить истории как просмотренные?";

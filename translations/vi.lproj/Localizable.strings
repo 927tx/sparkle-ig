@@ -734,6 +734,7 @@
 "GALLERY_GALLERY_NEW_FOLDER_TEXT" = "Thư mục mới";
 "GALLERY_GALLERY_NO_FILES_GALLERY_TEXT" = "Không có tệp nào trong Thư viện";
 "GALLERY_GALLERY_ORIGIN_ACCOUNT_LINKED_TEXT" = "Tài khoản đã liên kết";
+"GALLERY_GALLERY_ORIGIN_HIGHLIGHT_LINKED_TEXT" = "Đã liên kết tin nổi bật";
 "GALLERY_GALLERY_ORIGIN_VALUE_SAVED_ITEM_SO_OPENS_INSTANTLY_NOW_FORMAT" = "%@ đã được lưu vào mục này, do đó mục sẽ mở ngay lập tức từ bây giờ.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_FILE_GALLERY_TEXT" = "Hành động này sẽ xóa vĩnh viễn tệp này khỏi Thư viện.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_VALUE_FILE_VALUE_GALLERY_FORMAT" = "Thao tác này sẽ xóa vĩnh viễn %@ khỏi Thư viện.";
@@ -956,6 +957,7 @@
 "GENERAL_UTILS_CONTINUE_CONFIRMATION_MESSAGE" = "Bạn có chắc chắn muốn tiếp tục?";
 "GENERAL_UTILS_MUST_RESTART_APP_APPLY_CHANGE_TEXT" = "Khởi chạy lại Instagram để áp dụng thay đổi này.";
 "GENERAL_UTILS_OPENING_PROFILE_TEXT" = "Đang mở trang cá nhân...";
+"GENERAL_UTILS_OPENING_STORY_TEXT" = "Đang mở tin...";
 "GENERAL_UTILS_RESTART_REQUIRED_TEXT" = "Yêu cầu khởi động lại";
 "HOOKBISECT_BISECT_HEADER" = "Tìm lỗi Bisect";
 "HOOKBISECT_BISECT_HOOK_BISECT_TITLE" = "[DEV] Hook Bisect";
@@ -2241,6 +2243,8 @@
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_LIKE_TITLE" = "Chuyển sang Tin tiếp theo khi Thích";
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_REPLY_TITLE" = "Tự động chuyển sang tin tiếp theo khi trả lời";
 "STORIES_STORY_NAVIGATION_HEADER" = "Điều hướng Tin";
+"STORIES_STORY_OPENER_NOT_IN_HIGHLIGHT_TEXT" = "Không ở tin nổi bật. Thử lại sau 1 tuần.";
+"STORIES_STORY_OPENER_SEARCHING_HIGHLIGHTS_TEXT" = "Đang tìm trong tin nổi bật...";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_MARK_SEEN_MESSAGE" = "Đánh dấu tin này là đã xem? Bạn sẽ xuất hiện trong danh sách người xem.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_MESSAGE" = "Các tin bạn xem, kể cả tin này, sẽ được đánh dấu là đã xem cho đến khi bạn tắt tính năng này hoặc rời khỏi tin.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_TITLE" = "Đánh dấu tin là đã xem?";

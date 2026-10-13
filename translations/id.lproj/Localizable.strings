@@ -734,6 +734,7 @@
 "GALLERY_GALLERY_NEW_FOLDER_TEXT" = "Folder baru";
 "GALLERY_GALLERY_NO_FILES_GALLERY_TEXT" = "Tidak ada file di Galeri";
 "GALLERY_GALLERY_ORIGIN_ACCOUNT_LINKED_TEXT" = "Akun ditautkan";
+"GALLERY_GALLERY_ORIGIN_HIGHLIGHT_LINKED_TEXT" = "Sorotan ditautkan";
 "GALLERY_GALLERY_ORIGIN_VALUE_SAVED_ITEM_SO_OPENS_INSTANTLY_NOW_FORMAT" = "%@ disimpan ke item ini, sehingga akan terbuka secara instan mulai sekarang.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_FILE_GALLERY_TEXT" = "Ini akan menghapus file ini secara permanen dari Galeri.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_VALUE_FILE_VALUE_GALLERY_FORMAT" = "Ini akan menghapus %@ secara permanen dari Galeri.";
@@ -956,6 +957,7 @@
 "GENERAL_UTILS_CONTINUE_CONFIRMATION_MESSAGE" = "Apakah kamu yakin ingin melanjutkan?";
 "GENERAL_UTILS_MUST_RESTART_APP_APPLY_CHANGE_TEXT" = "Mulai ulang Instagram untuk menerapkan perubahan ini.";
 "GENERAL_UTILS_OPENING_PROFILE_TEXT" = "Membuka profil...";
+"GENERAL_UTILS_OPENING_STORY_TEXT" = "Membuka cerita...";
 "GENERAL_UTILS_RESTART_REQUIRED_TEXT" = "Perlu Mulai Ulang";
 "HOOKBISECT_BISECT_HEADER" = "Bisect";
 "HOOKBISECT_BISECT_HOOK_BISECT_TITLE" = "Hook Bisect";
@@ -2241,6 +2243,8 @@
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_LIKE_TITLE" = "Lanjut dengan Suka Story";
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_REPLY_TITLE" = "Lanjut dengan Balasan Story";
 "STORIES_STORY_NAVIGATION_HEADER" = "Navigasi Story";
+"STORIES_STORY_OPENER_NOT_IN_HIGHLIGHT_TEXT" = "Tidak ada di sorotan. Coba lagi minggu depan.";
+"STORIES_STORY_OPENER_SEARCHING_HIGHLIGHTS_TEXT" = "Mencari di sorotan...";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_MARK_SEEN_MESSAGE" = "Tandai story ini sebagai dilihat? Kamu akan muncul di daftar penontonnya.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_MESSAGE" = "Story yang kamu tonton akan ditandai sebagai dilihat, termasuk yang ini, sampai kamu menonaktifkannya atau keluar dari story.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_TITLE" = "Tandai Story sebagai Dilihat?";

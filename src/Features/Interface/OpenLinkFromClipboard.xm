@@ -2,7 +2,9 @@
 #import <limits.h>
 
 #import "../../InstagramHeaders.h"
+#import "../../Shared/i18n/SPKStrings.h"
 #import "../../Networking/SPKInstagramAPI.h"
+#import "../../Shared/Stories/SPKStoryOpener.h"
 #import "../../Utils.h"
 
 extern "C" void SPKBeginSavedTabRoutingBypass(void);
@@ -201,7 +203,40 @@ static BOOL SPKHandleExploreLongPressClipboard(void) {
         return NO;
     }
 
-    if (SPKOpenClipboardMediaLikeGallery(url)) {
+    // A highlight link names its reel outright, so the viewer opens directly.
+    // The router gets there too, but only after opening the profile and waiting
+    // on a second fetch.
+    SPKStoryLink *storyLink = [SPKStoryLink linkWithURL:url];
+    if (storyLink.isHighlight && SPKStoryOpenReel(storyLink.reelPK, storyLink.mediaPK, topMostController())) {
+        SPKLog(@"Interface", @"[Sparkle] Explore long-press: opening highlight %@ directly", storyLink.reelPK);
+    } else if (storyLink.username.length > 0) {
+        // A live-story link names the account, and its reel is keyed by the
+        // account's PK, so one lookup stands between the link and the viewer.
+        // A story past its 24 hours is no longer on that reel, and opening it
+        // gives an empty viewer, so it goes to the account's profile instead and
+        // is looked for in the highlights there.
+        BOOL expired = SPKStoryMediaIsPastLiveWindow(storyLink.mediaPK);
+        __weak UIViewController *presenter = topMostController();
+        [SPKUtils resolvePKForUsername:storyLink.username
+                         progressTitle:expired ? SPKL(@"GENERAL_UTILS_OPENING_PROFILE_TEXT") : SPKL(@"GENERAL_UTILS_OPENING_STORY_TEXT")
+                            completion:^(NSString *pk, __unused NSString *fullName) {
+                                UIViewController *livePresenter = presenter;
+                                if (pk.length == 0 || !livePresenter.view.window) {
+                                    SPKOpenClipboardURLWithSavedRoutingBypass(url);
+                                    return;
+                                }
+                                if (!expired) {
+                                    if (!SPKStoryOpenReel(pk, storyLink.mediaPK, livePresenter))
+                                        SPKOpenClipboardURLWithSavedRoutingBypass(url);
+                                    return;
+                                }
+                                if ([SPKUtils openInstagramProfileForUser:nil pk:pk username:storyLink.username fromViewController:livePresenter])
+                                    SPKStoryOpenExpiredStory(pk, storyLink.mediaPK, livePresenter, nil);
+                                else
+                                    SPKOpenClipboardURLWithSavedRoutingBypass(url);
+                            }];
+        SPKLog(@"Interface", @"[Sparkle] Explore long-press: resolving @%@ to open the %@ story", storyLink.username, expired ? @"expired" : @"live");
+    } else if (SPKOpenClipboardMediaLikeGallery(url)) {
         SPKLog(@"Interface", @"[Sparkle] Explore long-press: resolving clipboard media for native push %@", url);
     } else if (!SPKOpenClipboardURLWithSavedRoutingBypass(url)) {
         SPKWarnLog(@"Interface", @"[Sparkle] Explore long-press: failed to open %@, falling through to search", url);

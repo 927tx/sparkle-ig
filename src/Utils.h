@@ -177,6 +177,11 @@ FOUNDATION_EXPORT Class _Nullable SPKResolveIGClass(NSString *qualified, NSStrin
 // to the same person. It is nil on a memo hit, where the answer is already known.
 + (void)resolvePKForUsername:(NSString *)username
                   completion:(void (^)(NSString *_Nullable pk, NSString *_Nullable fullName))completion;
+/// As above, with the progress pill's wording chosen by the caller, for a
+/// lookup that is not on its way to opening a profile.
++ (void)resolvePKForUsername:(NSString *)username
+               progressTitle:(NSString *)progressTitle
+                  completion:(void (^)(NSString *_Nullable pk, NSString *_Nullable fullName))completion;
 + (BOOL)openInstagramMediaURL:(NSURL *)url;
 /// As above, but `dismiss` NO leaves whatever is presented on screen. Only for
 /// callers that intercept the resulting navigation themselves; with a modal still

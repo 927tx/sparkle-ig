@@ -734,6 +734,7 @@
 "GALLERY_GALLERY_NEW_FOLDER_TEXT" = "Naujas aplankas";
 "GALLERY_GALLERY_NO_FILES_GALLERY_TEXT" = "Galerijoje nėra failų";
 "GALLERY_GALLERY_ORIGIN_ACCOUNT_LINKED_TEXT" = "Paskyra susieta";
+"GALLERY_GALLERY_ORIGIN_HIGHLIGHT_LINKED_TEXT" = "Akimirka susieta";
 "GALLERY_GALLERY_ORIGIN_VALUE_SAVED_ITEM_SO_OPENS_INSTANTLY_NOW_FORMAT" = "%@ įrašyta į šį elementą, todėl nuo šiol jis atsidarys akimirksniu.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_FILE_GALLERY_TEXT" = "Tai visam laikui pašalina šį failą iš Galerijos.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_VALUE_FILE_VALUE_GALLERY_FORMAT" = "Tai visam laikui pašalina %@ iš Galerijos.";
@@ -956,6 +957,7 @@
 "GENERAL_UTILS_CONTINUE_CONFIRMATION_MESSAGE" = "Ar tikrai norite tęsti?";
 "GENERAL_UTILS_MUST_RESTART_APP_APPLY_CHANGE_TEXT" = "Paleiskite Instagram iš naujo, kad pritaikytumėte šį pakeitimą.";
 "GENERAL_UTILS_OPENING_PROFILE_TEXT" = "Atidaromas profilis…";
+"GENERAL_UTILS_OPENING_STORY_TEXT" = "Atidaroma istorija…";
 "GENERAL_UTILS_RESTART_REQUIRED_TEXT" = "Reikia paleisti iš naujo";
 "HOOKBISECT_BISECT_HEADER" = "Dalinimas";
 "HOOKBISECT_BISECT_HOOK_BISECT_TITLE" = "[DEV] Hook dalinimas";
@@ -2241,6 +2243,8 @@
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_LIKE_TITLE" = "Pereiti toliau paspaudus Stories patiktuką";
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_REPLY_TITLE" = "Pereiti toliau atsakius į Stories įrašą";
 "STORIES_STORY_NAVIGATION_HEADER" = "Stories naršymas";
+"STORIES_STORY_OPENER_NOT_IN_HIGHLIGHT_TEXT" = "Akimirkose nerasta. Bandykite po savaitės.";
+"STORIES_STORY_OPENER_SEARCHING_HIGHLIGHTS_TEXT" = "Ieškoma akimirkose…";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_MARK_SEEN_MESSAGE" = "Pažymėti šią istoriją kaip peržiūrėtą? Būsite matomi jos žiūrovų sąraše.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_MESSAGE" = "Jūsų žiūrimos istorijos, įskaitant šią, bus žymimos kaip peržiūrėtos, kol tai išjungsite arba išeisite iš istorijų.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_TITLE" = "Pažymėti istorijas kaip peržiūrėtas?";

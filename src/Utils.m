@@ -2360,6 +2360,12 @@ static void SPKSetResolvedPKForUsername(NSString *username, NSString *pk) {
 
 + (void)resolvePKForUsername:(NSString *)username
                   completion:(void (^)(NSString *_Nullable pk, NSString *_Nullable fullName))completion {
+    [self resolvePKForUsername:username progressTitle:SPKL(@"GENERAL_UTILS_OPENING_PROFILE_TEXT") completion:completion];
+}
+
++ (void)resolvePKForUsername:(NSString *)username
+               progressTitle:(NSString *)progressTitle
+                  completion:(void (^)(NSString *_Nullable pk, NSString *_Nullable fullName))completion {
     NSString *clean = [self sanitizedInstagramUsername:username] ?: username;
     if (clean.length == 0) {
         if (completion)
@@ -2377,7 +2383,7 @@ static void SPKSetResolvedPKForUsername(NSString *username, NSString *pk) {
     // Nothing changes on screen until this lands, so say that something is
     // happening. Transient, like the 4K candidate fetch: preparatory work before
     // the real flow, cleared on both outcomes.
-    [[SPKNotificationCenter shared] beginTransientProgressWithTitle:SPKL(@"GENERAL_UTILS_OPENING_PROFILE_TEXT") onCancel:nil];
+    [[SPKNotificationCenter shared] beginTransientProgressWithTitle:progressTitle onCancel:nil];
     [SPKInstagramAPI resolveUserForUsername:clean
                                  completion:^(NSDictionary *userDict, NSError *error) {
                                      NSString *resolvedPK = [userDict[@"pk"] description];

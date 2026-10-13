@@ -734,6 +734,7 @@
 "GALLERY_GALLERY_NEW_FOLDER_TEXT" = "مجلد جديد";
 "GALLERY_GALLERY_NO_FILES_GALLERY_TEXT" = "لا توجد ملفات في المعرض";
 "GALLERY_GALLERY_ORIGIN_ACCOUNT_LINKED_TEXT" = "تم ربط الحساب";
+"GALLERY_GALLERY_ORIGIN_HIGHLIGHT_LINKED_TEXT" = "تم ربط الأبرز";
 "GALLERY_GALLERY_ORIGIN_VALUE_SAVED_ITEM_SO_OPENS_INSTANTLY_NOW_FORMAT" = "تم حفظ %@ لهذا العنصر، لذلك سيتم فتحه على الفور من الآن فصاعداً.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_FILE_GALLERY_TEXT" = "سيحذف هذا الملف نهائياً من Gallery.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_VALUE_FILE_VALUE_GALLERY_FORMAT" = "سيحذف %@ نهائياً من Gallery.";
@@ -956,6 +957,7 @@
 "GENERAL_UTILS_CONTINUE_CONFIRMATION_MESSAGE" = "هل أنت متأكد من أنك تريد المتابعة؟";
 "GENERAL_UTILS_MUST_RESTART_APP_APPLY_CHANGE_TEXT" = "أعد تشغيل Instagram لتطبيق هذا التغيير.";
 "GENERAL_UTILS_OPENING_PROFILE_TEXT" = "جاري فتح الملف الشخصي...";
+"GENERAL_UTILS_OPENING_STORY_TEXT" = "جاري فتح القصة...";
 "GENERAL_UTILS_RESTART_REQUIRED_TEXT" = "إعادة تشغيل مطلوبة";
 "HOOKBISECT_BISECT_HEADER" = "المنصف";
 "HOOKBISECT_BISECT_HOOK_BISECT_TITLE" = "[DEV] منصف الخطاف";
@@ -2241,6 +2243,8 @@
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_LIKE_TITLE" = "التقدم على إعجاب القصة";
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_REPLY_TITLE" = "التقدم على رد القصة";
 "STORIES_STORY_NAVIGATION_HEADER" = "التنقل في القصة";
+"STORIES_STORY_OPENER_NOT_IN_HIGHLIGHT_TEXT" = "غير موجودة في الأبرز. حاول بعد أسبوع.";
+"STORIES_STORY_OPENER_SEARCHING_HIGHLIGHTS_TEXT" = "جاري البحث في الأبرز...";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_MARK_SEEN_MESSAGE" = "هل تريد وضع علامة المشاهدة على هذه القصة؟ ستظهر في قائمة مشاهديها.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_MESSAGE" = "سيتم تمييز القصص التي تشاهدها كمشاهَدة، بما فيها هذه القصة، حتى توقف ذلك أو تغادر القصص.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_TITLE" = "تمييز القصص كمشاهَدة؟";

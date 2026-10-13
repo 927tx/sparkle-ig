@@ -131,6 +131,7 @@ FOUNDATION_EXPORT void SPKInstallHideViewerPlusButtonHooksIfEnabled(void);
 FOUNDATION_EXPORT void SPKInstallSearchStoryViewersHooksIfEnabled(void);
 FOUNDATION_EXPORT void SPKInstallStoryVideoStickerHooksIfEnabled(void);
 FOUNDATION_EXPORT void SPKInstallHideRecentHighlightsHooksIfEnabled(void);
+FOUNDATION_EXPORT void SPKInstallStoryHighlightTrayTrackingHooksIfNeeded(void);
 
 // Master kill switch: when YES, suppress all feature hook installation, but
 // keep the home long-press shortcut so users can still reach Settings to turn
@@ -337,6 +338,7 @@ void SPKInstallProfileSurfaceHooksIfNeeded(void) {
     SPK_INSTALL(SPKInstallProfileHeaderControlsHooksIfNeeded);
     SPK_INSTALL(SPKInstallProfileSavedTabHooksIfNeeded);
     SPK_INSTALL(SPKInstallProfileAnalyzerVisitTrackerHooksIfEnabled);
+    SPK_INSTALL(SPKInstallStoryHighlightTrayTrackingHooksIfNeeded);
     SPK_INSTALL(SPKInstallSettingsShortcutsHooksIfNeeded);
 }
 

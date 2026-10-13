@@ -734,6 +734,7 @@
 "GALLERY_GALLERY_NEW_FOLDER_TEXT" = "Nouveau dossier";
 "GALLERY_GALLERY_NO_FILES_GALLERY_TEXT" = "Aucun fichier dans la Galerie";
 "GALLERY_GALLERY_ORIGIN_ACCOUNT_LINKED_TEXT" = "Compte lié";
+"GALLERY_GALLERY_ORIGIN_HIGHLIGHT_LINKED_TEXT" = "Story à la une associée";
 "GALLERY_GALLERY_ORIGIN_VALUE_SAVED_ITEM_SO_OPENS_INSTANTLY_NOW_FORMAT" = "%@ enregistré dans cet élément, s'ouvre maintenant instantanément.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_FILE_GALLERY_TEXT" = "Ce fichier sera définitivement supprimé de la Galerie.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_VALUE_FILE_VALUE_GALLERY_FORMAT" = "Cette action supprime définitivement %@ de la Galerie.";
@@ -956,6 +957,7 @@
 "GENERAL_UTILS_CONTINUE_CONFIRMATION_MESSAGE" = "Êtes-vous sûr de vouloir continuer ?";
 "GENERAL_UTILS_MUST_RESTART_APP_APPLY_CHANGE_TEXT" = "Redémarrez Instagram pour appliquer cette modification.";
 "GENERAL_UTILS_OPENING_PROFILE_TEXT" = "Ouverture du profil...";
+"GENERAL_UTILS_OPENING_STORY_TEXT" = "Ouverture de la story...";
 "GENERAL_UTILS_RESTART_REQUIRED_TEXT" = "Redémarrage requis";
 "HOOKBISECT_BISECT_HEADER" = "Bisect";
 "HOOKBISECT_BISECT_HOOK_BISECT_TITLE" = "[DEV] Hook Bisect";
@@ -2241,6 +2243,8 @@
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_LIKE_TITLE" = "Avancer au j'aime de la Story";
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_REPLY_TITLE" = "Avancer à la réponse de la Story";
 "STORIES_STORY_NAVIGATION_HEADER" = "Navigation de la Story";
+"STORIES_STORY_OPENER_NOT_IN_HIGHLIGHT_TEXT" = "Pas à la une. Réessayez dans une semaine.";
+"STORIES_STORY_OPENER_SEARCHING_HIGHLIGHTS_TEXT" = "Recherche dans les stories à la une...";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_MARK_SEEN_MESSAGE" = "Marquer cette story comme vue ? Vous apparaîtrez dans la liste des spectateurs.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_MESSAGE" = "Les stories que vous regardez seront marquées comme vues, y compris celle-ci, jusqu’à ce que vous désactiviez ceci ou quittiez les stories.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_TITLE" = "Marquer les stories comme vues ?";

@@ -734,6 +734,7 @@
 "GALLERY_GALLERY_NEW_FOLDER_TEXT" = "Nueva carpeta";
 "GALLERY_GALLERY_NO_FILES_GALLERY_TEXT" = "Sin archivos en la galería";
 "GALLERY_GALLERY_ORIGIN_ACCOUNT_LINKED_TEXT" = "Cuenta vinculada";
+"GALLERY_GALLERY_ORIGIN_HIGHLIGHT_LINKED_TEXT" = "Destacada vinculada";
 "GALLERY_GALLERY_ORIGIN_VALUE_SAVED_ITEM_SO_OPENS_INSTANTLY_NOW_FORMAT" = "%@ guardado en este elemento, por lo que se abre instantáneamente a partir de ahora.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_FILE_GALLERY_TEXT" = "Esto elimina permanentemente este archivo de Gallery.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_VALUE_FILE_VALUE_GALLERY_FORMAT" = "Esto elimina permanentemente %@ de Gallery.";
@@ -956,6 +957,7 @@
 "GENERAL_UTILS_CONTINUE_CONFIRMATION_MESSAGE" = "¿Estás seguro de que deseas continuar?";
 "GENERAL_UTILS_MUST_RESTART_APP_APPLY_CHANGE_TEXT" = "Reinicia Instagram para aplicar este cambio.";
 "GENERAL_UTILS_OPENING_PROFILE_TEXT" = "Abriendo perfil...";
+"GENERAL_UTILS_OPENING_STORY_TEXT" = "Abriendo historia...";
 "GENERAL_UTILS_RESTART_REQUIRED_TEXT" = "Se requiere reinicio";
 "HOOKBISECT_BISECT_HEADER" = "Bisección";
 "HOOKBISECT_BISECT_HOOK_BISECT_TITLE" = "[DEV] Bisección de Hook";
@@ -2241,6 +2243,8 @@
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_LIKE_TITLE" = "Avanzar en me gusta de historia";
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_REPLY_TITLE" = "Avanzar en respuesta de historia";
 "STORIES_STORY_NAVIGATION_HEADER" = "Navegación de historia";
+"STORIES_STORY_OPENER_NOT_IN_HIGHLIGHT_TEXT" = "No está en destacadas. Reintenta en 1 semana.";
+"STORIES_STORY_OPENER_SEARCHING_HIGHLIGHTS_TEXT" = "Buscando en destacadas...";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_MARK_SEEN_MESSAGE" = "¿Marcar esta historia como vista? Aparecerás en su lista de espectadores.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_MESSAGE" = "Las historias que veas se marcarán como vistas, incluida esta, hasta que lo desactives o salgas de las historias.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_TITLE" = "¿Marcar historias como vistas?";

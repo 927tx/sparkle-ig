@@ -734,6 +734,7 @@
 "GALLERY_GALLERY_NEW_FOLDER_TEXT" = "Neue Ordner";
 "GALLERY_GALLERY_NO_FILES_GALLERY_TEXT" = "Kei Dateie i dr Galerie";
 "GALLERY_GALLERY_ORIGIN_ACCOUNT_LINKED_TEXT" = "Konto verlinkt";
+"GALLERY_GALLERY_ORIGIN_HIGHLIGHT_LINKED_TEXT" = "Highlight verchnüpft";
 "GALLERY_GALLERY_ORIGIN_VALUE_SAVED_ITEM_SO_OPENS_INSTANTLY_NOW_FORMAT" = "%@ isch by däm Element gspeicheret, drum macht's sech vo jitz a sofort uf.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_FILE_GALLERY_TEXT" = "Das entfernt die Datei für immer vo dr Galerie.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_VALUE_FILE_VALUE_GALLERY_FORMAT" = "Das entfernt %@ für immer vo dr Galerie.";
@@ -956,6 +957,7 @@
 "GENERAL_UTILS_CONTINUE_CONFIRMATION_MESSAGE" = "Bisch sicher, dass du wittermache wottsch?";
 "GENERAL_UTILS_MUST_RESTART_APP_APPLY_CHANGE_TEXT" = "Start Instagram neu, für die Ändrig z'übernäh.";
 "GENERAL_UTILS_OPENING_PROFILE_TEXT" = "Am Profil Ufmache...";
+"GENERAL_UTILS_OPENING_STORY_TEXT" = "Am Story Ufmache...";
 "GENERAL_UTILS_RESTART_REQUIRED_TEXT" = "Neustart Erforderlich";
 "HOOKBISECT_BISECT_HEADER" = "Bisect";
 "HOOKBISECT_BISECT_HOOK_BISECT_TITLE" = "Hook Bisect";
@@ -2241,6 +2243,8 @@
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_LIKE_TITLE" = "Wyter bi Story-Like";
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_REPLY_TITLE" = "Wyter bi Story-Antwort";
 "STORIES_STORY_NAVIGATION_HEADER" = "Story-Navigation";
+"STORIES_STORY_OPENER_NOT_IN_HIGHLIGHT_TEXT" = "Nid i de Highlights. I eire Wuche nomau.";
+"STORIES_STORY_OPENER_SEARCHING_HIGHLIGHTS_TEXT" = "Am Highlights Dursueche...";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_MARK_SEEN_MESSAGE" = "Die Story als gseh markiere? Du wirsch uf dere Gseh-Lischte erschyne.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_MESSAGE" = "Stories, wo du aluegsch, wärde als gseh markiert, inklusiv die da, bis du das usschautisch oder Stories verlahsch.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_TITLE" = "Stories als Gseh Markiere?";

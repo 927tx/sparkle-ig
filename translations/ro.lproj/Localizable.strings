@@ -734,6 +734,7 @@
 "GALLERY_GALLERY_NEW_FOLDER_TEXT" = "Dosar nou";
 "GALLERY_GALLERY_NO_FILES_GALLERY_TEXT" = "Niciun fișier în Galerie";
 "GALLERY_GALLERY_ORIGIN_ACCOUNT_LINKED_TEXT" = "Cont conectat";
+"GALLERY_GALLERY_ORIGIN_HIGHLIGHT_LINKED_TEXT" = "Highlight asociat";
 "GALLERY_GALLERY_ORIGIN_VALUE_SAVED_ITEM_SO_OPENS_INSTANTLY_NOW_FORMAT" = "%@ salvat pe acest element, deci se deschide instantaneu de acum înainte.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_FILE_GALLERY_TEXT" = "Acest lucru șterge definitiv fișierul din Gallery.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_VALUE_FILE_VALUE_GALLERY_FORMAT" = "Acest lucru șterge definitiv %@ din Gallery.";
@@ -956,6 +957,7 @@
 "GENERAL_UTILS_CONTINUE_CONFIRMATION_MESSAGE" = "Sigur doriți să continuați?";
 "GENERAL_UTILS_MUST_RESTART_APP_APPLY_CHANGE_TEXT" = "Repornește Instagram pentru a aplica această schimbare.";
 "GENERAL_UTILS_OPENING_PROFILE_TEXT" = "Se deschide profilul...";
+"GENERAL_UTILS_OPENING_STORY_TEXT" = "Se deschide povestea...";
 "GENERAL_UTILS_RESTART_REQUIRED_TEXT" = "Repornire necesară";
 "HOOKBISECT_BISECT_HEADER" = "Înjumătățire";
 "HOOKBISECT_BISECT_HOOK_BISECT_TITLE" = "[DEV] Înjumătățire hook";
@@ -2241,6 +2243,8 @@
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_LIKE_TITLE" = "Avansează pe apreciere poveste";
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_REPLY_TITLE" = "Avansează pe răspuns poveste";
 "STORIES_STORY_NAVIGATION_HEADER" = "Navigare poveste";
+"STORIES_STORY_OPENER_NOT_IN_HIGHLIGHT_TEXT" = "Nu e în highlights. Reîncearcă în 7 zile.";
+"STORIES_STORY_OPENER_SEARCHING_HIGHLIGHTS_TEXT" = "Se caută în highlights...";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_MARK_SEEN_MESSAGE" = "Marchezi această poveste ca vizualizată? Vei apărea în lista de spectatori.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_MESSAGE" = "Poveștile pe care le urmărești vor fi marcate ca văzute, inclusiv aceasta, până dezactivezi opțiunea sau ieși din povești.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_TITLE" = "Marchezi poveștile ca văzute?";

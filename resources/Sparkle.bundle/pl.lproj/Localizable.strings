@@ -734,6 +734,7 @@
 "GALLERY_GALLERY_NEW_FOLDER_TEXT" = "Nowy folder";
 "GALLERY_GALLERY_NO_FILES_GALLERY_TEXT" = "Brak plików w Galerii";
 "GALLERY_GALLERY_ORIGIN_ACCOUNT_LINKED_TEXT" = "Konto połączone";
+"GALLERY_GALLERY_ORIGIN_HIGHLIGHT_LINKED_TEXT" = "Połączono z wyróżnioną relacją";
 "GALLERY_GALLERY_ORIGIN_VALUE_SAVED_ITEM_SO_OPENS_INSTANTLY_NOW_FORMAT" = "%@ zostało zapisane w tym elemencie, więc od teraz otwiera się natychmiast.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_FILE_GALLERY_TEXT" = "Trwale usuwa ten plik z Galerii.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_VALUE_FILE_VALUE_GALLERY_FORMAT" = "Trwale usuwa %@ z Galerii.";
@@ -956,6 +957,7 @@
 "GENERAL_UTILS_CONTINUE_CONFIRMATION_MESSAGE" = "Czy na pewno chcesz kontynuować?";
 "GENERAL_UTILS_MUST_RESTART_APP_APPLY_CHANGE_TEXT" = "Uruchom ponownie Instagram, aby zastosować tę zmianę.";
 "GENERAL_UTILS_OPENING_PROFILE_TEXT" = "Otwieranie profilu...";
+"GENERAL_UTILS_OPENING_STORY_TEXT" = "Otwieranie relacji...";
 "GENERAL_UTILS_RESTART_REQUIRED_TEXT" = "Wymagany restart";
 "HOOKBISECT_BISECT_HEADER" = "Bisekcja";
 "HOOKBISECT_BISECT_HOOK_BISECT_TITLE" = "[DEV] Bisekcja hooków";
@@ -2241,6 +2243,8 @@
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_LIKE_TITLE" = "Przechodź dalej po polubieniu relacji";
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_REPLY_TITLE" = "Przechodź dalej po odpowiedzi w relacji";
 "STORIES_STORY_NAVIGATION_HEADER" = "Nawigacja w relacjach";
+"STORIES_STORY_OPENER_NOT_IN_HIGHLIGHT_TEXT" = "Nie ma w wyróżnionych. Spróbuj za tydzień.";
+"STORIES_STORY_OPENER_SEARCHING_HIGHLIGHTS_TEXT" = "Szukanie w wyróżnionych relacjach...";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_MARK_SEEN_MESSAGE" = "Oznaczyć tę relację jako odczytaną? Pojawi się na liście jej widzów.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_MESSAGE" = "Oglądane relacje będą oznaczane jako wyświetlone, w tym ta, dopóki tego nie wyłączysz lub nie opuścisz relacji.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_TITLE" = "Oznaczyć relacje jako odczytane?";

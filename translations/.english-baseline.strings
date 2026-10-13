@@ -734,6 +734,7 @@
 "GALLERY_GALLERY_NEW_FOLDER_TEXT" = "New folder";
 "GALLERY_GALLERY_NO_FILES_GALLERY_TEXT" = "No files in Gallery";
 "GALLERY_GALLERY_ORIGIN_ACCOUNT_LINKED_TEXT" = "Account linked";
+"GALLERY_GALLERY_ORIGIN_HIGHLIGHT_LINKED_TEXT" = "Highlight linked";
 "GALLERY_GALLERY_ORIGIN_VALUE_SAVED_ITEM_SO_OPENS_INSTANTLY_NOW_FORMAT" = "%@ saved to this item, so it opens instantly from now on.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_FILE_GALLERY_TEXT" = "This permanently removes this file from Gallery.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_VALUE_FILE_VALUE_GALLERY_FORMAT" = "This permanently removes %@ from Gallery.";
@@ -956,6 +957,7 @@
 "GENERAL_UTILS_CONTINUE_CONFIRMATION_MESSAGE" = "Are you sure you want to continue?";
 "GENERAL_UTILS_MUST_RESTART_APP_APPLY_CHANGE_TEXT" = "Restart Instagram to apply this change.";
 "GENERAL_UTILS_OPENING_PROFILE_TEXT" = "Opening profile...";
+"GENERAL_UTILS_OPENING_STORY_TEXT" = "Opening story...";
 "GENERAL_UTILS_RESTART_REQUIRED_TEXT" = "Restart Required";
 "HOOKBISECT_BISECT_HEADER" = "Bisect";
 "HOOKBISECT_BISECT_HOOK_BISECT_TITLE" = "[DEV] Hook Bisect";
@@ -2241,6 +2243,8 @@
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_LIKE_TITLE" = "Advance on Story Like";
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_REPLY_TITLE" = "Advance on Story Reply";
 "STORIES_STORY_NAVIGATION_HEADER" = "Story Navigation";
+"STORIES_STORY_OPENER_NOT_IN_HIGHLIGHT_TEXT" = "Not in a highlight. Try again in a week.";
+"STORIES_STORY_OPENER_SEARCHING_HIGHLIGHTS_TEXT" = "Looking in highlights...";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_MARK_SEEN_MESSAGE" = "Mark this story as seen? You will appear on its viewer list.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_MESSAGE" = "Stories you watch will be marked as seen, including this one, until you turn this off or leave stories.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_TITLE" = "Mark Stories as Seen?";

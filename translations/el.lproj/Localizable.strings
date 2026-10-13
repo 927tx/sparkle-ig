@@ -734,6 +734,7 @@
 "GALLERY_GALLERY_NEW_FOLDER_TEXT" = "Νέος φάκελος";
 "GALLERY_GALLERY_NO_FILES_GALLERY_TEXT" = "Δεν υπάρχουν αρχεία στη Συλλογή";
 "GALLERY_GALLERY_ORIGIN_ACCOUNT_LINKED_TEXT" = "Ο λογαριασμός συνδέθηκε";
+"GALLERY_GALLERY_ORIGIN_HIGHLIGHT_LINKED_TEXT" = "Η επισήμανση συνδέθηκε";
 "GALLERY_GALLERY_ORIGIN_VALUE_SAVED_ITEM_SO_OPENS_INSTANTLY_NOW_FORMAT" = "%@ αποθηκεύτηκε σε αυτό το αντικείμενο, οπότε ανοίγει αμέσως από τώρα.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_FILE_GALLERY_TEXT" = "Αυτό διαγράφει οριστικά αυτό το αρχείο από το Gallery.";
 "GALLERY_GALLERY_PERMANENTLY_REMOVE_VALUE_FILE_VALUE_GALLERY_FORMAT" = "Αυτό διαγράφει οριστικά το %@ από το Gallery.";
@@ -956,6 +957,7 @@
 "GENERAL_UTILS_CONTINUE_CONFIRMATION_MESSAGE" = "Είστε σίγουρος ότι θέλετε να συνεχίσετε;";
 "GENERAL_UTILS_MUST_RESTART_APP_APPLY_CHANGE_TEXT" = "Επανεκκινήστε το Instagram για να εφαρμοστεί αυτή η αλλαγή.";
 "GENERAL_UTILS_OPENING_PROFILE_TEXT" = "Άνοιγμα προφίλ...";
+"GENERAL_UTILS_OPENING_STORY_TEXT" = "Άνοιγμα ιστορίας...";
 "GENERAL_UTILS_RESTART_REQUIRED_TEXT" = "Απαιτείται Επανεκκίνηση";
 "HOOKBISECT_BISECT_HEADER" = "Bisect";
 "HOOKBISECT_BISECT_HOOK_BISECT_TITLE" = "[DEV] Hook Bisect";
@@ -2241,6 +2243,8 @@
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_LIKE_TITLE" = "Προέλαση κατά Αρέσκεια Ιστορίας";
 "STORIES_STORY_NAVIGATION_ADVANCE_STORY_REPLY_TITLE" = "Προέλαση κατά Απάντηση Ιστορίας";
 "STORIES_STORY_NAVIGATION_HEADER" = "Πλοήγηση Ιστορίας";
+"STORIES_STORY_OPENER_NOT_IN_HIGHLIGHT_TEXT" = "Όχι σε επισήμανση. Ξανά σε μία εβδομάδα.";
+"STORIES_STORY_OPENER_SEARCHING_HIGHLIGHTS_TEXT" = "Αναζήτηση στις επισημάνσεις...";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_MARK_SEEN_MESSAGE" = "Να σημειωθεί αυτή η ιστορία ως προβληθείσα; Θα εμφανιστείτε στη λίστα θεατών της.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_MESSAGE" = "Οι ιστορίες που βλέπεις θα επισημαίνονται ως προβεβλημένες, μαζί με αυτήν, μέχρι να το απενεργοποιήσεις ή να βγεις από τις ιστορίες.";
 "STORIES_STORY_SEEN_BUTTONS_CONFIRM_RECEIPTS_ON_TITLE" = "Επισήμανση ιστοριών ως προβεβλημένων;";

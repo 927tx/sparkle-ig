@@ -1030,6 +1030,14 @@
 // Backing store for the reel list the story viewer pages through. The view
 // controller keeps its own copy for tap-forward navigation, while horizontal
 // swipes are driven by the list adapter reading this store.
+// The highlight list a profile shows. One is created per open profile.
+@interface IGHighlightsStoryTrayDataSource : NSObject
+@property (nonatomic, readonly) BOOL isFetching;
+@property (nonatomic, readonly) BOOL hasInitiatedFetch;
+@property (nonatomic, readonly) NSArray *reels;
+- (id)initWithUserPK:(id)userPK userSession:(id)session diskManager:(id)diskManager isArchive:(BOOL)isArchive;
+@end
+
 @interface IGStoryViewerDataStore : NSObject
 - (id)modelItems;
 - (void)replaceModelItems:(id)items;

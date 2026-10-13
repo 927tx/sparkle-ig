@@ -2123,8 +2123,9 @@
 "SETTINGS_WHATS_NEW_FIX_DOWNLOAD_BUSY_FALLBACK_TEXT" = "Tải xuống thử cách khác khi máy chủ Instagram đang bận";
 "SETTINGS_WHATS_NEW_FIX_EYE_EARLIER_STORIES_TEXT" = "Nút con mắt cũng đánh dấu các tin trước đó là đã xem";
 "SETTINGS_WHATS_NEW_FIX_FOLLOW_BADGE_ACCOUNTS_TEXT" = "Huy hiệu \"theo dõi bạn\" luôn đúng giữa các tài khoản";
+"SETTINGS_WHATS_NEW_FIX_HIDDEN_TABS_SWIPE_TEXT" = "Các tab đã ẩn vẫn được ẩn khi vuốt giữa các tab";
 "SETTINGS_WHATS_NEW_FIX_INLINE_SUGGESTED_REELS_TEXT" = "Ẩn reels gợi ý bắt được các gợi ý mới trong bảng tin";
-"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_450_COMPATIBILITY_TEXT" = "Tương thích với Instagram v450.1.0";
+"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_451_COMPATIBILITY_TEXT" = "Tương thích với Instagram v451.0.0";
 "SETTINGS_WHATS_NEW_FIX_NATIVE_ALERT_STYLE_TEXT" = "Cảnh báo trông giống hộp thoại của chính Instagram";
 "SETTINGS_WHATS_NEW_FIX_PREVIEW_TRIM_QUALITY_TEXT" = "Cắt từ bản xem trước dùng chất lượng tải xuống của bạn";
 "SETTINGS_WHATS_NEW_GLASS_APP_ICON_TEXT" = "Biểu tượng ứng dụng Liquid Glass mới cho Sparkle";

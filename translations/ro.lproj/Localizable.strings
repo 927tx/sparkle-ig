@@ -2123,8 +2123,9 @@
 "SETTINGS_WHATS_NEW_FIX_DOWNLOAD_BUSY_FALLBACK_TEXT" = "Descărcările încearcă altă cale când serverele Instagram sunt ocupate";
 "SETTINGS_WHATS_NEW_FIX_EYE_EARLIER_STORIES_TEXT" = "Butonul ochi marchează ca văzute și story-urile anterioare";
 "SETTINGS_WHATS_NEW_FIX_FOLLOW_BADGE_ACCOUNTS_TEXT" = "Insigna „te urmărește” rămâne corectă între conturi";
+"SETTINGS_WHATS_NEW_FIX_HIDDEN_TABS_SWIPE_TEXT" = "Filele ascunse rămân ascunse când glisezi între file";
 "SETTINGS_WHATS_NEW_FIX_INLINE_SUGGESTED_REELS_TEXT" = "Ascunderea reels-urilor sugerate prinde noile sugestii din feed";
-"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_450_COMPATIBILITY_TEXT" = "Compatibilitate cu Instagram v450.1.0";
+"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_451_COMPATIBILITY_TEXT" = "Compatibilitate cu Instagram v451.0.0";
 "SETTINGS_WHATS_NEW_FIX_NATIVE_ALERT_STYLE_TEXT" = "Alertele arată ca dialogurile proprii ale Instagram";
 "SETTINGS_WHATS_NEW_FIX_PREVIEW_TRIM_QUALITY_TEXT" = "Decuparea din previzualizare folosește calitatea ta de descărcare";
 "SETTINGS_WHATS_NEW_GLASS_APP_ICON_TEXT" = "O nouă pictogramă Liquid Glass pentru Sparkle";

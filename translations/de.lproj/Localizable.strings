@@ -2123,8 +2123,9 @@
 "SETTINGS_WHATS_NEW_FIX_DOWNLOAD_BUSY_FALLBACK_TEXT" = "Downloads nehmen einen anderen Weg, wenn Instagrams Server ausgelastet sind";
 "SETTINGS_WHATS_NEW_FIX_EYE_EARLIER_STORIES_TEXT" = "Die Augen-Schaltfläche markiert auch die früheren Storys als gesehen";
 "SETTINGS_WHATS_NEW_FIX_FOLLOW_BADGE_ACCOUNTS_TEXT" = "Das „Folgt dir“-Abzeichen bleibt über Konten hinweg korrekt";
+"SETTINGS_WHATS_NEW_FIX_HIDDEN_TABS_SWIPE_TEXT" = "Ausgeblendete Tabs bleiben auch beim Wischen zwischen Tabs ausgeblendet";
 "SETTINGS_WHATS_NEW_FIX_INLINE_SUGGESTED_REELS_TEXT" = "„Vorgeschlagene Reels ausblenden“ erfasst die neuen Vorschläge im Feed";
-"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_450_COMPATIBILITY_TEXT" = "Kompatibilität mit Instagram v450.1.0";
+"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_451_COMPATIBILITY_TEXT" = "Kompatibilität mit Instagram v451.0.0";
 "SETTINGS_WHATS_NEW_FIX_NATIVE_ALERT_STYLE_TEXT" = "Hinweise sehen aus wie Instagrams eigene Dialoge";
 "SETTINGS_WHATS_NEW_FIX_PREVIEW_TRIM_QUALITY_TEXT" = "Kürzen aus der Vorschau nutzt deine Download-Qualität";
 "SETTINGS_WHATS_NEW_GLASS_APP_ICON_TEXT" = "Ein neues Liquid-Glass-App-Symbol für Sparkle";

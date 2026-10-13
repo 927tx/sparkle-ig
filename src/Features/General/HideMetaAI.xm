@@ -431,10 +431,32 @@ return [config copy];
 
     return %orig;
 }
+
+// IG 451 added a trailing floatsAsCenteredPill: to this initializer.
+- (id)initWithLauncherSet:(id)arg1 hasSearchPrefix:(BOOL)arg2 floatsAsCenteredPill:(BOOL)arg3 {
+    if (SPKHideMetaAIComments()) {
+        SPKLog(@"General", @"[Sparkle] Hiding meta ai: suggested ai searches comment carousel");
+
+        return nil;
+    }
+
+    return %orig;
+}
 %end
 
 %hook _TtC34IGCommentThreadAICarouselPillSwift30IGCommentThreadAICarouselSwift
 - (id)initWithLauncherSet:(id)arg1 hasSearchPrefix:(BOOL)arg2 {
+    if (SPKHideMetaAIComments()) {
+        SPKLog(@"General", @"[Sparkle] Hiding meta ai: suggested ai searches comment carousel");
+
+        return nil;
+    }
+
+    return %orig;
+}
+
+// IG 451 added a trailing floatsAsCenteredPill: to this initializer.
+- (id)initWithLauncherSet:(id)arg1 hasSearchPrefix:(BOOL)arg2 floatsAsCenteredPill:(BOOL)arg3 {
     if (SPKHideMetaAIComments()) {
         SPKLog(@"General", @"[Sparkle] Hiding meta ai: suggested ai searches comment carousel");
 

@@ -2123,8 +2123,9 @@
 "SETTINGS_WHATS_NEW_FIX_DOWNLOAD_BUSY_FALLBACK_TEXT" = "وقتی سرورهای Instagram شلوغ‌اند، دانلودها مسیر دیگری را امتحان می‌کنند";
 "SETTINGS_WHATS_NEW_FIX_EYE_EARLIER_STORIES_TEXT" = "دکمه چشم استوری‌های قبلی را هم دیده‌شده می‌کند";
 "SETTINGS_WHATS_NEW_FIX_FOLLOW_BADGE_ACCOUNTS_TEXT" = "نشان «شما را دنبال می‌کند» بین حساب‌ها درست می‌ماند";
+"SETTINGS_WHATS_NEW_FIX_HIDDEN_TABS_SWIPE_TEXT" = "زبانه‌های پنهان هنگام کشیدن بین زبانه‌ها پنهان می‌مانند";
 "SETTINGS_WHATS_NEW_FIX_INLINE_SUGGESTED_REELS_TEXT" = "پنهان کردن ریلزهای پیشنهادی، پیشنهادهای جدید داخل فید را هم می‌گیرد";
-"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_450_COMPATIBILITY_TEXT" = "سازگاری با Instagram v450.1.0";
+"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_451_COMPATIBILITY_TEXT" = "سازگاری با Instagram v451.0.0";
 "SETTINGS_WHATS_NEW_FIX_NATIVE_ALERT_STYLE_TEXT" = "هشدارها شبیه پنجره‌های خود Instagram هستند";
 "SETTINGS_WHATS_NEW_FIX_PREVIEW_TRIM_QUALITY_TEXT" = "برش از پیش‌نمایش از کیفیت دانلود شما استفاده می‌کند";
 "SETTINGS_WHATS_NEW_GLASS_APP_ICON_TEXT" = "نماد برنامه جدید Liquid Glass برای Sparkle";

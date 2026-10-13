@@ -2123,8 +2123,9 @@
 "SETTINGS_WHATS_NEW_FIX_DOWNLOAD_BUSY_FALLBACK_TEXT" = "Sumusubok ng ibang ruta ang mga download kapag abala ang mga server ng Instagram";
 "SETTINGS_WHATS_NEW_FIX_EYE_EARLIER_STORIES_TEXT" = "Minamarkahan din ng eye button ang mga naunang story bilang nakita";
 "SETTINGS_WHATS_NEW_FIX_FOLLOW_BADGE_ACCOUNTS_TEXT" = "Nananatiling tama ang badge na follows-you sa iba't ibang account";
+"SETTINGS_WHATS_NEW_FIX_HIDDEN_TABS_SWIPE_TEXT" = "Nananatiling nakatago ang mga nakatagong tab kapag nag-swipe sa pagitan ng mga tab";
 "SETTINGS_WHATS_NEW_FIX_INLINE_SUGGESTED_REELS_TEXT" = "Nahuhuli na ng Itago ang Suggested Reels ang mga bagong mungkahi sa feed";
-"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_450_COMPATIBILITY_TEXT" = "Compatible sa Instagram v450.1.0";
+"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_451_COMPATIBILITY_TEXT" = "Compatible sa Instagram v451.0.0";
 "SETTINGS_WHATS_NEW_FIX_NATIVE_ALERT_STYLE_TEXT" = "Kamukha na ng sariling dialog ng Instagram ang mga alert";
 "SETTINGS_WHATS_NEW_FIX_PREVIEW_TRIM_QUALITY_TEXT" = "Ginagamit ng pag-trim mula sa preview ang download quality mo";
 "SETTINGS_WHATS_NEW_GLASS_APP_ICON_TEXT" = "Bagong Liquid Glass na app icon para sa Sparkle";

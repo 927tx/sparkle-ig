@@ -29,7 +29,7 @@ marked **(restart)** and prompt for a relaunch when changed.
 - **Copy Text**: Long-press text fields across the app to copy them.
 - **Hide Recent Searches** *(restart)*: Hides existing recent searches and stops search bars from saving new queries.
 - **Copy Links Without Tracking**: Strips the username path and tracking parameters from copied links.
-- **Hold Send to Copy Link**: Long-press the send/share button to copy the post link.
+- **Hold Send to Copy Link**: Long-press the send/share button to copy the post link. A story viewed inside a highlight copies the highlight's own link, which keeps working after the story expires.
 - **Detect Links in Text** *(restart)*: Finds explicit `http://` and `https://` links in comments, post captions, and reel captions, colors them in Instagram's blue and makes them tappable. Nothing is requested from a link until you tap it. Off by default. Tapped links open per Open Links In below.
 - **Open Links In**: Opens links that Instagram would load in its own browser (bios, captions, stories, messages, ads) in an in-app Safari view, the Safari app, or after asking each time, so Instagram's tracking scripts never load on the page. Instagram's `l.instagram.com` redirect and click-tracking parameters (`fbclid`, `igsh`, `utm_*`, ...) are removed before the link is contacted. Meta's own pages, sign-in flows, lead forms, and Instant Experience ads stay in Instagram's browser. Always Ask also offers Instagram's browser. Default keeps Instagram's browser; links tapped in post text open in the in-app Safari view under Default.
 

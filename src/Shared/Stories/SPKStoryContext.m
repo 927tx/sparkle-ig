@@ -424,7 +424,45 @@ NSString *SPKStoryFullNameForContext(SPKStoryContext *context) {
     return context.fullName ?: SPKStoryFullNameFromMediaObject(context.media);
 }
 
+NSString *SPKStoryReelPKForContext(SPKStoryContext *context) {
+    id viewModel = SPKStoryFirstObjectForSelectors(context.sectionController, @[ @"viewModel" ]);
+    NSString *reelPK = SPKStringFromValue(SPKObjectForSelector(viewModel, @"reelPK"));
+    if (reelPK.length == 0) {
+        viewModel = SPKStoryFirstObjectForSelectors(context.viewerController, @[ @"currentViewModel" ]);
+        reelPK = SPKStringFromValue(SPKObjectForSelector(viewModel, @"reelPK"));
+    }
+    return reelPK.length > 0 ? reelPK : nil;
+}
+
+BOOL SPKStoryReelPKIsHighlight(NSString *reelPK) {
+    return [reelPK hasPrefix:@"highlight:"];
+}
+
+// A highlight's share link is /s/<token>/, where the token is the reel PK
+// ("highlight:<id>") in base64, and story_media_id selects one story inside it.
+// The /stories/<username>/<mediaPK>/ form addresses the account's live reel, so
+// for a story that only survives in a highlight it resolves to "expired".
+NSURL *SPKStoryHighlightURLForReelPK(NSString *reelPK, NSString *mediaPK) {
+    if (!SPKStoryReelPKIsHighlight(reelPK))
+        return nil;
+    NSString *token = [[reelPK dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
+    if (token.length == 0)
+        return nil;
+    NSURLComponents *components = [NSURLComponents componentsWithString:@"https://www.instagram.com"];
+    components.path = [NSString stringWithFormat:@"/s/%@/", token];
+    NSString *bareMediaPK = [mediaPK componentsSeparatedByString:@"_"].firstObject;
+    if (bareMediaPK.length > 0)
+        components.queryItems = @[ [NSURLQueryItem queryItemWithName:@"story_media_id" value:bareMediaPK] ];
+    return components.URL;
+}
+
 NSURL *SPKStoryURLForContext(SPKStoryContext *context) {
+    // Resolved here and not into the cached storyURL: the cache is keyed by the
+    // media object alone, and the same media can be reached through the live
+    // reel or through a highlight.
+    NSURL *highlightURL = SPKStoryHighlightURLForReelPK(SPKStoryReelPKForContext(context), SPKStoryMediaID(context.media));
+    if (highlightURL)
+        return highlightURL;
     return context.storyURL ?: SPKStoryURLForMedia(context.media);
 }
 

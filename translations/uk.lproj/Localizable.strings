@@ -2123,8 +2123,9 @@
 "SETTINGS_WHATS_NEW_FIX_DOWNLOAD_BUSY_FALLBACK_TEXT" = "Завантаження пробують інший шлях, коли сервери Instagram перевантажені";
 "SETTINGS_WHATS_NEW_FIX_EYE_EARLIER_STORIES_TEXT" = "Кнопка з оком позначає переглянутими й попередні історії";
 "SETTINGS_WHATS_NEW_FIX_FOLLOW_BADGE_ACCOUNTS_TEXT" = "Позначка «стежить за вами» лишається правильною між акаунтами";
+"SETTINGS_WHATS_NEW_FIX_HIDDEN_TABS_SWIPE_TEXT" = "Приховані вкладки залишаються прихованими під час гортання між вкладками";
 "SETTINGS_WHATS_NEW_FIX_INLINE_SUGGESTED_REELS_TEXT" = "Приховування рекомендованих Reels охоплює нові рекомендації у стрічці";
-"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_450_COMPATIBILITY_TEXT" = "Сумісність з Instagram v450.1.0";
+"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_451_COMPATIBILITY_TEXT" = "Сумісність з Instagram v451.0.0";
 "SETTINGS_WHATS_NEW_FIX_NATIVE_ALERT_STYLE_TEXT" = "Сповіщення виглядають як діалоги самого Instagram";
 "SETTINGS_WHATS_NEW_FIX_PREVIEW_TRIM_QUALITY_TEXT" = "Обрізання з попереднього перегляду використовує вашу якість завантаження";
 "SETTINGS_WHATS_NEW_GLASS_APP_ICON_TEXT" = "Нова іконка Sparkle у стилі Liquid Glass";

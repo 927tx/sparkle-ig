@@ -2123,8 +2123,9 @@
 "SETTINGS_WHATS_NEW_FIX_DOWNLOAD_BUSY_FALLBACK_TEXT" = "Unduhan mencoba jalur lain saat server Instagram sibuk";
 "SETTINGS_WHATS_NEW_FIX_EYE_EARLIER_STORIES_TEXT" = "Tombol mata juga menandai cerita sebelumnya sebagai dilihat";
 "SETTINGS_WHATS_NEW_FIX_FOLLOW_BADGE_ACCOUNTS_TEXT" = "Lencana mengikuti Anda tetap benar di semua akun";
+"SETTINGS_WHATS_NEW_FIX_HIDDEN_TABS_SWIPE_TEXT" = "Tab tersembunyi tetap tersembunyi saat menggeser antar tab";
 "SETTINGS_WHATS_NEW_FIX_INLINE_SUGGESTED_REELS_TEXT" = "Sembunyikan Reels yang Disarankan menangkap saran baru di dalam feed";
-"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_450_COMPATIBILITY_TEXT" = "Kompatibel dengan Instagram v450.1.0";
+"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_451_COMPATIBILITY_TEXT" = "Kompatibel dengan Instagram v451.0.0";
 "SETTINGS_WHATS_NEW_FIX_NATIVE_ALERT_STYLE_TEXT" = "Peringatan tampak seperti dialog bawaan Instagram";
 "SETTINGS_WHATS_NEW_FIX_PREVIEW_TRIM_QUALITY_TEXT" = "Memangkas dari pratinjau memakai kualitas unduhan Anda";
 "SETTINGS_WHATS_NEW_GLASS_APP_ICON_TEXT" = "Ikon aplikasi Liquid Glass baru untuk Sparkle";

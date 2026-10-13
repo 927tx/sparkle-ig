@@ -2123,8 +2123,9 @@
 "SETTINGS_WHATS_NEW_FIX_DOWNLOAD_BUSY_FALLBACK_TEXT" = "Instagram sunucuları meşgulken indirmeler başka bir yol dener";
 "SETTINGS_WHATS_NEW_FIX_EYE_EARLIER_STORIES_TEXT" = "Göz düğmesi önceki hikâyeleri de görüldü olarak işaretler";
 "SETTINGS_WHATS_NEW_FIX_FOLLOW_BADGE_ACCOUNTS_TEXT" = "\"Seni takip ediyor\" rozeti hesaplar arasında doğru kalır";
+"SETTINGS_WHATS_NEW_FIX_HIDDEN_TABS_SWIPE_TEXT" = "Gizlenen sekmeler, sekmeler arasında kaydırırken de gizli kalır";
 "SETTINGS_WHATS_NEW_FIX_INLINE_SUGGESTED_REELS_TEXT" = "Önerilen Reels'i Gizle, akıştaki yeni önerileri de yakalar";
-"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_450_COMPATIBILITY_TEXT" = "Instagram v450.1.0 ile uyumluluk";
+"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_451_COMPATIBILITY_TEXT" = "Instagram v451.0.0 ile uyumluluk";
 "SETTINGS_WHATS_NEW_FIX_NATIVE_ALERT_STYLE_TEXT" = "Uyarılar Instagram'ın kendi iletişim kutuları gibi görünür";
 "SETTINGS_WHATS_NEW_FIX_PREVIEW_TRIM_QUALITY_TEXT" = "Önizlemeden kırpma, indirme kalitenizi kullanır";
 "SETTINGS_WHATS_NEW_GLASS_APP_ICON_TEXT" = "Sparkle için yeni bir Liquid Glass uygulama simgesi";

@@ -2123,8 +2123,9 @@
 "SETTINGS_WHATS_NEW_FIX_DOWNLOAD_BUSY_FALLBACK_TEXT" = "Instagram के सर्वर व्यस्त होने पर डाउनलोड दूसरा रास्ता आज़माते हैं";
 "SETTINGS_WHATS_NEW_FIX_EYE_EARLIER_STORIES_TEXT" = "आँख वाला बटन पहले की स्टोरीज़ को भी देखा हुआ चिह्नित करता है";
 "SETTINGS_WHATS_NEW_FIX_FOLLOW_BADGE_ACCOUNTS_TEXT" = "\"आपको फ़ॉलो करता है\" बैज अलग-अलग खातों में सही रहता है";
+"SETTINGS_WHATS_NEW_FIX_HIDDEN_TABS_SWIPE_TEXT" = "टैब के बीच स्वाइप करने पर छिपे हुए टैब छिपे रहते हैं";
 "SETTINGS_WHATS_NEW_FIX_INLINE_SUGGESTED_REELS_TEXT" = "सुझाई गई रील्स छिपाने का विकल्प फ़ीड के नए सुझाव भी पकड़ता है";
-"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_450_COMPATIBILITY_TEXT" = "Instagram v450.1.0 के साथ संगतता";
+"SETTINGS_WHATS_NEW_FIX_INSTAGRAM_451_COMPATIBILITY_TEXT" = "Instagram v451.0.0 के साथ संगतता";
 "SETTINGS_WHATS_NEW_FIX_NATIVE_ALERT_STYLE_TEXT" = "अलर्ट Instagram के अपने डायलॉग जैसे दिखते हैं";
 "SETTINGS_WHATS_NEW_FIX_PREVIEW_TRIM_QUALITY_TEXT" = "प्रीव्यू से ट्रिम करने पर आपकी डाउनलोड क्वालिटी इस्तेमाल होती है";
 "SETTINGS_WHATS_NEW_GLASS_APP_ICON_TEXT" = "Sparkle के लिए नया Liquid Glass ऐप आइकन";

@@ -447,6 +447,8 @@ static NSString *SPKNotificationIconResourceForTone(NSString *iconResource, SPKN
 // the 4K candidate fetch). Weak: it's owned by its slot, and whoever adopts it as a
 // real progress pill clears this so it's no longer dismissed out from under them.
 @property (nonatomic, weak) SPKNotificationPillView *transientProgressPill;
+// The transient pill last told to go away, while it is still animating out.
+@property (nonatomic, weak) SPKNotificationPillView *departingTransientPill;
 - (void)notifyIdentifier:(NSString *)identifier
                    title:(NSString *)title
                 subtitle:(NSString *)subtitle
@@ -842,6 +844,7 @@ static BOOL SPKManualSeenSettingsUIVisible(void) {
     dispatch_block_t dismiss = ^{
         SPKNotificationPillView *pill = self.transientProgressPill;
         self.transientProgressPill = nil;
+        self.departingTransientPill = pill;
         if (pill && pill.superview)
             [pill dismiss];
     };
@@ -857,6 +860,12 @@ static BOOL SPKManualSeenSettingsUIVisible(void) {
     __block SPKNotificationPillView *pill = nil;
     dispatch_block_t create = ^{
         for (SPKNotificationSlot *slot in self.visible) {
+            // A pill on its way out still has a superview, but adopting it would
+            // put the new title on something that vanishes a moment later and
+            // leave the new step with no pill at all. That is what happens when
+            // one preparatory step ends and the next begins in the same pass.
+            if (slot.pill && slot.pill == self.departingTransientPill)
+                continue;
             if (slot.progress && slot.pill && slot.pill.superview) {
                 pill = slot.pill;
                 if (title.length > 0) {

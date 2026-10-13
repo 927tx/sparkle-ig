@@ -137,6 +137,7 @@ typedef NS_ENUM(NSUInteger, SPKPillVisualTone) {
 - (UIColor *)spk_glowColorForTone:(SPKPillVisualTone)tone;
 - (UIColor *)spk_toneColor:(SPKPillVisualTone)tone;
 - (void)spk_updateDynamicWidthForTitle:(NSString *)title subtitle:(NSString *)subtitle hasButton:(BOOL)hasButton;
+- (CGFloat)spk_dynamicHeightForButton:(BOOL)hasButton;
 - (NSString *)spk_progressSubtitleForProgress:(float)progress;
 - (NSString *)spk_progressSubtitleForProgress:(float)progress bytesWritten:(int64_t)bytesWritten totalBytesExpected:(int64_t)totalBytesExpected;
 - (void)spk_applyAutomaticProgressSubtitleIfNeeded;
@@ -667,7 +668,7 @@ typedef NS_ENUM(NSUInteger, SPKPillVisualTone) {
     self.titleLabel.text = SPKL(@"MEDIA_TRIM_TRIM_ENTRY_DOWNLOADING_TEXT");
     self.progressView.progress = 0.0f;
 
-    self.heightConstraint.constant = self.subtitleLabel.hidden ? kDynamicPillHeight : kDynamicTallHeight;
+    self.heightConstraint.constant = [self spk_dynamicHeightForButton:!self.closeButton.hidden];
     [self spk_updateDynamicWidthForTitle:self.titleLabel.text subtitle:self.subtitleLabel.text hasButton:YES];
     self.progressRingLayer.strokeEnd = 0.0;
 
@@ -709,7 +710,8 @@ typedef NS_ENUM(NSUInteger, SPKPillVisualTone) {
     self.subtitleLabel.hidden = (subtitle.length == 0);
     [self updateToastWidthForTitle:self.titleLabel.text subtitle:subtitle];
 
-    self.heightConstraint.constant = self.subtitleLabel.hidden ? kDynamicPillHeight : kDynamicTallHeight;
+    // A toast has no button; the one from a previous progress state is hidden below.
+    self.heightConstraint.constant = [self spk_dynamicHeightForButton:NO];
     [self setProgressVisible:NO];
     [self setCloseButtonVisible:NO];
 
@@ -813,7 +815,7 @@ typedef NS_ENUM(NSUInteger, SPKPillVisualTone) {
 
     self.subtitleLabel.text = subtitle;
     self.subtitleLabel.hidden = (subtitle.length == 0);
-    self.heightConstraint.constant = self.subtitleLabel.hidden ? kDynamicPillHeight : kDynamicTallHeight;
+    self.heightConstraint.constant = [self spk_dynamicHeightForButton:!self.closeButton.hidden];
     [self spk_updateDynamicWidthForTitle:self.titleLabel.text subtitle:subtitle hasButton:!self.closeButton.hidden];
     [self spk_syncInstagramSkin];
 }
@@ -847,7 +849,7 @@ typedef NS_ENUM(NSUInteger, SPKPillVisualTone) {
         [self spk_stopIndeterminateSpin];
         self.usesAutomaticProgressSubtitle = YES;
         [self spk_applyAutomaticProgressSubtitleIfNeeded];
-        self.heightConstraint.constant = self.subtitleLabel.hidden ? kDynamicPillHeight : kDynamicTallHeight;
+        self.heightConstraint.constant = [self spk_dynamicHeightForButton:!self.closeButton.hidden];
         [self spk_updateDynamicWidthForTitle:self.titleLabel.text subtitle:self.subtitleLabel.text hasButton:!self.closeButton.hidden];
         [self spk_syncInstagramSkin];
         [self layoutIfNeeded];
@@ -910,7 +912,7 @@ typedef NS_ENUM(NSUInteger, SPKPillVisualTone) {
         self.titleLabel.text = SPKL(@"MEDIA_TRIM_TRIM_ENTRY_DOWNLOADING_TEXT");
         self.subtitleLabel.text = [self spk_progressSubtitleForProgress:self.currentProgress];
         self.subtitleLabel.hidden = (self.subtitleLabel.text.length == 0);
-        self.heightConstraint.constant = self.subtitleLabel.hidden ? kDynamicPillHeight : kDynamicTallHeight;
+        self.heightConstraint.constant = [self spk_dynamicHeightForButton:!self.closeButton.hidden];
         [self setCloseButtonVisible:YES];
         [self setProgressVisible:YES];
 
@@ -960,7 +962,7 @@ typedef NS_ENUM(NSUInteger, SPKPillVisualTone) {
         self.subtitleLabel.hidden = (self.subtitleLabel.text.length == 0);
     }
 
-    self.heightConstraint.constant = self.subtitleLabel.hidden ? kDynamicPillHeight : kDynamicTallHeight;
+    self.heightConstraint.constant = [self spk_dynamicHeightForButton:!self.closeButton.hidden];
     [self spk_updateDynamicWidthForTitle:self.titleLabel.text subtitle:self.subtitleLabel.text hasButton:YES];
 
     [self setProgressVisible:YES];
@@ -1014,9 +1016,7 @@ typedef NS_ENUM(NSUInteger, SPKPillVisualTone) {
                         [self updateToastWidthForTitle:self.titleLabel.text subtitle:subtitle];
                         [self setCloseButtonVisible:NO];
                         [self setProgressVisible:NO];
-                        self.heightConstraint.constant = self.subtitleLabel.hidden
-                                                             ? kDynamicPillHeight
-                                                             : kDynamicTallHeight;
+                        self.heightConstraint.constant = [self spk_dynamicHeightForButton:!self.closeButton.hidden];
                         [self layoutIfNeeded];
                     }
                     completion:nil];
@@ -1065,9 +1065,7 @@ typedef NS_ENUM(NSUInteger, SPKPillVisualTone) {
                         [self updateToastWidthForTitle:self.titleLabel.text subtitle:resolvedSubtitle];
                         [self setCloseButtonVisible:YES];
                         [self setProgressVisible:NO];
-                        self.heightConstraint.constant = self.subtitleLabel.hidden
-                                                             ? kDynamicPillHeight
-                                                             : kDynamicTallHeight;
+                        self.heightConstraint.constant = [self spk_dynamicHeightForButton:!self.closeButton.hidden];
                         [self layoutIfNeeded];
                     }
                     completion:nil];
@@ -1106,9 +1104,7 @@ typedef NS_ENUM(NSUInteger, SPKPillVisualTone) {
                         [self updateToastWidthForTitle:self.titleLabel.text subtitle:subtitle];
                         [self setCloseButtonVisible:NO];
                         [self setProgressVisible:NO];
-                        self.heightConstraint.constant = self.subtitleLabel.hidden
-                                                             ? kDynamicPillHeight
-                                                             : kDynamicTallHeight;
+                        self.heightConstraint.constant = [self spk_dynamicHeightForButton:!self.closeButton.hidden];
                         [self layoutIfNeeded];
                     }
                     completion:nil];
@@ -1962,6 +1958,38 @@ static UIVisualEffectView *SPKInstagramToastBackgroundEffectView(UIView *toastVi
                                     ? self.traitCollection
                                     : [UITraitCollection traitCollectionWithUserInterfaceStyle:UIUserInterfaceStyleDark];
     return [color resolvedColorWithTraitCollection:traits];
+}
+
+// The pill's height for the text it currently holds. A subtitle too long for one
+// line at the pill's widest wraps onto a second and the pill grows by that line;
+// past two lines it truncates as before. The width follows the text up to its
+// cap, so the subtitle only ever wraps once the pill is already at full width.
+- (CGFloat)spk_dynamicHeightForButton:(BOOL)hasButton {
+    if (self.subtitleLabel.hidden) {
+        self.subtitleLabel.numberOfLines = 1;
+        return kDynamicPillHeight;
+    }
+    // The Instagram style is laid out by Instagram's own toast view.
+    if (self.instagramSkin) {
+        self.subtitleLabel.numberOfLines = 1;
+        return kDynamicTallHeight;
+    }
+
+    UIFont *font = self.subtitleLabel.font ?: [UIFont systemFontOfSize:11.5 weight:UIFontWeightMedium];
+    CGFloat subtitleWidth = ceil([self.subtitleLabel.text ?: @"" boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, font.lineHeight)
+                                                                              options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                                                                           attributes:@{NSFontAttributeName : font}
+                                                                              context:nil]
+                                     .size.width);
+    CGFloat fixedWidth = kHorizontalPad + kIconBadgeSize + 10.0 + kHorizontalPad;
+    if (hasButton)
+        fixedWidth += 24.0 + 13.0 + 10.0;
+    CGFloat screenMaxWidth = MAX(kDynamicMinWidth, CGRectGetWidth(UIScreen.mainScreen.bounds) - 24.0);
+    CGFloat widestText = MIN(kDynamicMaxWidth, screenMaxWidth) - fixedWidth;
+
+    BOOL wraps = subtitleWidth > widestText + 0.5;
+    self.subtitleLabel.numberOfLines = wraps ? 2 : 1;
+    return wraps ? kDynamicTallHeight + ceil(font.lineHeight) : kDynamicTallHeight;
 }
 
 - (void)spk_updateDynamicWidthForTitle:(NSString *)title subtitle:(NSString *)subtitle hasButton:(BOOL)hasButton {

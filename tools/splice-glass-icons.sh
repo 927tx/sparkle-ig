@@ -52,7 +52,10 @@ clang -fobjc-arc -framework Foundation -framework CoreGraphics \
 render_preview() {
     local package="$1" rendition="$2" scale="$3" output="$4"
     "$ictool" "$package" --export-image --output-file "$output" --platform iOS \
-        --rendition "$rendition" --width 72 --height 72 --scale "$scale" >/dev/null
+        --rendition "$rendition" --width 72 --height 72 --scale "$scale" >/dev/null || {
+        echo "splice-glass-icons: ictool could not render $(basename "$package"); the package may need a newer Icon Composer than $(xcodebuild -version 2>/dev/null | head -n 1)" >&2
+        return 1
+    }
 }
 
 # Each preview imageset gets a catalog of its own. Compiled together, actool

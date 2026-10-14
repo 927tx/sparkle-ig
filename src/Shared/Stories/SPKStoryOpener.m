@@ -182,6 +182,15 @@ static const NSUInteger kSPKStoryHighlightListPolls = 15;
 static const NSUInteger kSPKStoryHighlightBatchPolls = 20;
 static const NSUInteger kSPKStoryHighlightProfileLoadPolls = 3;
 
+// Bumped by every new search and by cancelling one. Each step of a search
+// carries the generation it started under and stops once that is no longer the
+// current one, so a cancelled search loads nothing further and never completes.
+static NSUInteger spk_highlightSearchGeneration;
+
+static BOOL SPKStoryHighlightSearchIsCurrent(NSUInteger generation) {
+    return generation == spk_highlightSearchGeneration;
+}
+
 static NSString *SPKStoryBareMediaPK(id value) {
     NSString *string = [value isKindOfClass:NSString.class] ? value : ([value respondsToSelector:@selector(stringValue)] ? [value stringValue] : nil);
     return [string componentsSeparatedByString:@"_"].firstObject;
@@ -245,18 +254,21 @@ static BOOL SPKStoryRequestHighlightLoad(id session, NSArray<NSString *> *reelPK
     return NO;
 }
 
-static void SPKStorySearchHighlights(id session, NSArray *highlights, NSString *mediaPK, void (^completion)(NSString *reelPK, BOOL searched));
+static void SPKStorySearchHighlights(id session, NSArray *highlights, NSString *mediaPK, NSUInteger generation,
+                                     void (^completion)(NSString *reelPK, BOOL searched));
 
 // Waits for the reels of one batch to fill in, then looks again.
 static void SPKStoryAwaitHighlightBatch(id session, NSArray *highlights, NSArray *batch, NSUInteger pollsLeft, NSString *mediaPK,
-                                        void (^completion)(NSString *reelPK, BOOL searched)) {
+                                        NSUInteger generation, void (^completion)(NSString *reelPK, BOOL searched)) {
+    if (!SPKStoryHighlightSearchIsCurrent(generation))
+        return;
     NSUInteger loaded = 0;
     for (id reel in batch) {
         if (SPKStoryReelMediaIDs(reel).count > 0)
             loaded++;
     }
     if (loaded == batch.count) {
-        SPKStorySearchHighlights(session, highlights, mediaPK, completion);
+        SPKStorySearchHighlights(session, highlights, mediaPK, generation, completion);
         return;
     }
     if (pollsLeft == 0) {
@@ -266,14 +278,17 @@ static void SPKStoryAwaitHighlightBatch(id session, NSArray *highlights, NSArray
         return;
     }
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kSPKStoryHighlightPollInterval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        SPKStoryAwaitHighlightBatch(session, highlights, batch, pollsLeft - 1, mediaPK, completion);
+        SPKStoryAwaitHighlightBatch(session, highlights, batch, pollsLeft - 1, mediaPK, generation, completion);
     });
 }
 
 // One round: check everything loaded so far, then load the next few that are
 // still empty. What is empty is worked out afresh each round, so a highlight
 // Instagram loaded by itself in the meantime is never asked for again.
-static void SPKStorySearchHighlights(id session, NSArray *highlights, NSString *mediaPK, void (^completion)(NSString *reelPK, BOOL searched)) {
+static void SPKStorySearchHighlights(id session, NSArray *highlights, NSString *mediaPK, NSUInteger generation,
+                                     void (^completion)(NSString *reelPK, BOOL searched)) {
+    if (!SPKStoryHighlightSearchIsCurrent(generation))
+        return;
     NSMutableArray *batch = [NSMutableArray array];
     NSMutableArray<NSString *> *reelPKs = [NSMutableArray array];
     for (id reel in highlights) {
@@ -295,13 +310,15 @@ static void SPKStorySearchHighlights(id session, NSArray *highlights, NSString *
         return;
     }
     SPKLog(@"Stories", @"[Sparkle StoryOpen] Loading %lu highlight(s)", (unsigned long)batch.count);
-    SPKStoryAwaitHighlightBatch(session, highlights, batch, kSPKStoryHighlightBatchPolls, mediaPK, completion);
+    SPKStoryAwaitHighlightBatch(session, highlights, batch, kSPKStoryHighlightBatchPolls, mediaPK, generation, completion);
 }
 
 // The profile loads its first few highlights by itself right after the list
 // arrives. Starting the search before that lands would ask for the same
 // highlights a second time, so it gets a short head start.
-static void SPKStoryAwaitProfileLoad(NSArray *highlights, NSUInteger pollsLeft, void (^ready)(void)) {
+static void SPKStoryAwaitProfileLoad(NSArray *highlights, NSUInteger pollsLeft, NSUInteger generation, void (^ready)(void)) {
+    if (!SPKStoryHighlightSearchIsCurrent(generation))
+        return;
     BOOL anyLoaded = NO;
     for (id reel in highlights) {
         if (SPKStoryReelMediaIDs(reel).count > 0) {
@@ -314,7 +331,7 @@ static void SPKStoryAwaitProfileLoad(NSArray *highlights, NSUInteger pollsLeft, 
         return;
     }
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kSPKStoryHighlightPollInterval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        SPKStoryAwaitProfileLoad(highlights, pollsLeft - 1, ready);
+        SPKStoryAwaitProfileLoad(highlights, pollsLeft - 1, generation, ready);
     });
 }
 
@@ -331,8 +348,10 @@ static BOOL SPKStoryOpenerFlag(id target, NSString *selectorName) {
 // case an empty list means the account has no highlights. Without a tracked
 // profile list (feature hooks off) the story map stands in, and since that can be
 // a stale fragment, nothing found there is treated as a real "no".
-static void SPKStoryAwaitHighlightList(id session, NSString *userPK, NSUInteger pollsLeft, NSInteger previousCount,
+static void SPKStoryAwaitHighlightList(id session, NSString *userPK, NSUInteger pollsLeft, NSInteger previousCount, NSUInteger generation,
                                        void (^ready)(NSArray *highlights, BOOL authoritative)) {
+    if (!SPKStoryHighlightSearchIsCurrent(generation))
+        return;
     NSArray *trays = SPKStoryHighlightTraysForUser(userPK);
     NSArray *reels = nil;
     BOOL settled = trays.count > 0;
@@ -360,7 +379,7 @@ static void SPKStoryAwaitHighlightList(id session, NSString *userPK, NSUInteger 
         return;
     }
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kSPKStoryHighlightPollInterval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        SPKStoryAwaitHighlightList(session, userPK, pollsLeft - 1, settled ? (NSInteger)reels.count : -1, ready);
+        SPKStoryAwaitHighlightList(session, userPK, pollsLeft - 1, settled ? (NSInteger)reels.count : -1, generation, ready);
     });
 }
 
@@ -374,7 +393,8 @@ void SPKStoryFindHighlightContainingMedia(NSString *userPK, NSString *mediaPK, v
         return;
     }
 
-    SPKStoryAwaitHighlightList(session, userPK, kSPKStoryHighlightListPolls, -1, ^(NSArray *highlights, BOOL authoritative) {
+    NSUInteger generation = ++spk_highlightSearchGeneration;
+    SPKStoryAwaitHighlightList(session, userPK, kSPKStoryHighlightListPolls, -1, generation, ^(NSArray *highlights, BOOL authoritative) {
         if (highlights.count == 0) {
             // The profile's own empty list is an account without highlights. Any
             // other empty list only means it never arrived.
@@ -385,13 +405,13 @@ void SPKStoryFindHighlightContainingMedia(NSString *userPK, NSString *mediaPK, v
 
         if (highlights.count > kSPKStoryHighlightSearchLimit)
             highlights = [highlights subarrayWithRange:NSMakeRange(0, kSPKStoryHighlightSearchLimit)];
-        SPKStoryAwaitProfileLoad(highlights, kSPKStoryHighlightProfileLoadPolls, ^{
+        SPKStoryAwaitProfileLoad(highlights, kSPKStoryHighlightProfileLoadPolls, generation, ^{
             NSUInteger loaded = 0;
             for (id reel in highlights)
                 loaded += SPKStoryReelMediaIDs(reel).count > 0 ? 1 : 0;
             SPKLog(@"Stories", @"[Sparkle StoryOpen] Searching user=%@ for media=%@: %lu highlight(s) %@, %lu already loaded",
                    userPK, bareMediaPK, (unsigned long)highlights.count, authoritative ? @"on the profile" : @"in the story map", (unsigned long)loaded);
-            SPKStorySearchHighlights(session, highlights, bareMediaPK, ^(NSString *reelPK, BOOL searched) {
+            SPKStorySearchHighlights(session, highlights, bareMediaPK, generation, ^(NSString *reelPK, BOOL searched) {
                 // A fragment of the list cannot prove the story is nowhere.
                 searched = searched && (reelPK || authoritative);
                 SPKLog(@"Stories", @"[Sparkle StoryOpen] media=%@ %@", bareMediaPK,
@@ -424,13 +444,15 @@ static BOOL SPKStoryReelHasLoadedItem(id reel, NSString *mediaPK) {
     return NO;
 }
 
-static void SPKStoryAwaitLoadedItem(id reel, NSString *mediaPK, NSUInteger pollsLeft, void (^ready)(void)) {
+static void SPKStoryAwaitLoadedItem(id reel, NSString *mediaPK, NSUInteger pollsLeft, NSUInteger generation, void (^ready)(void)) {
+    if (!SPKStoryHighlightSearchIsCurrent(generation))
+        return;
     if (pollsLeft == 0 || SPKStoryReelHasLoadedItem(reel, mediaPK)) {
         ready();
         return;
     }
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kSPKStoryHighlightPollInterval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        SPKStoryAwaitLoadedItem(reel, mediaPK, pollsLeft - 1, ready);
+        SPKStoryAwaitLoadedItem(reel, mediaPK, pollsLeft - 1, generation, ready);
     });
 }
 
@@ -439,7 +461,7 @@ static void SPKStoryAwaitLoadedItem(id reel, NSString *mediaPK, NSUInteger polls
 // does not fetch a reel that already has some, so a story further in would open
 // the highlight from the beginning. The rest of that one highlight is loaded
 // first when the wanted story is not among the ones in hand.
-static void SPKStoryEnsureStoryLoaded(NSString *reelPK, NSString *mediaPK, void (^ready)(void)) {
+static void SPKStoryEnsureStoryLoaded(NSString *reelPK, NSString *mediaPK, NSUInteger generation, void (^ready)(void)) {
     id session = [SPKUtils activeUserSession];
     id storyMap = SPKStoryOpenerObject(session, @"storyMap");
     SEL stored = NSSelectorFromString(@"storedStoryReelWithPK:");
@@ -451,7 +473,7 @@ static void SPKStoryEnsureStoryLoaded(NSString *reelPK, NSString *mediaPK, void 
         return;
     }
     SPKLog(@"Stories", @"[Sparkle StoryOpen] media=%@ is past the first page of %@, loading the rest", bareMediaPK, reelPK);
-    SPKStoryAwaitLoadedItem(reel, bareMediaPK, kSPKStoryHighlightBatchPolls, ready);
+    SPKStoryAwaitLoadedItem(reel, bareMediaPK, kSPKStoryHighlightBatchPolls, generation, ready);
 }
 
 // Instagram media PKs carry their creation time: the bits above the low 23 are
@@ -549,12 +571,20 @@ void SPKStoryOpenExpiredStory(NSString *userPK, NSString *mediaPK, UIViewControl
 
     // The profile is already on screen and nothing else moves until the search
     // lands, which is a load per three highlights.
-    [[SPKNotificationCenter shared] beginTransientProgressWithTitle:SPKL(@"STORIES_STORY_OPENER_SEARCHING_HIGHLIGHTS_TEXT") onCancel:nil];
+    // A pill with a cancel handler leaves dismissing itself to that handler.
+    // Cancelling ends the search where it is: nothing more is loaded, no viewer
+    // opens, and no miss is remembered.
+    [[SPKNotificationCenter shared] beginTransientProgressWithTitle:SPKL(@"STORIES_STORY_OPENER_SEARCHING_HIGHLIGHTS_TEXT")
+                                                           onCancel:^{
+                                                               spk_highlightSearchGeneration++;
+                                                               SPKLog(@"Stories", @"[Sparkle StoryOpen] Highlight search for media=%@ cancelled", missKey);
+                                                               [[SPKNotificationCenter shared] dismissTransientProgressPill];
+                                                           }];
     __weak UIViewController *weakPresenter = presenter;
     SPKStoryFindHighlightContainingMedia(userPK, mediaPK, ^(NSString *highlightPK, BOOL searched) {
         if (highlightPK.length > 0) {
             // The pill stays up until the viewer is actually requested.
-            SPKStoryEnsureStoryLoaded(highlightPK, mediaPK, ^{
+            SPKStoryEnsureStoryLoaded(highlightPK, mediaPK, spk_highlightSearchGeneration, ^{
                 [[SPKNotificationCenter shared] dismissTransientProgressPill];
                 UIViewController *livePresenter = weakPresenter;
                 if (livePresenter.view.window)

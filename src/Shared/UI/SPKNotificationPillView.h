@@ -55,6 +55,10 @@ typedef NS_ENUM(NSUInteger, SPKNotificationTone) {
 /// Called when user taps the close button while a progress operation is running.
 @property (nonatomic, copy) void (^onCancel)(void);
 
+/// NO for work that cannot stop partway: a running progress pill then shows no
+/// close button. Defaults to YES, and a pill adopted by a new flow is reset to YES.
+@property (nonatomic) BOOL cancellable;
+
 /// Called when user taps the pill body to retry while in error state.
 @property (nonatomic, copy) void (^onRetry)(void);
 

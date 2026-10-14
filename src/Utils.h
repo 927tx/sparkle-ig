@@ -169,7 +169,8 @@ FOUNDATION_EXPORT Class _Nullable SPKResolveIGClass(NSString *qualified, NSStrin
 + (BOOL)openInstagramProfileForUser:(nullable id)user pk:(nullable NSString *)pk username:(nullable NSString *)username fromViewController:(nullable UIViewController *)presentingVC;
 // Username -> pk, memoised for the session and showing the transient progress
 // pill while it is in flight. Completion runs on the main thread, with nil when
-// the username could not be resolved. Exposed so a caller that can PERSIST the
+// the username could not be resolved, and not at all when the user cancels the
+// pill. Exposed so a caller that can PERSIST the
 // answer (the gallery) never has to look it up twice.
 //
 // fullName is the display name the handle carries RIGHT NOW, so a caller holding

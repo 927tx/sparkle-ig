@@ -993,6 +993,7 @@ static NSString *SPKTransferArchiveFilename(BOOL includeSettings, BOOL includeGa
     [fm createDirectoryAtPath:bundleRoot withIntermediateDirectories:YES attributes:nil error:nil];
 
     SPKNotificationPillView *pill = SPKNotifyProgress(kSPKNotificationSettingsExport, SPKL(@"SETTINGS_TRANSFER_EXPORT_PROGRESS_TITLE"), nil);
+    pill.cancellable = NO;
     void (^setProgress)(float, NSString *) = ^(float fraction, NSString *subtitle) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [pill setProgress:fraction animated:YES];
@@ -1164,8 +1165,10 @@ static NSString *SPKTransferArchiveFilename(BOOL includeSettings, BOOL includeGa
 
     BOOL scoped = [url startAccessingSecurityScopedResource];
 
-    // Progress pill so unzip + the heavy merges never block the UI.
+    // Progress pill so unzip + the heavy merges never block the UI. Stopping
+    // partway would leave settings half merged, so it offers no cancel.
     SPKNotificationPillView *pill = SPKNotifyProgress(kSPKNotificationSettingsImport, SPKL(@"GALLERY_IMPORT_IMPORTING_PROGRESS"), nil);
+    pill.cancellable = NO;
     void (^setProgress)(float, NSString *) = ^(float fraction, NSString *sub) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [pill setProgress:fraction animated:YES];

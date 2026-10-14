@@ -874,6 +874,7 @@ static BOOL SPKManualSeenSettingsUIVisible(void) {
                 if (onCancel) {
                     pill.onCancel = onCancel;
                 }
+                pill.cancellable = YES;
                 // Reusing a live progress pill means a real flow now owns it (either
                 // it was already real, or a transient pill just morphed into one), so
                 // it must no longer be dismissed as transient.

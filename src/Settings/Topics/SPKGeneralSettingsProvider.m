@@ -135,6 +135,7 @@ static SPKSetting *SPKTappableTextLinksSetting(void) {
                                                                  // The clear walks every cached file, so it can take a few seconds:
                                                                  // show it as unmeasurable work until the completion lands.
                                                                  pill = SPKNotifyProgress(kSPKNotificationSettingsClearCache, SPKL(@"SETTINGS_GENERAL_CACHE_CLEARING_PROGRESS"), nil);
+                                                                 pill.cancellable = NO;
                                                                  [pill setProgressIndeterminate:YES];
                                                              }];
     clearCacheSetting.tintColor = [SPKUtils SPKColor_InstagramDestructive];

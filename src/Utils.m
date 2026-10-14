@@ -2382,16 +2382,24 @@ static void SPKSetResolvedPKForUsername(NSString *username, NSString *pk) {
 
     // Nothing changes on screen until this lands, so say that something is
     // happening. Transient, like the 4K candidate fetch: preparatory work before
-    // the real flow, cleared on both outcomes.
-    [[SPKNotificationCenter shared] beginTransientProgressWithTitle:progressTitle onCancel:nil];
+    // the real flow, cleared on both outcomes. Cancelling drops the completion,
+    // so nothing opens once the answer lands; the answer is still memoised.
+    __block BOOL cancelled = NO;
+    [[SPKNotificationCenter shared] beginTransientProgressWithTitle:progressTitle
+                                                           onCancel:^{
+                                                               cancelled = YES;
+                                                               [[SPKNotificationCenter shared] dismissTransientProgressPill];
+                                                           }];
     [SPKInstagramAPI resolveUserForUsername:clean
                                  completion:^(NSDictionary *userDict, NSError *error) {
                                      NSString *resolvedPK = [userDict[@"pk"] description];
                                      NSString *resolvedName = [userDict[@"full_name"] description];
                                      dispatch_async(dispatch_get_main_queue(), ^{
-                                         [[SPKNotificationCenter shared] dismissTransientProgressPill];
                                          if (resolvedPK.length > 0)
                                              SPKSetResolvedPKForUsername(clean, resolvedPK);
+                                         if (cancelled)
+                                             return;
+                                         [[SPKNotificationCenter shared] dismissTransientProgressPill];
                                          if (completion)
                                              completion(resolvedPK.length > 0 ? resolvedPK : nil,
                                                         resolvedName.length > 0 ? resolvedName : nil);

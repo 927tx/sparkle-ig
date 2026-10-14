@@ -256,12 +256,22 @@ static NSURL *SPKInstantsImportPickedVideo(NSURL *sourceURL) {
 /// The picked file is the untouched original, which for a long 4K clip is large
 /// enough that copying it on the main thread would visibly hang. Copy on a work
 /// queue behind a progress pill and hand back the local URL on the main thread.
+/// Cancelling lets the copy finish, then deletes it and skips `completion`.
 static void SPKInstantsImportPickedVideoAsync(NSURL *sourceURL, void (^completion)(NSURL *_Nullable)) {
-    SPKNotificationPillView *pill = SPKNotifyProgress(kSPKNotificationInstantsUpload, SPKL(@"INSTANTS_INSTANTS_GALLERY_UPLOAD_IMPORTING_VIDEO_TEXT"), nil);
+    __block BOOL cancelled = NO;
+    __block SPKNotificationPillView *pill = SPKNotifyProgress(kSPKNotificationInstantsUpload, SPKL(@"INSTANTS_INSTANTS_GALLERY_UPLOAD_IMPORTING_VIDEO_TEXT"), ^{
+        cancelled = YES;
+        [pill dismiss];
+    });
     [pill setProgressIndeterminate:YES];
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
         NSURL *localURL = SPKInstantsImportPickedVideo(sourceURL);
         dispatch_async(dispatch_get_main_queue(), ^{
+            if (cancelled) {
+                if (localURL)
+                    [[NSFileManager defaultManager] removeItemAtURL:localURL error:nil];
+                return;
+            }
             if (localURL) {
                 [pill dismiss];
             } else {

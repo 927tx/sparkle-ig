@@ -195,6 +195,7 @@ typedef NS_ENUM(NSUInteger, SPKPillVisualTone) {
     if (!self)
         return nil;
 
+    _cancellable = YES;
     self.layer.cornerRadius = kPillCorner;
     self.clipsToBounds = YES;
     self.layer.cornerCurve = kCACornerCurveContinuous;
@@ -668,12 +669,12 @@ typedef NS_ENUM(NSUInteger, SPKPillVisualTone) {
     self.titleLabel.text = SPKL(@"MEDIA_TRIM_TRIM_ENTRY_DOWNLOADING_TEXT");
     self.progressView.progress = 0.0f;
 
-    self.heightConstraint.constant = [self spk_dynamicHeightForButton:!self.closeButton.hidden];
-    [self spk_updateDynamicWidthForTitle:self.titleLabel.text subtitle:self.subtitleLabel.text hasButton:YES];
+    [self setCloseButtonVisible:self.cancellable];
+    self.heightConstraint.constant = [self spk_dynamicHeightForButton:self.cancellable];
+    [self spk_updateDynamicWidthForTitle:self.titleLabel.text subtitle:self.subtitleLabel.text hasButton:self.cancellable];
     self.progressRingLayer.strokeEnd = 0.0;
 
     [self setProgressVisible:YES];
-    [self setCloseButtonVisible:YES];
 
     [self spk_applyProgressModeInfoIcon];
     [self applyCancelButtonStyle];
@@ -912,8 +913,8 @@ typedef NS_ENUM(NSUInteger, SPKPillVisualTone) {
         self.titleLabel.text = SPKL(@"MEDIA_TRIM_TRIM_ENTRY_DOWNLOADING_TEXT");
         self.subtitleLabel.text = [self spk_progressSubtitleForProgress:self.currentProgress];
         self.subtitleLabel.hidden = (self.subtitleLabel.text.length == 0);
-        self.heightConstraint.constant = [self spk_dynamicHeightForButton:!self.closeButton.hidden];
-        [self setCloseButtonVisible:YES];
+        [self setCloseButtonVisible:self.cancellable];
+        self.heightConstraint.constant = [self spk_dynamicHeightForButton:self.cancellable];
         [self setProgressVisible:YES];
 
         [self spk_applyProgressModeInfoIcon];
@@ -962,11 +963,11 @@ typedef NS_ENUM(NSUInteger, SPKPillVisualTone) {
         self.subtitleLabel.hidden = (self.subtitleLabel.text.length == 0);
     }
 
-    self.heightConstraint.constant = [self spk_dynamicHeightForButton:!self.closeButton.hidden];
-    [self spk_updateDynamicWidthForTitle:self.titleLabel.text subtitle:self.subtitleLabel.text hasButton:YES];
+    [self setCloseButtonVisible:self.cancellable];
+    self.heightConstraint.constant = [self spk_dynamicHeightForButton:self.cancellable];
+    [self spk_updateDynamicWidthForTitle:self.titleLabel.text subtitle:self.subtitleLabel.text hasButton:self.cancellable];
 
     [self setProgressVisible:YES];
-    [self setCloseButtonVisible:YES];
     [self spk_applyProgressModeInfoIcon];
     [self applyTone:SPKPillVisualToneInfo animated:YES];
     [self applyCancelButtonStyle];
@@ -1235,12 +1236,28 @@ typedef NS_ENUM(NSUInteger, SPKPillVisualTone) {
         return;
     }
 
+    if (!self.isCompleted && !self.cancellable)
+        return;
+
     if (!self.isCompleted && self.onCancel) {
         self.onCancel();
         return;
     }
 
     [self dismissWithCompletion:nil];
+}
+
+- (void)setCancellable:(BOOL)cancellable {
+    if (_cancellable == cancellable)
+        return;
+    _cancellable = cancellable;
+    if (self.mode != SPKNotificationPillModeProgress || self.isCompleted || self.isErrorState)
+        return;
+    [self setCloseButtonVisible:cancellable];
+    self.heightConstraint.constant = [self spk_dynamicHeightForButton:cancellable];
+    [self spk_updateDynamicWidthForTitle:self.titleLabel.text subtitle:self.subtitleLabel.hidden ? nil : self.subtitleLabel.text hasButton:cancellable];
+    [self spk_syncInstagramSkin];
+    [self layoutIfNeeded];
 }
 
 #pragma mark - Instagram Style
@@ -1552,8 +1569,9 @@ static UIUserInterfaceStyle SPKInstagramToastStyleForAppStyle(UIUserInterfaceSty
         subtitle = SPKInstagramStableLayoutText(subtitle);
     }
     self.instagramLiveSubtitleText = liveSubtitle;
-    // Stands in for the pill's close button, which a running pill always shows.
-    NSString *buttonText = running ? SPKL(@"ALERT_ACTION_CANCEL") : nil;
+    // Stands in for the pill's close button, which a running pill shows unless
+    // its work cannot be cancelled.
+    NSString *buttonText = running && self.cancellable ? SPKL(@"ALERT_ACTION_CANCEL") : nil;
 
 
     NSString *(^signatureForStyle)(UIUserInterfaceStyle) = ^NSString *(UIUserInterfaceStyle forStyle) {

@@ -2639,8 +2639,15 @@ static void SPKPerformBatchDownloadWithQualityPrompt(NSArray<SPKResolvedMediaEnt
         if ([effectiveQuality isEqualToString:@"max"] && [SPKUtils getBoolPref:@"downloads_fetch_4k_images"]) {
             NSString *topPK = SPKMediaPKForMediaObject(media);
             if (topPK.length > 0 && ![SPKMediaQualityManager hasWebPhotoCandidatesFetchedForPK:topPK]) {
+                // Cancelling drops the download that was waiting on the fetch;
+                // the candidates are still cached for the next attempt.
+                __block BOOL cancelled = NO;
                 if (SPKNotificationIsEnabled(identifier)) {
-                    [[SPKNotificationCenter shared] beginTransientProgressWithTitle:SPKL(@"ACTION_BUTTON_ACTION_BUTTON_CORE_FETCHING_4K_CANDIDATES_TEXT") onCancel:nil];
+                    [[SPKNotificationCenter shared] beginTransientProgressWithTitle:SPKL(@"ACTION_BUTTON_ACTION_BUTTON_CORE_FETCHING_4K_CANDIDATES_TEXT")
+                                                                           onCancel:^{
+                                                                               cancelled = YES;
+                                                                               [[SPKNotificationCenter shared] dismissTransientProgressPill];
+                                                                           }];
                 }
                 [SPKInstagramAPI fetchWebMediaInfoForPK:topPK completion:^(NSDictionary *response, NSError *error) {
                     [SPKMediaQualityManager markWebPhotoCandidatesFetchedForPK:topPK];
@@ -2648,7 +2655,8 @@ static void SPKPerformBatchDownloadWithQualityPrompt(NSArray<SPKResolvedMediaEnt
                         [SPKMediaQualityManager cacheWebCandidatesFromResponse:response];
                     }
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        startDownload();
+                        if (!cancelled)
+                            startDownload();
                     });
                 }];
                 return;
@@ -3369,11 +3377,21 @@ BOOL SPKExecuteActionIdentifier(NSString *identifier, SPKActionButtonContext *co
     if (SPKIsDownloadOrCopyAction(identifier) && shouldFetch4K) {
         NSString *topPK = SPKMediaPKForMediaObject(media);
         if (topPK.length > 0 && ![SPKMediaQualityManager hasWebPhotoCandidatesFetchedForPK:topPK]) {
-            if (isDefaultTap && !SPKActionIdentifierOpensPreview(identifier)) {
+            BOOL pausedPlayback = isDefaultTap && !SPKActionIdentifierOpensPreview(identifier);
+            if (pausedPlayback) {
                 SPKPausePlaybackForPreviewContext(context);
             }
+            // Cancelling drops the action that was waiting on the fetch; the
+            // candidates are still cached for the next attempt.
+            __block BOOL cancelled = NO;
             if (SPKNotificationIsEnabled(identifier)) {
-                [[SPKNotificationCenter shared] beginTransientProgressWithTitle:SPKL(@"ACTION_BUTTON_ACTION_BUTTON_CORE_FETCHING_4K_CANDIDATES_TEXT") onCancel:nil];
+                [[SPKNotificationCenter shared] beginTransientProgressWithTitle:SPKL(@"ACTION_BUTTON_ACTION_BUTTON_CORE_FETCHING_4K_CANDIDATES_TEXT")
+                                                                       onCancel:^{
+                                                                           cancelled = YES;
+                                                                           [[SPKNotificationCenter shared] dismissTransientProgressPill];
+                                                                           if (pausedPlayback)
+                                                                               SPKResumePlaybackForPreviewContext(context);
+                                                                       }];
             }
             [SPKInstagramAPI fetchWebMediaInfoForPK:topPK completion:^(NSDictionary *response, NSError *error) {
                 [SPKMediaQualityManager markWebPhotoCandidatesFetchedForPK:topPK];
@@ -3381,7 +3399,8 @@ BOOL SPKExecuteActionIdentifier(NSString *identifier, SPKActionButtonContext *co
                     [SPKMediaQualityManager cacheWebCandidatesFromResponse:response];
                 }
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    SPKExecuteActionIdentifier(identifier, context, isDefaultTap);
+                    if (!cancelled)
+                        SPKExecuteActionIdentifier(identifier, context, isDefaultTap);
                 });
             }];
             return YES;

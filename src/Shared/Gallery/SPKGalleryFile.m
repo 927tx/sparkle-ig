@@ -919,8 +919,23 @@ NSString *SPKFileNameForMedia(NSURL *fileURL,
     return rel;
 }
 
+- (BOOL)isFromHighlight {
+    if (self.source != SPKGallerySourceStories || self.sourceMediaURLString.length == 0)
+        return NO;
+    // A highlight's share link is /s/<token>/; a live story's is /stories/<user>/<pk>/.
+    return [[NSURL URLWithString:self.sourceMediaURLString].path.lowercaseString hasPrefix:@"/s/"];
+}
+
 - (NSString *)sourceLabel {
+    if ([self isFromHighlight])
+        return SPKL(@"GALLERY_GALLERY_FILE_SOURCE_HIGHLIGHTS_TEXT");
     return [SPKGalleryFile labelForSource:(SPKGallerySource)self.source];
+}
+
+- (NSString *)sourceSymbolName {
+    if ([self isFromHighlight])
+        return @"highlights_filled";
+    return [SPKGalleryFile symbolNameForSource:(SPKGallerySource)self.source];
 }
 
 - (NSString *)listPrimaryTitle {

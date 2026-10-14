@@ -1814,6 +1814,26 @@ static CGPoint SPKCenterForBounds(CGRect bounds) {
         }
     }
 
+    // An expanded Instagram photo goes through the Edit & Save entry, which picks the
+    // source by the photo quality preference (asking when it is Always Ask) and only
+    // reuses the on-screen bitmap when that choice is the file already displayed.
+    if (!fromGallery && item.sourceMediaObject && item.fileURL && !item.fileURL.isFileURL) {
+        __weak typeof(self) weakSelf = self;
+        if ([self beginFetching4KCandidatesForItem:item
+                                        identifier:kSPKActionEditSave
+                                             retry:^{
+                                                 [weakSelf editCurrentItem];
+                                             }]) {
+            return;
+        }
+        [SPKPhotoEditEntry beginEditAndSaveForMediaObject:item.sourceMediaObject
+                                                 photoURL:item.fileURL
+                                           displayedImage:source
+                                                 metadata:item.galleryMetadata
+                                                presenter:self];
+        return;
+    }
+
     if (!source) {
         if (!fromGallery) {
             [SPKPhotoEditEntry beginEditAndSaveForMediaObject:item.sourceMediaObject
@@ -2631,7 +2651,7 @@ static CGPoint SPKCenterForBounds(CGRect bounds) {
     if ([SPKMediaQualityManager hasWebPhotoCandidatesFetchedForPK:mediaPK])
         return NO;
 
-    if (identifier.length > 0 && SPKNotificationIsEnabled(identifier)) {
+    if (identifier.length > 0 && SPKActionShowsCandidateFetchPill(identifier)) {
         [[SPKNotificationCenter shared] beginTransientProgressWithTitle:SPKL(@"ACTION_BUTTON_ACTION_BUTTON_CORE_FETCHING_4K_CANDIDATES_TEXT")
                                                                onCancel:nil];
     }

@@ -3304,8 +3304,15 @@ static BOOL SPKExecuteStoryMentionsSheetAction(SPKActionButtonContext *context) 
     return YES;
 }
 
-static BOOL SPKIsDownloadOrCopyAction(NSString *identifier) {
+BOOL SPKActionShowsCandidateFetchPill(NSString *identifier) {
+    return [identifier isEqualToString:kSPKActionEditSave] || SPKNotificationIsEnabled(identifier);
+}
+
+// Actions whose photo source is chosen by the photo quality preference, so they
+// wait on the 4K candidate fetch before resolving.
+static BOOL SPKActionUsesPhotoQuality(NSString *identifier) {
     return [identifier isEqualToString:kSPKActionDownloadLibrary] ||
+           [identifier isEqualToString:kSPKActionEditSave] ||
            [identifier isEqualToString:kSPKActionDownloadShare] ||
            [identifier isEqualToString:kSPKActionDownloadGallery] ||
            [identifier isEqualToString:kSPKActionCopyDownloadLink] ||
@@ -3374,7 +3381,7 @@ BOOL SPKExecuteActionIdentifier(NSString *identifier, SPKActionButtonContext *co
                          !isVideo && 
                          ([photoQuality isEqualToString:@"max"] || ([photoQuality isEqualToString:@"always_ask"] && !isBulkAction));
 
-    if (SPKIsDownloadOrCopyAction(identifier) && shouldFetch4K) {
+    if (SPKActionUsesPhotoQuality(identifier) && shouldFetch4K) {
         NSString *topPK = SPKMediaPKForMediaObject(media);
         if (topPK.length > 0 && ![SPKMediaQualityManager hasWebPhotoCandidatesFetchedForPK:topPK]) {
             BOOL pausedPlayback = isDefaultTap && !SPKActionIdentifierOpensPreview(identifier);
@@ -3384,7 +3391,7 @@ BOOL SPKExecuteActionIdentifier(NSString *identifier, SPKActionButtonContext *co
             // Cancelling drops the action that was waiting on the fetch; the
             // candidates are still cached for the next attempt.
             __block BOOL cancelled = NO;
-            if (SPKNotificationIsEnabled(identifier)) {
+            if (SPKActionShowsCandidateFetchPill(identifier)) {
                 [[SPKNotificationCenter shared] beginTransientProgressWithTitle:SPKL(@"ACTION_BUTTON_ACTION_BUTTON_CORE_FETCHING_4K_CANDIDATES_TEXT")
                                                                        onCancel:^{
                                                                            cancelled = YES;

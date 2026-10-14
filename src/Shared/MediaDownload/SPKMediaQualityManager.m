@@ -3033,6 +3033,28 @@ static NSURL *SPKMediaDownloadLinkURL(SPKMediaAnalysis *analysis, NSString *phot
                                 nil);
 }
 
++ (void)resolveEditPhotoURLForMediaObject:(id)mediaObject
+                                 photoURL:(NSURL *)photoURL
+                                presenter:(UIViewController *)presenter
+                               completion:(void (^)(NSURL *url))completion {
+    if (!completion)
+        return;
+    SPKMediaAnalysis *analysis = SPKMediaAnalyze(mediaObject, photoURL, nil, SPKDownloadDestinationGallery, NO);
+    NSString *quality = [SPKUtils getStringPref:@"downloads_photo_quality"];
+    if (![quality isEqualToString:@"always_ask"] || !presenter || analysis.photoOptions.count < 2) {
+        SPKMediaOption *option = SPKMediaResolveDefaultOption(analysis, [quality isEqualToString:@"always_ask"] ? @"max" : nil);
+        completion(option.primaryURL ?: photoURL);
+        return;
+    }
+    SPKMediaPresentOptionsSheet(presenter, nil, analysis, SPKDownloadDestinationGallery,
+                                ^(SPKMediaOption *option) {
+                                    completion(option.primaryURL ?: photoURL);
+                                },
+                                ^{
+                                    completion(nil); // dismissed without choosing
+                                });
+}
+
 + (UIViewController *)encodingSettingsViewController {
     return [[SPKMediaEncodingSettingsViewController alloc] init];
 }

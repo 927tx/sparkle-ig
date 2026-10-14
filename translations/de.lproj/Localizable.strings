@@ -2308,7 +2308,6 @@
 "TOOLS_DEBUG_BUTTON_MENU_VIEW_HIERARCHY" = "View-Hierarchie";
 "TOOLS_DEBUG_BUTTON_TITLE" = "Debug-Taste";
 "TOOLS_DIAGNOSTICS_DEV_HIDE_TESTFLIGHT_POPUP_TITLE" = "[DEV] TestFlight Popup verbergen";
-"TOOLS_DIAGNOSTICS_DISABLE_SAFE_MODE_TITLE" = "Safe Mode deaktivieren";
 "TOOLS_DIAGNOSTICS_FIX_DUPLICATE_NOTIFICATIONS_TITLE" = "Doppelte Benachrichtigungen beheben";
 "TOOLS_DIAGNOSTICS_HEADER" = "Diagnose";
 "TOOLS_DIAGNOSTICS_HOOK_BISECT_HELP" = "Überspringe einzelne Hook-Installer beim Start, um einen Absturz oder eine Verlangsamung auf eine Funktion einzugrenzen.";
@@ -2319,7 +2318,6 @@
 "TOOLS_FLEX_THREE_FINGER_HOLD_HELP" = "Halte drei Finger irgendwo in Instagram gedrückt, um FLEX zu öffnen.";
 "TOOLS_GENERAL_CHANGE_SETTINGS_PASSCODE_TITLE" = "Einstellungen-Passcode ändern";
 "TOOLS_GENERAL_SETTINGS_PASSCODE_LOCK_TITLE" = "Einstellungen-Passcode-Sperre";
-"TOOLS_INSTAGRAM_DISABLE_SAFE_MODE_HELP" = "Verhindert, dass Instagram seine Einstellungen nach wiederholten Abstürzen zurücksetzt. Nutzung auf eigene Gefahr.";
 "TOOLS_INSTAGRAM_FIX_DUPLICATE_NOTIFICATIONS_HELP" = "Verwirft das doppelte In-App-Banner, das ein sideloadetes Instagram anzeigt, während die Mitteilungserweiterung dieselbe Push-Mitteilung bereits zustellt. Wirkt nur, während die App im Vordergrund ist.";
 "TOOLS_INSTAGRAM_HIDE_TESTFLIGHT_POPUP_HELP" = "Unterdrückt das Update-Fenster von Instagram Beta.";
 "TOOLS_SETTINGS_LOCK_HEADER" = "Einstellungen-Sperre";

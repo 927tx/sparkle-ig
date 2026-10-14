@@ -2308,7 +2308,6 @@
 "TOOLS_DEBUG_BUTTON_MENU_VIEW_HIERARCHY" = "Cấu trúc chế độ xem";
 "TOOLS_DEBUG_BUTTON_TITLE" = "Nút gỡ lỗi";
 "TOOLS_DIAGNOSTICS_DEV_HIDE_TESTFLIGHT_POPUP_TITLE" = "[DEV] Ẩn cửa sổ bật lên TestFlight";
-"TOOLS_DIAGNOSTICS_DISABLE_SAFE_MODE_TITLE" = "Tắt Chế độ an toàn";
 "TOOLS_DIAGNOSTICS_FIX_DUPLICATE_NOTIFICATIONS_TITLE" = "Sửa lỗi thông báo trùng lặp";
 "TOOLS_DIAGNOSTICS_HEADER" = "Chẩn đoán";
 "TOOLS_DIAGNOSTICS_HOOK_BISECT_HELP" = "Bỏ qua từng trình cài đặt hook riêng lẻ khi khởi chạy để cô lập lỗi văng ứng dụng hoặc làm chậm tính năng nào đó.";
@@ -2319,7 +2318,6 @@
 "TOOLS_FLEX_THREE_FINGER_HOLD_HELP" = "Chạm giữ ba ngón tay ở bất kỳ đâu trong Instagram để mở FLEX.";
 "TOOLS_GENERAL_CHANGE_SETTINGS_PASSCODE_TITLE" = "Đổi mật mã Cài đặt";
 "TOOLS_GENERAL_SETTINGS_PASSCODE_LOCK_TITLE" = "Khóa Cài đặt bằng mật mã";
-"TOOLS_INSTAGRAM_DISABLE_SAFE_MODE_HELP" = "Ngăn Instagram đặt lại cài đặt sau nhiều lần sự cố ứng dụng. Tự chịu rủi ro khi sử dụng.";
 "TOOLS_INSTAGRAM_FIX_DUPLICATE_NOTIFICATIONS_HELP" = "Bỏ qua biểu ngữ trong ứng dụng bị trùng lặp do bản Instagram sideload tạo ra khi tiện ích mở rộng thông báo đã phân phối cùng thông báo đẩy đó. Chỉ hoạt động khi ứng dụng ở chế độ tiền cảnh.";
 "TOOLS_INSTAGRAM_HIDE_TESTFLIGHT_POPUP_HELP" = "Ẩn cửa sổ bật lên cập nhật Instagram Beta.";
 "TOOLS_SETTINGS_LOCK_HEADER" = "Khóa cài đặt";

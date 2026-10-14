@@ -2308,7 +2308,6 @@
 "TOOLS_DEBUG_BUTTON_MENU_VIEW_HIERARCHY" = "Ιεραρχία προβολών";
 "TOOLS_DEBUG_BUTTON_TITLE" = "Κουμπί εντοπισμού σφαλμάτων";
 "TOOLS_DIAGNOSTICS_DEV_HIDE_TESTFLIGHT_POPUP_TITLE" = "[DEV] Απόκρυψη Αναδυόμενου TestFlight";
-"TOOLS_DIAGNOSTICS_DISABLE_SAFE_MODE_TITLE" = "Απενεργοποίηση Ασφαλούς Λειτουργίας";
 "TOOLS_DIAGNOSTICS_FIX_DUPLICATE_NOTIFICATIONS_TITLE" = "Επιδιόρθωση Διπλών Ειδοποιήσεων";
 "TOOLS_DIAGNOSTICS_HEADER" = "Διαγνωστικά";
 "TOOLS_DIAGNOSTICS_HOOK_BISECT_HELP" = "Παράλειψε συγκεκριμένους εγκαταστάτες hook κατά την εκκίνηση για να απομονώσεις μια κατάρρευση ή μια επιβράδυνση σε μία λειτουργία.";
@@ -2319,7 +2318,6 @@
 "TOOLS_FLEX_THREE_FINGER_HOLD_HELP" = "Κράτα τρία δάχτυλα οπουδήποτε στο Instagram για να ανοίξεις το FLEX.";
 "TOOLS_GENERAL_CHANGE_SETTINGS_PASSCODE_TITLE" = "Αλλαγή Κωδικού Πρόσβασης Ρυθμίσεων";
 "TOOLS_GENERAL_SETTINGS_PASSCODE_LOCK_TITLE" = "Κλείδωμα Κωδικού Πρόσβασης Ρυθμίσεων";
-"TOOLS_INSTAGRAM_DISABLE_SAFE_MODE_HELP" = "Εμποδίζει το Instagram να επαναφέρει τις ρυθμίσεις του μετά από επανειλημμένες καταρρεύσεις. Με δική σου ευθύνη.";
 "TOOLS_INSTAGRAM_FIX_DUPLICATE_NOTIFICATIONS_HELP" = "Απορρίπτει το διπλό banner μέσα στην εφαρμογή που δείχνει ένα sideloaded Instagram ενώ η επέκταση ειδοποιήσεων παραδίδει ήδη την ίδια push. Δρα μόνο όσο η εφαρμογή είναι σε πρώτο πλάνο.";
 "TOOLS_INSTAGRAM_HIDE_TESTFLIGHT_POPUP_HELP" = "Καταστέλλει το παράθυρο ενημέρωσης του Instagram Beta.";
 "TOOLS_SETTINGS_LOCK_HEADER" = "Κλείδωμα Ρυθμίσεων";

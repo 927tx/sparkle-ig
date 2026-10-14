@@ -2308,7 +2308,6 @@
 "TOOLS_DEBUG_BUTTON_MENU_VIEW_HIERARCHY" = "Hierarchia widoków";
 "TOOLS_DEBUG_BUTTON_TITLE" = "Przycisk debugowania";
 "TOOLS_DIAGNOSTICS_DEV_HIDE_TESTFLIGHT_POPUP_TITLE" = "[DEV] Ukryj wyskakujące okno TestFlight";
-"TOOLS_DIAGNOSTICS_DISABLE_SAFE_MODE_TITLE" = "Wyłącz tryb bezpieczny";
 "TOOLS_DIAGNOSTICS_FIX_DUPLICATE_NOTIFICATIONS_TITLE" = "Napraw zduplikowane powiadomienia";
 "TOOLS_DIAGNOSTICS_HEADER" = "Diagnostyka";
 "TOOLS_DIAGNOSTICS_HOOK_BISECT_HELP" = "Pomiń pojedyncze instalatory hooków przy starcie, aby zawęzić awarię lub spowolnienie do jednej funkcji.";
@@ -2319,7 +2318,6 @@
 "TOOLS_FLEX_THREE_FINGER_HOLD_HELP" = "Przytrzymaj trzy palce gdziekolwiek w Instagramie, aby otworzyć FLEX.";
 "TOOLS_GENERAL_CHANGE_SETTINGS_PASSCODE_TITLE" = "Zmień kod ustawień";
 "TOOLS_GENERAL_SETTINGS_PASSCODE_LOCK_TITLE" = "Blokada ustawień kodem";
-"TOOLS_INSTAGRAM_DISABLE_SAFE_MODE_HELP" = "Zatrzymuje resetowanie ustawień Instagrama po powtarzających się awariach. Używasz na własne ryzyko.";
 "TOOLS_INSTAGRAM_FIX_DUPLICATE_NOTIFICATIONS_HELP" = "Usuwa zduplikowany baner w aplikacji, który wyświetla sideloadowany Instagram, gdy rozszerzenie powiadomień już dostarcza to samo powiadomienie push. Działa tylko wtedy, gdy aplikacja jest na pierwszym planie.";
 "TOOLS_INSTAGRAM_HIDE_TESTFLIGHT_POPUP_HELP" = "Ukrywa wyskakujące okno aktualizacji Instagram Beta.";
 "TOOLS_SETTINGS_LOCK_HEADER" = "Blokada ustawień";

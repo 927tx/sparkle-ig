@@ -2308,7 +2308,6 @@
 "TOOLS_DEBUG_BUTTON_MENU_VIEW_HIERARCHY" = "Rodinių hierarchija";
 "TOOLS_DEBUG_BUTTON_TITLE" = "Derinimo mygtukas";
 "TOOLS_DIAGNOSTICS_DEV_HIDE_TESTFLIGHT_POPUP_TITLE" = "[DEV] Slėpti TestFlight iššokantį langą";
-"TOOLS_DIAGNOSTICS_DISABLE_SAFE_MODE_TITLE" = "Išjungti saugųjį režimą";
 "TOOLS_DIAGNOSTICS_FIX_DUPLICATE_NOTIFICATIONS_TITLE" = "Taisyti pasikartojančius pranešimus";
 "TOOLS_DIAGNOSTICS_HEADER" = "Diagnostika";
 "TOOLS_DIAGNOSTICS_HOOK_BISECT_HELP" = "Praleidžia atskiras kabliukų diegimo programas paleidžiant, kad strigtį arba sulėtėjimą priskirtumėte vienai funkcijai.";
@@ -2319,7 +2318,6 @@
 "TOOLS_FLEX_THREE_FINGER_HOLD_HELP" = "Laikykite tris pirštus bet kurioje Instagram vietoje, kad atidarytumėte Flex.";
 "TOOLS_GENERAL_CHANGE_SETTINGS_PASSCODE_TITLE" = "Keisti Nustatymai kodą";
 "TOOLS_GENERAL_SETTINGS_PASSCODE_LOCK_TITLE" = "Nustatymai kodo užraktas";
-"TOOLS_INSTAGRAM_DISABLE_SAFE_MODE_HELP" = "Neleidžia Instagram atstatyti nustatymų po pakartotinių strigčių. Naudokite savo rizika.";
 "TOOLS_INSTAGRAM_FIX_DUPLICATE_NOTIFICATIONS_HELP" = "Pašalina pasikartojančią programos viduje rodomą reklamjuostę, kurią įkelta Instagram rodo, kai pranešimų plėtinys jau teikia tą patį tiesioginį pranešimą. Veikia tik programai esant priekiname plane.";
 "TOOLS_INSTAGRAM_HIDE_TESTFLIGHT_POPUP_HELP" = "Slopina Instagram Beta atnaujinimo iššokantį langą.";
 "TOOLS_SETTINGS_LOCK_HEADER" = "Nustatymai užraktas";

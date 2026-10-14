@@ -2308,7 +2308,6 @@
 "TOOLS_DEBUG_BUTTON_MENU_VIEW_HIERARCHY" = "Gerarchia delle viste";
 "TOOLS_DEBUG_BUTTON_TITLE" = "Pulsante di debug";
 "TOOLS_DIAGNOSTICS_DEV_HIDE_TESTFLIGHT_POPUP_TITLE" = "[DEV] Nascondi popup TestFlight";
-"TOOLS_DIAGNOSTICS_DISABLE_SAFE_MODE_TITLE" = "Disabilita Modalità Sicura";
 "TOOLS_DIAGNOSTICS_FIX_DUPLICATE_NOTIFICATIONS_TITLE" = "Correggi Notifiche Duplicate";
 "TOOLS_DIAGNOSTICS_HEADER" = "Diagnostica";
 "TOOLS_DIAGNOSTICS_HOOK_BISECT_HELP" = "Salta singoli installatori di hook all'avvio per isolare un crash o un rallentamento in una sola funzione.";
@@ -2319,7 +2318,6 @@
 "TOOLS_FLEX_THREE_FINGER_HOLD_HELP" = "Tieni premute tre dita in qualsiasi punto di Instagram per aprire FLEX.";
 "TOOLS_GENERAL_CHANGE_SETTINGS_PASSCODE_TITLE" = "Cambia Passcode Impostazioni";
 "TOOLS_GENERAL_SETTINGS_PASSCODE_LOCK_TITLE" = "Blocco Passcode Impostazioni";
-"TOOLS_INSTAGRAM_DISABLE_SAFE_MODE_HELP" = "Impedisce a Instagram di reimpostare le proprie impostazioni dopo crash ripetuti. Usalo a tuo rischio.";
 "TOOLS_INSTAGRAM_FIX_DUPLICATE_NOTIFICATIONS_HELP" = "Scarta il banner in-app duplicato che un Instagram sideloaded mostra mentre l'estensione notifiche sta già consegnando la stessa push. Agisce solo mentre l'app è in primo piano.";
 "TOOLS_INSTAGRAM_HIDE_TESTFLIGHT_POPUP_HELP" = "Sopprime la finestra di aggiornamento di Instagram Beta.";
 "TOOLS_SETTINGS_LOCK_HEADER" = "Blocco Impostazioni";

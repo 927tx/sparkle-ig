@@ -2308,7 +2308,6 @@
 "TOOLS_DEBUG_BUTTON_MENU_VIEW_HIERARCHY" = "Hiérarchie des vues";
 "TOOLS_DEBUG_BUTTON_TITLE" = "Bouton de débogage";
 "TOOLS_DIAGNOSTICS_DEV_HIDE_TESTFLIGHT_POPUP_TITLE" = "[DEV] Masquer la popup TestFlight";
-"TOOLS_DIAGNOSTICS_DISABLE_SAFE_MODE_TITLE" = "Désactiver le mode sûr";
 "TOOLS_DIAGNOSTICS_FIX_DUPLICATE_NOTIFICATIONS_TITLE" = "Corriger les notifications en doublon";
 "TOOLS_DIAGNOSTICS_HEADER" = "Diagnostics";
 "TOOLS_DIAGNOSTICS_HOOK_BISECT_HELP" = "Ignorez certains installateurs de hooks au lancement pour isoler un plantage ou un ralentissement à une seule fonctionnalité.";
@@ -2319,7 +2318,6 @@
 "TOOLS_FLEX_THREE_FINGER_HOLD_HELP" = "Maintenez trois doigts n'importe où dans Instagram pour ouvrir FLEX.";
 "TOOLS_GENERAL_CHANGE_SETTINGS_PASSCODE_TITLE" = "Changer le code des paramètres";
 "TOOLS_GENERAL_SETTINGS_PASSCODE_LOCK_TITLE" = "Verrouillage du code des paramètres";
-"TOOLS_INSTAGRAM_DISABLE_SAFE_MODE_HELP" = "Empêche Instagram de réinitialiser ses réglages après des plantages répétés. À utiliser à vos risques et périls.";
 "TOOLS_INSTAGRAM_FIX_DUPLICATE_NOTIFICATIONS_HELP" = "Écarte la bannière in-app en double qu'affiche un Instagram sideloadé alors que l'extension de notification délivre déjà la même push. N'agit que lorsque l'app est au premier plan.";
 "TOOLS_INSTAGRAM_HIDE_TESTFLIGHT_POPUP_HELP" = "Supprime la fenêtre de mise à jour d'Instagram Beta.";
 "TOOLS_SETTINGS_LOCK_HEADER" = "Verrouillage des paramètres";

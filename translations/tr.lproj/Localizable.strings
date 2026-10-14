@@ -2308,7 +2308,6 @@
 "TOOLS_DEBUG_BUTTON_MENU_VIEW_HIERARCHY" = "Görünüm Hiyerarşisi";
 "TOOLS_DEBUG_BUTTON_TITLE" = "Hata Ayıklama Düğmesi";
 "TOOLS_DIAGNOSTICS_DEV_HIDE_TESTFLIGHT_POPUP_TITLE" = "[DEV] TestFlight Açılır Penceresini Gizle";
-"TOOLS_DIAGNOSTICS_DISABLE_SAFE_MODE_TITLE" = "Güvenli Modu Devre Dışı Bırak";
 "TOOLS_DIAGNOSTICS_FIX_DUPLICATE_NOTIFICATIONS_TITLE" = "Yinelenen Bildirimleri Düzelt";
 "TOOLS_DIAGNOSTICS_HEADER" = "Tanılama";
 "TOOLS_DIAGNOSTICS_HOOK_BISECT_HELP" = "Bir çökmeyi ya da yavaşlamayı tek bir özelliğe indirgemek için başlangıçta belirli hook yükleyicilerini atla.";
@@ -2319,7 +2318,6 @@
 "TOOLS_FLEX_THREE_FINGER_HOLD_HELP" = "FLEX'i açmak için Instagram'da herhangi bir yerde üç parmağını basılı tut.";
 "TOOLS_GENERAL_CHANGE_SETTINGS_PASSCODE_TITLE" = "Ayarlar Şifresini Değiştir";
 "TOOLS_GENERAL_SETTINGS_PASSCODE_LOCK_TITLE" = "Ayarlar Şifre Kilidi";
-"TOOLS_INSTAGRAM_DISABLE_SAFE_MODE_HELP" = "Instagram'ın tekrarlanan çökmelerden sonra ayarlarını sıfırlamasını engeller. Sorumluluk sana ait.";
 "TOOLS_INSTAGRAM_FIX_DUPLICATE_NOTIFICATIONS_HELP" = "Bildirim uzantısı aynı anlık bildirimi zaten iletirken sideload edilmiş bir Instagram'ın gösterdiği yinelenen uygulama içi bildirimi düşürür. Yalnızca uygulama ön plandayken etkilidir.";
 "TOOLS_INSTAGRAM_HIDE_TESTFLIGHT_POPUP_HELP" = "Instagram Beta güncelleme penceresini bastırır.";
 "TOOLS_SETTINGS_LOCK_HEADER" = "Ayarlar Kilidi";

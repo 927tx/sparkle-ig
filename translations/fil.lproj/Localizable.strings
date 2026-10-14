@@ -2308,7 +2308,6 @@
 "TOOLS_DEBUG_BUTTON_MENU_VIEW_HIERARCHY" = "Hierarchy ng View";
 "TOOLS_DEBUG_BUTTON_TITLE" = "Button ng Debug";
 "TOOLS_DIAGNOSTICS_DEV_HIDE_TESTFLIGHT_POPUP_TITLE" = "[DEV] Itago ang TestFlight Popup";
-"TOOLS_DIAGNOSTICS_DISABLE_SAFE_MODE_TITLE" = "I-disable ang Safe Mode";
 "TOOLS_DIAGNOSTICS_FIX_DUPLICATE_NOTIFICATIONS_TITLE" = "Ayusin ang Duplicate Notifications";
 "TOOLS_DIAGNOSTICS_HEADER" = "Pagsusuri";
 "TOOLS_DIAGNOSTICS_HOOK_BISECT_HELP" = "Laktawan ang bawat hook installer sa launch para maitukoy kung aling feature ang sanhi ng crash o pagbagal.";
@@ -2319,7 +2318,6 @@
 "TOOLS_FLEX_THREE_FINGER_HOLD_HELP" = "Idikit ang tatlong daliri kahit saan sa Instagram para buksan ang FLEX.";
 "TOOLS_GENERAL_CHANGE_SETTINGS_PASSCODE_TITLE" = "Baguhin ang Passcode ng Settings";
 "TOOLS_GENERAL_SETTINGS_PASSCODE_LOCK_TITLE" = "Passcode Lock ng Settings";
-"TOOLS_INSTAGRAM_DISABLE_SAFE_MODE_HELP" = "Pinipigilan ang Instagram na i-reset ang mga setting nito matapos ang paulit-ulit na crash. Gamitin nang may pananagutan sa sarili.";
 "TOOLS_INSTAGRAM_FIX_DUPLICATE_NOTIFICATIONS_HELP" = "Inaalis ang duplicate na in-app banner na ipinopost ng naka-sideload na Instagram habang ang notification extension ay nagde-deliver na ng parehong push. Kumikilos lang habang nasa foreground ang app.";
 "TOOLS_INSTAGRAM_HIDE_TESTFLIGHT_POPUP_HELP" = "Sinusupil ang popup ng Instagram Beta update.";
 "TOOLS_SETTINGS_LOCK_HEADER" = "Lock ng Settings";

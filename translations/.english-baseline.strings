@@ -2308,7 +2308,6 @@
 "TOOLS_DEBUG_BUTTON_MENU_VIEW_HIERARCHY" = "View Hierarchy";
 "TOOLS_DEBUG_BUTTON_TITLE" = "Debug Button";
 "TOOLS_DIAGNOSTICS_DEV_HIDE_TESTFLIGHT_POPUP_TITLE" = "[DEV] Hide TestFlight Popup";
-"TOOLS_DIAGNOSTICS_DISABLE_SAFE_MODE_TITLE" = "Disable Safe Mode";
 "TOOLS_DIAGNOSTICS_FIX_DUPLICATE_NOTIFICATIONS_TITLE" = "Fix Duplicate Notifications";
 "TOOLS_DIAGNOSTICS_HEADER" = "Diagnostics";
 "TOOLS_DIAGNOSTICS_HOOK_BISECT_HELP" = "Skip individual hook installers at launch to isolate a crash or a slowdown to one feature.";
@@ -2319,7 +2318,6 @@
 "TOOLS_FLEX_THREE_FINGER_HOLD_HELP" = "Hold three fingers anywhere in Instagram to open FLEX.";
 "TOOLS_GENERAL_CHANGE_SETTINGS_PASSCODE_TITLE" = "Change Settings Passcode";
 "TOOLS_GENERAL_SETTINGS_PASSCODE_LOCK_TITLE" = "Settings Passcode Lock";
-"TOOLS_INSTAGRAM_DISABLE_SAFE_MODE_HELP" = "Stops Instagram resetting its settings after repeated crashes. Use at your own risk.";
 "TOOLS_INSTAGRAM_FIX_DUPLICATE_NOTIFICATIONS_HELP" = "Drops the duplicate in-app banner a sideloaded Instagram posts while the notification extension is already delivering the same push. Only acts while the app is in the foreground.";
 "TOOLS_INSTAGRAM_HIDE_TESTFLIGHT_POPUP_HELP" = "Suppresses the Instagram Beta update popup.";
 "TOOLS_SETTINGS_LOCK_HEADER" = "Settings Lock";

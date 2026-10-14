@@ -2308,7 +2308,6 @@
 "TOOLS_DEBUG_BUTTON_MENU_VIEW_HIERARCHY" = "Ierarhia vizualizărilor";
 "TOOLS_DEBUG_BUTTON_TITLE" = "Buton de depanare";
 "TOOLS_DIAGNOSTICS_DEV_HIDE_TESTFLIGHT_POPUP_TITLE" = "[DEV] Ascunde pop-up TestFlight";
-"TOOLS_DIAGNOSTICS_DISABLE_SAFE_MODE_TITLE" = "Dezactivează modul sigur";
 "TOOLS_DIAGNOSTICS_FIX_DUPLICATE_NOTIFICATIONS_TITLE" = "Repară notificări duplicate";
 "TOOLS_DIAGNOSTICS_HEADER" = "Diagnostice";
 "TOOLS_DIAGNOSTICS_HOOK_BISECT_HELP" = "Sari peste anumite instalatoare de hook-uri la pornire pentru a izola o blocare sau o încetinire la o singură funcție.";
@@ -2319,7 +2318,6 @@
 "TOOLS_FLEX_THREE_FINGER_HOLD_HELP" = "Ține trei degete apăsate oriunde în Instagram pentru a deschide FLEX.";
 "TOOLS_GENERAL_CHANGE_SETTINGS_PASSCODE_TITLE" = "Schimbă codul de acces setări";
 "TOOLS_GENERAL_SETTINGS_PASSCODE_LOCK_TITLE" = "Blocare cu cod setări";
-"TOOLS_INSTAGRAM_DISABLE_SAFE_MODE_HELP" = "Oprește resetarea setărilor Instagram după blocări repetate. Folosește pe propria răspundere.";
 "TOOLS_INSTAGRAM_FIX_DUPLICATE_NOTIFICATIONS_HELP" = "Renunță la bannerul duplicat din aplicație pe care îl afișează un Instagram instalat prin sideload în timp ce extensia de notificări livrează deja aceeași notificare push. Acționează doar cât timp aplicația este în prim-plan.";
 "TOOLS_INSTAGRAM_HIDE_TESTFLIGHT_POPUP_HELP" = "Suprimă fereastra de actualizare Instagram Beta.";
 "TOOLS_SETTINGS_LOCK_HEADER" = "Blocare setări";

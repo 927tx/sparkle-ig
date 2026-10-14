@@ -2308,7 +2308,6 @@
 "TOOLS_DEBUG_BUTTON_MENU_VIEW_HIERARCHY" = "ลำดับชั้นของมุมมอง";
 "TOOLS_DEBUG_BUTTON_TITLE" = "ปุ่มดีบัก";
 "TOOLS_DIAGNOSTICS_DEV_HIDE_TESTFLIGHT_POPUP_TITLE" = "[DEV] ซ่อนป๊อปอัป TestFlight";
-"TOOLS_DIAGNOSTICS_DISABLE_SAFE_MODE_TITLE" = "ปิดใช้งานโหมดปลอดภัย";
 "TOOLS_DIAGNOSTICS_FIX_DUPLICATE_NOTIFICATIONS_TITLE" = "แก้ไขการแจ้งเตือนซ้ำ";
 "TOOLS_DIAGNOSTICS_HEADER" = "การวินิจฉัย";
 "TOOLS_DIAGNOSTICS_HOOK_BISECT_HELP" = "ข้ามตัวติดตั้งฮุกแต่ละตัวขณะเปิดแอป เพื่อระบุว่าอาการแอปขัดข้องหรือทำงานช้ามาจากฟีเจอร์ใด";
@@ -2319,7 +2318,6 @@
 "TOOLS_FLEX_THREE_FINGER_HOLD_HELP" = "แตะค้างด้วยสามนิ้วที่ใดก็ได้ใน Instagram เพื่อเปิด FLEX";
 "TOOLS_GENERAL_CHANGE_SETTINGS_PASSCODE_TITLE" = "เปลี่ยนรหัสผ่านการตั้งค่า";
 "TOOLS_GENERAL_SETTINGS_PASSCODE_LOCK_TITLE" = "ล็อกรหัสผ่านการตั้งค่า";
-"TOOLS_INSTAGRAM_DISABLE_SAFE_MODE_HELP" = "หยุด Instagram ไม่ให้รีเซ็ตการตั้งค่าหลังจากขัดข้องซ้ำ ๆ ใช้งานด้วยความเสี่ยงของคุณเอง";
 "TOOLS_INSTAGRAM_FIX_DUPLICATE_NOTIFICATIONS_HELP" = "ตัดแบนเนอร์ในแอปที่ซ้ำกันซึ่ง Instagram ที่ไซด์โหลดโพสต์ ในขณะที่ส่วนขยายการแจ้งเตือนกำลังส่งพุชเดียวกันอยู่แล้ว ทำงานเฉพาะขณะที่แอปอยู่เบื้องหน้าเท่านั้น";
 "TOOLS_INSTAGRAM_HIDE_TESTFLIGHT_POPUP_HELP" = "ระงับป๊อปอัปอัปเดต Instagram Beta";
 "TOOLS_SETTINGS_LOCK_HEADER" = "ล็อกการตั้งค่า";

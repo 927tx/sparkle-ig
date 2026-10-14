@@ -2308,7 +2308,6 @@
 "TOOLS_DEBUG_BUTTON_MENU_VIEW_HIERARCHY" = "تسلسل العروض";
 "TOOLS_DEBUG_BUTTON_TITLE" = "زر التصحيح";
 "TOOLS_DIAGNOSTICS_DEV_HIDE_TESTFLIGHT_POPUP_TITLE" = "[DEV] إخفاء منبثقة TestFlight";
-"TOOLS_DIAGNOSTICS_DISABLE_SAFE_MODE_TITLE" = "تعطيل الوضع الآمن";
 "TOOLS_DIAGNOSTICS_FIX_DUPLICATE_NOTIFICATIONS_TITLE" = "إصلاح الإخطارات المكررة";
 "TOOLS_DIAGNOSTICS_HEADER" = "التشخيص";
 "TOOLS_DIAGNOSTICS_HOOK_BISECT_HELP" = "تخطَّ مثبتات الخطافات فرادى عند الإقلاع لعزل تعطل أو بطء وربطه بميزة واحدة.";
@@ -2319,7 +2318,6 @@
 "TOOLS_FLEX_THREE_FINGER_HOLD_HELP" = "اضغط بثلاثة أصابع مطولاً في أي مكان داخل Instagram لفتح FLEX.";
 "TOOLS_GENERAL_CHANGE_SETTINGS_PASSCODE_TITLE" = "تغيير رمز مرور الإعدادات";
 "TOOLS_GENERAL_SETTINGS_PASSCODE_LOCK_TITLE" = "قفل رمز مرور الإعدادات";
-"TOOLS_INSTAGRAM_DISABLE_SAFE_MODE_HELP" = "يمنع Instagram من إعادة ضبط إعداداته بعد تعطلات متكررة. استخدمه على مسؤوليتك.";
 "TOOLS_INSTAGRAM_FIX_DUPLICATE_NOTIFICATIONS_HELP" = "يسقط الشريط المكرر داخل التطبيق الذي يعرضه Instagram المثبت جانبياً بينما يسلّم امتداد الإشعارات الإشعار نفسه. يعمل فقط أثناء وجود التطبيق في المقدمة.";
 "TOOLS_INSTAGRAM_HIDE_TESTFLIGHT_POPUP_HELP" = "يمنع ظهور نافذة تحديث Instagram Beta.";
 "TOOLS_SETTINGS_LOCK_HEADER" = "قفل الإعدادات";

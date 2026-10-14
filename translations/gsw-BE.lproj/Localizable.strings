@@ -2308,7 +2308,6 @@
 "TOOLS_DEBUG_BUTTON_MENU_VIEW_HIERARCHY" = "View-Hierarchie";
 "TOOLS_DEBUG_BUTTON_TITLE" = "Debug-Chnopf";
 "TOOLS_DIAGNOSTICS_DEV_HIDE_TESTFLIGHT_POPUP_TITLE" = "[DEV] TestFlight-Popup verstecke";
-"TOOLS_DIAGNOSTICS_DISABLE_SAFE_MODE_TITLE" = "Safe Mode deaktiviere";
 "TOOLS_DIAGNOSTICS_FIX_DUPLICATE_NOTIFICATIONS_TITLE" = "Doppleti Benachrichtigige fixe";
 "TOOLS_DIAGNOSTICS_HEADER" = "Diagnostik";
 "TOOLS_DIAGNOSTICS_HOOK_BISECT_HELP" = "Überspring einzelni Hook-Installer bim Start, zum en Absturz oder e Verlangsamig uf ei Funktion yzgrenze.";
@@ -2319,7 +2318,6 @@
 "TOOLS_FLEX_THREE_FINGER_HOLD_HELP" = "Haut drei Finger irgendwo i Instagram, zum FLEX ufmache.";
 "TOOLS_GENERAL_CHANGE_SETTINGS_PASSCODE_TITLE" = "Ystellige-Passcode ändere";
 "TOOLS_GENERAL_SETTINGS_PASSCODE_LOCK_TITLE" = "Ystellige-Passcode-Sperri";
-"TOOLS_INSTAGRAM_DISABLE_SAFE_MODE_HELP" = "Ghört uf, dass Instagram sini Ystellige nach mehrmalige Abstürz zrüggsetzt. Bruuchs uf eiges Risiko.";
 "TOOLS_INSTAGRAM_FIX_DUPLICATE_NOTIFICATIONS_HELP" = "Lat s dopplete In-App-Banner wäg, wo e sideloadets Instagram postet, während d'Benachrichtigungs-Extension die gliech Push scho zuestellt. Wirkt nume, während d'App im Vordergrund isch.";
 "TOOLS_INSTAGRAM_HIDE_TESTFLIGHT_POPUP_HELP" = "Unterdrückt s Instagram-Beta-Update-Popup.";
 "TOOLS_SETTINGS_LOCK_HEADER" = "Ystellige-Sperri";

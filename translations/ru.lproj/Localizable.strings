@@ -2308,7 +2308,6 @@
 "TOOLS_DEBUG_BUTTON_MENU_VIEW_HIERARCHY" = "Иерархия представлений";
 "TOOLS_DEBUG_BUTTON_TITLE" = "Кнопка отладки";
 "TOOLS_DIAGNOSTICS_DEV_HIDE_TESTFLIGHT_POPUP_TITLE" = "[DEV] Скрыть всплывающее окно TestFlight";
-"TOOLS_DIAGNOSTICS_DISABLE_SAFE_MODE_TITLE" = "Отключить безопасный режим";
 "TOOLS_DIAGNOSTICS_FIX_DUPLICATE_NOTIFICATIONS_TITLE" = "Исправить дублирующиеся уведомления";
 "TOOLS_DIAGNOSTICS_HEADER" = "Диагностика";
 "TOOLS_DIAGNOSTICS_HOOK_BISECT_HELP" = "Пропускайте отдельные установщики хуков при запуске, чтобы свести сбой или замедление к одной функции.";
@@ -2319,7 +2318,6 @@
 "TOOLS_FLEX_THREE_FINGER_HOLD_HELP" = "Удерживайте три пальца в любом месте Instagram, чтобы открыть FLEX.";
 "TOOLS_GENERAL_CHANGE_SETTINGS_PASSCODE_TITLE" = "Изменить код доступа настроек";
 "TOOLS_GENERAL_SETTINGS_PASSCODE_LOCK_TITLE" = "Блокировка кода доступа настроек";
-"TOOLS_INSTAGRAM_DISABLE_SAFE_MODE_HELP" = "Не даёт Instagram сбрасывать свои настройки после повторяющихся сбоев. Используйте на свой риск.";
 "TOOLS_INSTAGRAM_FIX_DUPLICATE_NOTIFICATIONS_HELP" = "Отбрасывает дублирующий баннер внутри приложения, который показывает сайдлоад-версия Instagram, пока расширение уведомлений уже доставляет тот же push. Действует только пока приложение на переднем плане.";
 "TOOLS_INSTAGRAM_HIDE_TESTFLIGHT_POPUP_HELP" = "Подавляет окно обновления Instagram Beta.";
 "TOOLS_SETTINGS_LOCK_HEADER" = "Блокировка настроек";

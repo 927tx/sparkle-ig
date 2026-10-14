@@ -2308,7 +2308,6 @@
 "TOOLS_DEBUG_BUTTON_MENU_VIEW_HIERARCHY" = "Hierarki Tampilan";
 "TOOLS_DEBUG_BUTTON_TITLE" = "Tombol Debug";
 "TOOLS_DIAGNOSTICS_DEV_HIDE_TESTFLIGHT_POPUP_TITLE" = "[DEV] Sembunyikan Popup TestFlight";
-"TOOLS_DIAGNOSTICS_DISABLE_SAFE_MODE_TITLE" = "Nonaktifkan Mode Aman";
 "TOOLS_DIAGNOSTICS_FIX_DUPLICATE_NOTIFICATIONS_TITLE" = "Perbaiki Notifikasi Ganda";
 "TOOLS_DIAGNOSTICS_HEADER" = "Diagnostik";
 "TOOLS_DIAGNOSTICS_HOOK_BISECT_HELP" = "Lewati instalasi hook satu per satu saat aplikasi dijalankan untuk mengisolasi crash atau perlambatan ke satu fitur tertentu.";
@@ -2319,7 +2318,6 @@
 "TOOLS_FLEX_THREE_FINGER_HOLD_HELP" = "Tahan tiga jari di mana saja di Instagram untuk membuka FLEX.";
 "TOOLS_GENERAL_CHANGE_SETTINGS_PASSCODE_TITLE" = "Ubah Kode Sandi Pengaturan";
 "TOOLS_GENERAL_SETTINGS_PASSCODE_LOCK_TITLE" = "Kunci Kode Sandi Pengaturan";
-"TOOLS_INSTAGRAM_DISABLE_SAFE_MODE_HELP" = "Menghentikan Instagram mereset pengaturannya setelah crash berulang. Gunakan dengan risiko ditanggung sendiri.";
 "TOOLS_INSTAGRAM_FIX_DUPLICATE_NOTIFICATIONS_HELP" = "Menghilangkan banner dalam-aplikasi duplikat yang diposting Instagram sideload saat ekstensi notifikasi sudah mengirimkan push yang sama. Hanya bekerja saat aplikasi berada di latar depan.";
 "TOOLS_INSTAGRAM_HIDE_TESTFLIGHT_POPUP_HELP" = "Menyembunyikan popup pembaruan Instagram Beta.";
 "TOOLS_SETTINGS_LOCK_HEADER" = "Kunci Pengaturan";

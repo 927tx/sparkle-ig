@@ -2308,7 +2308,6 @@
 "TOOLS_DEBUG_BUTTON_MENU_VIEW_HIERARCHY" = "ビュー階層";
 "TOOLS_DEBUG_BUTTON_TITLE" = "デバッグボタン";
 "TOOLS_DIAGNOSTICS_DEV_HIDE_TESTFLIGHT_POPUP_TITLE" = "[開発]TestFlightポップアップを非表示にします";
-"TOOLS_DIAGNOSTICS_DISABLE_SAFE_MODE_TITLE" = "セーフモードを無効化";
 "TOOLS_DIAGNOSTICS_FIX_DUPLICATE_NOTIFICATIONS_TITLE" = "重複通知を修正";
 "TOOLS_DIAGNOSTICS_HEADER" = "診断";
 "TOOLS_DIAGNOSTICS_HOOK_BISECT_HELP" = "起動時に個々のフックインストーラーをスキップし、クラッシュや動作の遅さを特定の機能に絞り込みます。";
@@ -2319,7 +2318,6 @@
 "TOOLS_FLEX_THREE_FINGER_HOLD_HELP" = "Instagram内のどこでも3本指で長押しするとFLEXを開きます。";
 "TOOLS_GENERAL_CHANGE_SETTINGS_PASSCODE_TITLE" = "設定パスコードを変更";
 "TOOLS_GENERAL_SETTINGS_PASSCODE_LOCK_TITLE" = "設定パスコードロック";
-"TOOLS_INSTAGRAM_DISABLE_SAFE_MODE_HELP" = "クラッシュが繰り返された後にInstagramが設定をリセットするのを防ぎます。自己責任で使用してください。";
 "TOOLS_INSTAGRAM_FIX_DUPLICATE_NOTIFICATIONS_HELP" = "通知拡張機能が同じプッシュをすでに配信しているのに、サイドロード版Instagramが表示してしまう重複したアプリ内バナーを取り除きます。アプリがフォアグラウンドにある間のみ動作します。";
 "TOOLS_INSTAGRAM_HIDE_TESTFLIGHT_POPUP_HELP" = "Instagramベータの更新ポップアップを非表示にします。";
 "TOOLS_SETTINGS_LOCK_HEADER" = "設定ロック";

@@ -922,27 +922,6 @@ if ([SPKUtils getBoolPref:@"tools_flex_instagram"]) {
 
 %end
 
-// Disable safe mode (defaults reset upon subsequent crashes)
-%group SPKTweakSafeModeHooks
-
-%hook IGSafeModeChecker
-- (id)initWithInstacrashCounterProvider:(void *)provider crashThreshold:(unsigned long long)threshold {
-    if ([SPKUtils getBoolPref:@"tools_disable_safe_mode"])
-        return nil;
-
-    return %orig(provider, threshold);
-}
-- (unsigned long long)crashCount {
-    if ([SPKUtils getBoolPref:@"tools_disable_safe_mode"]) {
-        return 0;
-    }
-
-    return %orig;
-}
-%end
-
-%end
-
 static BOOL SPKPrefEnabled(NSString *key) {
     return [SPKUtils getBoolPref:key];
 }
@@ -993,11 +972,6 @@ void SPKInstallTweakLaunchCriticalHooks(void) {
     static dispatch_once_t launchOnceToken;
     dispatch_once(&launchOnceToken, ^{
         %init(SPKTweakLaunchCriticalHooks);
-    });
-
-    static dispatch_once_t safeModeOnceToken;
-    dispatch_once(&safeModeOnceToken, ^{
-        %init(SPKTweakSafeModeHooks);
     });
 
     SPKInstallTweakFlexSupportHooksIfNeeded();

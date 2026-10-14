@@ -10,7 +10,6 @@
 
 static NSDictionary *SPKBootstrapDefaults(void) {
     return @{
-        @"tools_disable_safe_mode" : @(NO),
         @"tools_flex_app_launch" : @(NO),
         @"tools_flex_app_start" : @(NO),
         @"tools_flex_instagram" : @(NO),

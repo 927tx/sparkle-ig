@@ -54,6 +54,14 @@ FOUNDATION_EXPORT Class _Nullable SPKReelsVerticalUFIClass(void);
 /// to it via `%init(Group, BareName = SPKResolveIGClass(@"Module.Class", @"BareName"))`.
 FOUNDATION_EXPORT Class _Nullable SPKResolveIGClass(NSString *qualified, NSString *_Nullable legacy);
 
+/// The Swift DM inbox view controller: IGDirectInboxSwiftViewController on IG 439-451,
+/// renamed to the IGDirectInboxViewController module on 452, where it replaced the
+/// ObjC class outright.
+FOUNDATION_EXPORT Class _Nullable SPKDirectSwiftInboxClass(void);
+/// The legacy ObjC DM inbox view controller, or nil when this build has none. Never
+/// the same class as SPKDirectSwiftInboxClass(), so hooking both cannot double-wrap.
+FOUNDATION_EXPORT Class _Nullable SPKDirectObjCInboxClass(void);
+
 #define SPKLog(category, fmt, ...) SPKLogMessage((category), OS_LOG_TYPE_DEFAULT, (fmt), ##__VA_ARGS__)
 #define SPKWarnLog(category, fmt, ...) SPKLogMessage((category), OS_LOG_TYPE_ERROR, (fmt), ##__VA_ARGS__)
 #define SPKErrorLog(category, fmt, ...) SPKLogMessage((category), OS_LOG_TYPE_FAULT, (fmt), ##__VA_ARGS__)

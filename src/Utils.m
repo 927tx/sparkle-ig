@@ -440,6 +440,16 @@ Class SPKResolveIGClass(NSString *qualified, NSString *legacy) {
     return c;
 }
 
+Class SPKDirectSwiftInboxClass(void) {
+    return SPKResolveIGClass(@"IGDirectInboxViewController.IGDirectInboxViewController", nil)
+               ?: SPKResolveIGClass(@"IGDirectInboxSwiftViewController.IGDirectInboxSwiftViewController", nil);
+}
+
+Class SPKDirectObjCInboxClass(void) {
+    Class objcInbox = objc_getClass("IGDirectInboxViewController");
+    return objcInbox == SPKDirectSwiftInboxClass() ? Nil : objcInbox;
+}
+
 static NSString *SPKTrimmedLogBody(NSString *body) {
     return [body stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }

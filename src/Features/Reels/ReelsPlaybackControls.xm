@@ -3,6 +3,7 @@
 
 #import "../../App/SPKPerfMeter.h"
 #import "../../InstagramHeaders.h"
+#import "../../Shared/ActionButton/ActionButtonLookupUtils.h"
 #import "../../Shared/Playback/SPKPlaybackPanel.h"
 #import "../../Shared/UI/SPKChrome.h"
 #import "../../Shared/i18n/SPKStrings.h"
@@ -87,16 +88,7 @@ static id SPKReelsPlaybackVideoView(UICollectionViewCell *cell) {
 static id SPKReelsPlaybackItem(UICollectionViewCell *cell) {
     if (!cell)
         return nil;
-    Ivar ivar = class_getInstanceVariable([cell class], "_mediaPassthrough");
-    if (ivar) {
-        const char *type = ivar_getTypeEncoding(ivar);
-        if (type && type[0] == '@') {
-            id media = object_getIvar(cell, ivar);
-            if (media)
-                return media;
-        }
-    }
-    return SPKReelsPlaybackSend(cell, @"video");
+    return SPKSundialCellMedia(cell) ?: SPKReelsPlaybackSend(cell, @"video");
 }
 
 static BOOL SPKReelsPlaybackCellIsOnScreen(UICollectionViewCell *cell) {

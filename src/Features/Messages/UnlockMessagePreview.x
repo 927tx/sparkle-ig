@@ -50,24 +50,21 @@ static void SPKMessagePreviewBypassSeenState(id preview) {
     *((uint8_t *)(__bridge void *)preview + ivar_getOffset(ivar)) = 1;
 }
 
-%group SPKUnlockMessagePreviewHooks
-
-%hook _TtC29IGConsumerSubsDirectChatPeeks35IGDirectInboxChatPeekPreviewHandler
-
-- (id)previewViewControllerForThreadId:(id)threadId userSession:(id)session containerWidth:(double)width {
+/// The receipt-free preview controller, or nil to let Instagram build its own.
+static id SPKMessagePreviewController(id threadId, id session) {
     if (!SPKUnlockMessagePreviewEnabled())
-        return %orig;
+        return nil;
 
     Class previewClass = NSClassFromString(@"_TtC39IGDirectLightweightThreadViewController39IGDirectLightweightThreadViewController");
     SEL initializer = @selector(initWithUserSession:threadId:onLoadCompletion:);
     if (!previewClass || ![previewClass instancesRespondToSelector:initializer])
-        return %orig;
+        return nil;
 
     id preview = [[previewClass alloc] initWithUserSession:session
                                                   threadId:threadId
                                            onLoadCompletion:nil];
     if (!preview)
-        return %orig;
+        return nil;
 
     if ([preview respondsToSelector:@selector(setShouldHideHeader:)])
         [preview setShouldHideHeader:YES];
@@ -75,6 +72,20 @@ static void SPKMessagePreviewBypassSeenState(id preview) {
     if ([preview respondsToSelector:@selector(setShouldSkipScrollToNewMessagesSeparator:)])
         [preview setShouldSkipScrollToNewMessagesSeparator:YES];
     return preview;
+}
+
+%group SPKUnlockMessagePreviewHooks
+
+%hook _TtC29IGConsumerSubsDirectChatPeeks35IGDirectInboxChatPeekPreviewHandler
+
+- (id)previewViewControllerForThreadId:(id)threadId userSession:(id)session containerWidth:(double)width {
+    return SPKMessagePreviewController(threadId, session) ?: %orig;
+}
+
+// IG 452 added a trailing experience argument. Each build defines only one of the
+// two selectors, so the other hook binds nothing.
+- (id)previewViewControllerForThreadId:(id)threadId userSession:(id)session containerWidth:(double)width experience:(id)experience {
+    return SPKMessagePreviewController(threadId, session) ?: %orig;
 }
 
 %end

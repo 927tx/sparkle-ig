@@ -817,6 +817,7 @@
 
 @interface _TtC29IGConsumerSubsDirectChatPeeks35IGDirectInboxChatPeekPreviewHandler : NSObject
 - (id)previewViewControllerForThreadId:(id)threadId userSession:(id)session containerWidth:(double)width;
+- (id)previewViewControllerForThreadId:(id)threadId userSession:(id)session containerWidth:(double)width experience:(id)experience;
 @end
 
 @interface _TtC39IGDirectLightweightThreadViewController39IGDirectLightweightThreadViewController : UIViewController
